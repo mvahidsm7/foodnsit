@@ -24,6 +24,11 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 // menu
 Route::get('/menu', [MenuController::class, 'menu']);
 // pesan
-Route::get('/pesan', [PesanController::class, 'pesan']);
+Route::get('/pesan', [PesanController::class, 'TampilReservasi']);
+Route::post('/pesan/sukses', [PesanController::class, 'Reservasi']);
 
 
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

@@ -10,8 +10,8 @@
 								<p class="subtitle">FOOD n SIT</p>
 								<h1>Selamat datang</h1>
 								<div class="hero-btns">
-									<a href="/menu" class="boxed-btn">Menu</a>
-									<a href="/pesan" class="bordered-btn">Reservasi & Pemesanan</a>
+									<a href="/pesan" class="boxed-btn">Reservasi</a>
+									<a href="/menu" class="bordered-btn">Menu</a>
 								</div>
 							</div>
 						</div>

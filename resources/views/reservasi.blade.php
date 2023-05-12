@@ -6,8 +6,8 @@
 				<div class="row">
 					<div class="col-lg-8 offset-lg-2 text-center">
 						<div class="breadcrumb-text">
-							<p>halaman ini untuk</p>
-							<h1>Pesan & Reservasi</h1>
+							<p>halaman</p>
+							<h1>Reservasi</h1>
 						</div>
 					</div>
 				</div>
@@ -27,9 +27,9 @@
 								<section>Meja :</section>
 								<select name="no_meja" id="" class="form-control input-group form-label">
 									<option value="" hidden selected>Pilih Meja</option>
-									{{-- @foreach ($meja as $m)
-										<option value="{{$m->id_meja}}" @if ($m->status == 'dipesan') hidden @endif>0{{$m->id_meja}}</option>
-									@endforeach --}}
+									@foreach ($meja as $m)
+										<option value="{{$m->no_meja}}" @if ($m->status == 'dipesan') hidden @endif>0{{$m->no_meja}}</option>
+									@endforeach
 								</select><br>
 								<section>Tanggal :</section>
 								<input type="date" class="form-control input-group form-label" name="tanggal"><br>
@@ -63,7 +63,7 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-lg-12 text-center">
-						<p> <i class="fas fa-map-marker-alt"></i> Find Our Location</p>
+						<p> <i class="fas fa-map-marker-alt"></i> Temui kami disini</p>
 					</div>
 				</div>
 			</div>
