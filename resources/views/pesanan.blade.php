@@ -41,6 +41,7 @@
                         <p class="card-text">
                             <a href="/meja" class="btn btn-outline-primary">data meja</a>
                             <a href="/tambah-menu" class="btn btn-outline-info">data menu</a>
+                            <a href="/data-pesanan" class="btn btn-outline-info">data pesanan</a>
                             <a href="/" class="btn btn-outline-success">lainnya</a>
                         </p>
                     </div>
@@ -123,7 +124,7 @@
                             <h5>Tanggal :</h5>{{ $p->tanggal }}
                             </p>
                             <p>
-                                @if ($p->status == 0)
+                                @if ($p->status == false)
                                 <form action="/bayar/{{ $p->no_pes }}" method="post">
                                     @csrf
                                     <button type="submit" class="btn btn-outline-success">Lanjutkan Bayar</button>

@@ -4,6 +4,7 @@ use App\Http\Controllers\BayarController;
 use App\Http\Controllers\BerandaController;
 use App\Http\Controllers\MejaController;
 use App\Http\Controllers\MenuController;
+use App\Http\Controllers\PesananController;
 use App\Http\Controllers\PesanController;
 use App\Http\Controllers\ProfilController;
 use Illuminate\Support\Facades\Auth;
@@ -36,7 +37,8 @@ Route::post('/tambah-meja', [MejaController::class, 'create']);
 Route::post('/tambah-meja/sukses', [MejaController::class, 'store']);
 //bayar
 Route::post('/bayar/{no_pes}', [BayarController::class, 'index']);
-
+// admin 
+Route::get('/data-pesanan', [PesananController::class, 'index']);
 
 Auth::routes();
 
