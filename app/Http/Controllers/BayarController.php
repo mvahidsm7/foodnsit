@@ -2,18 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Menu;
-use App\Http\Requests\StoreMenuRequest;
-use App\Http\Requests\UpdateMenuRequest;
+use App\Models\Bayar;
+use App\Http\Requests\StoreBayarRequest;
+use App\Http\Requests\UpdateBayarRequest;
 
-class MenuController extends Controller
+class BayarController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return view('menu');
+        return view('bayar');
     }
 
     /**
@@ -27,7 +27,7 @@ class MenuController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreMenuRequest $request)
+    public function store(StoreBayarRequest $request)
     {
         //
     }
@@ -35,7 +35,7 @@ class MenuController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Menu $menu)
+    public function show(Bayar $bayar)
     {
         //
     }
@@ -43,7 +43,7 @@ class MenuController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Menu $menu)
+    public function edit(Bayar $bayar)
     {
         //
     }
@@ -51,7 +51,7 @@ class MenuController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateMenuRequest $request, Menu $menu)
+    public function update(UpdateBayarRequest $request, Bayar $bayar)
     {
         //
     }
@@ -59,7 +59,7 @@ class MenuController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Menu $menu)
+    public function destroy(Bayar $bayar)
     {
         //
     }

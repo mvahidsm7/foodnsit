@@ -11,11 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('reservasi', function (Blueprint $table) {
-            $table->id('no_res');
+        Schema::create('pesan', function (Blueprint $table) {
+            $table->id('no_pes');
             $table->date('tanggal');
             $table->time('jam');
-            $table->enum('status', ['belum', 'dibayar'])->default('belum');
+            $table->boolean('status')->default(false);
             $table->timestamps();
         });
     }
@@ -25,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('reservasi');
+        Schema::dropIfExists('pesan');
     }
 };

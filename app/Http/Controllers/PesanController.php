@@ -3,24 +3,31 @@
 namespace App\Http\Controllers;
 
 use App\Models\Meja;
-use App\Models\Reservasi;
+use App\Models\Menu;
+use App\Models\Pesan;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class PesanController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     public function TampilReservasi(){
         $meja = Meja::all();
-        return view('reservasi', compact('meja'));
+        $menu = Menu::all();
+        return view('reservasi', compact('meja', 'menu'));
     }
 
     public function Reservasi(Request $request){
-        $res = new Reservasi;
-        $res->no_meja = $request->no_meja;
-        // $res->id_user = Auth::user()->id_user;
-        $res->id_user = 1;
-        $res->tanggal = $request->tanggal;
-        $res->jam = $request->jam;
-        $res->save();
+        $pesan = new Pesan;
+        $pesan->no_meja = $request->no_meja;
+        $pesan->id_user = Auth::user()->id_user;
+        $pesan->id_menu = $request->menu;
+        $pesan->tanggal = $request->tanggal;
+        $pesan->jam = $request->jam;
+        $pesan->save();
         return redirect('');
     }
 }

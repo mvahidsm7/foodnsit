@@ -13,11 +13,14 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('reservasi', function (Blueprint $table){
+        Schema::table('bayar', function (Blueprint $table){
             $table->unsignedBigInteger('id_user');
-            $table->unsignedBigInteger('no_meja');
+            $table->unsignedBigInteger('no_meja')->nullable();
+            $table->unsignedBigInteger('id_menu')->nullable();
+            $table->timestamps();
             $table->foreign('id_user')->references('id_user')->on('users')->onDelete('cascade')->onUpdate('cascade');
-            $table->foreign('no_meja')->references('no_meja')->on('meja')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('no_meja')->references('no_meja')->on('pesan')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('id_menu')->references('id_menu')->on('pesan')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 

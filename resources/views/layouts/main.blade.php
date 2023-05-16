@@ -33,7 +33,7 @@
 
 </head>
 <body>
-{{-- 	
+	
 	<!--PreLoader-->
     <div class="loader">
         <div class="loader-inner">
@@ -41,7 +41,7 @@
         </div>
     </div>
     <!--PreLoader Ends-->
-   --}}
+  
 	<!-- header -->
 	<div class="top-header-area" id="sticker">
 		<div class="container">
@@ -59,7 +59,7 @@
 						<!-- menu start -->
 						<nav class="main-menu">
 							<ul>
-								<li class="current-list-item"><a href="#">Beranda</a></li>
+								<li class="current-list-item"><a href="/">Beranda</a></li>
 								<li><a href="about.html">Tentang Kami</a></li>
 								<li><a href="#">Lainnya</a>
 									<ul class="sub-menu">
@@ -74,7 +74,7 @@
 								</li>
 								<li>
 									<div class="header-icons">
-										<a class="shopping-cart" href="cart.html">
+										<a class="shopping-cart" href="/profil">
 											<i class="bi bi-person-fill">
 												<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
 													<path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3Zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/>

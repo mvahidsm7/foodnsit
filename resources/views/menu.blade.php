@@ -6,7 +6,7 @@
 			<div class="row">
 				<div class="col-lg-8 offset-lg-2 text-center">
 					<div class="breadcrumb-text">
-						<p>Halaman ini adalah</p>
+						<p>Halaman</p>
 						<h1>Menu</h1>
 					</div>
 				</div>

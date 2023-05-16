@@ -2,18 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Menu;
-use App\Http\Requests\StoreMenuRequest;
-use App\Http\Requests\UpdateMenuRequest;
+use App\Models\Meja;
+use Illuminate\Http\Request;
 
-class MenuController extends Controller
+class MejaController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return view('menu');
+        $meja = Meja::all();
+        return view('meja', compact('meja'));
     }
 
     /**
@@ -21,21 +21,22 @@ class MenuController extends Controller
      */
     public function create()
     {
-        //
+        return view('tambah-meja');
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreMenuRequest $request)
+    public function store(Request $request)
     {
-        //
+        Meja::create($request->except('_token', 'submit'));
+        return redirect('meja');
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(Menu $menu)
+    public function show(string $id)
     {
         //
     }
@@ -43,15 +44,16 @@ class MenuController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Menu $menu)
+    public function edit($no_meja)
     {
-        //
+        $meja = Meja::find($no_meja);
+        return view('edit-meja');
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateMenuRequest $request, Menu $menu)
+    public function update(Request $request, string $id)
     {
         //
     }
@@ -59,7 +61,7 @@ class MenuController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Menu $menu)
+    public function destroy(string $id)
     {
         //
     }

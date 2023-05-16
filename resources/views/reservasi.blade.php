@@ -33,6 +33,13 @@
 								</select><br>
 								<section>Tanggal :</section>
 								<input type="date" class="form-control input-group form-label" name="tanggal"><br>
+								<section>Menu :</section>
+								<select name="menu" class="form-control input-group form-label" id="">
+									<option value="" hidden selected>Pilih Menu</option>
+									@foreach ($menu as $m)
+										<option value="{{$m->id_menu}}">{{$m->nama}}</option>
+									@endforeach	
+								</select><br>
 								<section>Jam :</section>
 								<input type="time" class="form-control input-group form-label" name="jam"><br>
 								<button type="submit" class="btn btn-outline-success">Pesan</button>
