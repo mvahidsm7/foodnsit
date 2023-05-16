@@ -31,13 +31,13 @@ Route::get('/pesan', [PesanController::class, 'TampilReservasi']);
 Route::post('/pesan/sukses', [PesanController::class, 'Reservasi']);
 // profil & pesanan
 Route::get('/profil', [ProfilController::class, 'index']);
-//meja
+Route::post('/bayar/{no_pes}', [BayarController::class, 'index']);
+Route::get('batal/{no_pes}', [ProfilController::class, 'batal']);
+
+// admin 
 Route::get('/meja', [MejaController::class, 'index']);
 Route::post('/tambah-meja', [MejaController::class, 'create']);
 Route::post('/tambah-meja/sukses', [MejaController::class, 'store']);
-//bayar
-Route::post('/bayar/{no_pes}', [BayarController::class, 'index']);
-// admin 
 Route::get('/data-pesanan', [PesananController::class, 'index']);
 
 Auth::routes();

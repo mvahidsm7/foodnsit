@@ -15,21 +15,21 @@
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet">
 	<!-- fontawesome -->
-	<link rel="stylesheet" href="assets/css/all.min.css">
+	<link rel="stylesheet" href= " {{ asset('css/all.min.css')}} ">
 	<!-- bootstrap -->
-	<link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="{{ asset('bootstrap/css/bootstrap.min.css')}} ">
 	<!-- owl carousel -->
-	<link rel="stylesheet" href="assets/css/owl.carousel.css">
+	<link rel="stylesheet" href="{{ asset('css/owl.carousel.css')}}  ">
 	<!-- magnific popup -->
-	<link rel="stylesheet" href="assets/css/magnific-popup.css">
+	<link rel="stylesheet" href="{{ asset('css/magnific-popup.css')}}">
 	<!-- animate css -->
-	<link rel="stylesheet" href="assets/css/animate.css">
+	<link rel="stylesheet" href="{{ asset('css/animate.css')}}">
 	<!-- mean menu css -->
-	<link rel="stylesheet" href="assets/css/meanmenu.min.css">
+	<link rel="stylesheet" href="{{ asset('css/meanmenu.min.css')}}">
 	<!-- main style -->
-	<link rel="stylesheet" href="assets/css/main.css">
+	<link rel="stylesheet" href="{{ asset('css/main.css')}}">
 	<!-- responsive -->
-	<link rel="stylesheet" href="assets/css/responsive.css">
+	<link rel="stylesheet" href="{{ asset('css/responsive.css')}}">
 
 </head>
 <body>
@@ -115,7 +115,74 @@
 	<!-- end search area -->
 
   <!-- content area -->
-  @yield('content')
+  <!-- breadcrumb-section -->
+    <div class="breadcrumb-section breadcrumb-bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2 text-center">
+                    <div class="breadcrumb-text">
+                        <p>halaman</p>
+                        <h1>Bayar</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end breadcrumb section -->
+
+    {{-- Pesanan --}}
+    <div class="cart-section mt-5 mb-5">
+        <div class="container">
+            <div class="card">
+                <div class="card-body">
+                    <center>
+                        <h4 class="card-title">Pesanan Anda</h4>
+                    </center>
+                    <hr>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{-- end Pesanan --}}
+    {{-- Pesanan --}}
+    <div class="cart-section mt-5 mb-5">
+        <div class="container">
+            <div class="card">
+                <div class="card-body">
+                    <center>
+                        <h4 class="card-title">Pesanan Anda</h4>
+                    </center>
+                    <hr>
+                        <h5>Nomer Meja :</h5>{{ $pes->no_meja }}@if ($pes->no_meja == false)
+                            Tidak ada
+                        @endif
+                        </p>
+                        <h5>Nomer Menu :</h5>{{ $pes->id_menu }}@if ($pes->id_menu == false)
+                            Tidak ada
+                        @endif
+                        </p>
+                        <h5>Jam :</h5>{{ $pes->jam }}
+                        </p>
+                        <h5>Tanggal :</h5>{{ $pes->tanggal }}
+                        </p>
+                        <p>
+                            @if ($pes->status == false)
+                                <form action="/bayar/{{ $pes->no_pes }}" method="post">
+                                    @csrf
+                                    <button type="submit" class="btn btn-outline-success">Lanjutkan Bayar</button>
+                                </form><br>
+                                <a href="/batal/{{ $pes->no_pes }}" class="btn btn-outline-danger">Batalkan
+                                    Pesanan</a>
+                            @else
+                                <a href="/batal/{{ $pes->no_pes }}" class="btn btn-outline-danger">Batal</a>
+                            @endif
+                        </p>
+                        <hr>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{-- end Pesanan --}}
   <!-- end content area -->
 
 	<!-- footer -->
@@ -132,7 +199,7 @@
 					<div class="footer-box get-in-touch">
 						<h2 class="widget-title">Kontak kami</h2>
 						<ul>
-							<li>34/8, East Hukupara, Gempol, Sadang Serang.</li>
+							<li>34/8, East Hukupara, Gifirtok, Sadan.</li>
 							<li>support@fruitkha.com</li>
 							<li>+00 111 222 3333</li>
 						</ul>
@@ -203,3 +270,6 @@
 
 </body>
 </html>
+
+
+

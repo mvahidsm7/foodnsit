@@ -5,15 +5,19 @@ namespace App\Http\Controllers;
 use App\Models\Bayar;
 use App\Http\Requests\StoreBayarRequest;
 use App\Http\Requests\UpdateBayarRequest;
+use App\Models\Pesan;
+use Illuminate\Http\Request;
 
 class BayarController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index($no_pes, Request $request)
     {
-        return view('bayar');
+        $pes = Pesan::find($no_pes);
+        // dd($pes);
+        return view('bayar', compact('pes'));
     }
 
     /**

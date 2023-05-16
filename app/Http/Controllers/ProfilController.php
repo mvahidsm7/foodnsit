@@ -20,4 +20,8 @@ class ProfilController extends Controller
         // dd($pes);
         return view('pesanan', compact('user', 'pes'));
     }
+    public function batal($no_pes){
+        $pes = Pesan::find($no_pes);
+        return view('batal', compact('pes'));
+    }
 }
