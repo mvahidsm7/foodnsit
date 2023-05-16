@@ -39,6 +39,8 @@ Route::post('/tambah-meja/sukses', [MejaController::class, 'store']);
 Route::post('/bayar/{no_pes}', [BayarController::class, 'index']);
 // admin 
 Route::get('/data-pesanan', [PesananController::class, 'index']);
+Route::get('/print-pesanan', [PesananController::class, 'pdf']);
+Route::get('/laporan', [PesananController::class, 'laporan']);
 
 Auth::routes();
 
