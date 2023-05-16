@@ -36,9 +36,9 @@
                 </tr>
             @endforeach
         </table>
-        <form action="/print-pesanan" method="post">
+        <form action="/print-pesanan" method="get">
             @csrf
-            <button class="btn btn-outline-danger" type="submit">Print</button>
+            <button class="btn btn-outline-danger" type="submit" href="{{ URL::to('/print-pesanan') }}" >Print</button>
         </form>
     </div>
     {{-- end table --}}

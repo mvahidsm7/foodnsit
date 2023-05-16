@@ -39,6 +39,8 @@ Route::get('/meja', [MejaController::class, 'index']);
 Route::post('/tambah-meja', [MejaController::class, 'create']);
 Route::post('/tambah-meja/sukses', [MejaController::class, 'store']);
 Route::get('/data-pesanan', [PesananController::class, 'index']);
+Route::get('/print-pesanan', [PesananController::class, 'pdf']);
+Route::get('/laporan', [PesananController::class, 'laporan']);
 
 Auth::routes();
 
