@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Pesan;
+use Barryvdh\DomPDF\Facade\Pdf;
+use Barryvdh\DomPDF\PDF as DomPDFPDF;
 use Illuminate\Http\Request;
 
 class PesananController extends Controller
@@ -14,6 +16,22 @@ class PesananController extends Controller
     {
         $pes = Pesan::all();
         return view('admin_pesanan', compact('pes'));
+    }
+
+    public function pdf()
+    {
+        $pes = Pesan::all();
+ 
+    	$pes = Pdf::loadview('laporan', ['pes' =>$pes]);
+        // $pes->setPaper('A4', 'landscape');
+    	return $pes->download('laporan-pesanan.pdf');
+    }
+
+    public function laporan()
+    {
+        $pes = Pesan::all();
+
+        return view('laporan', compact('pes'));
     }
 
     /**
