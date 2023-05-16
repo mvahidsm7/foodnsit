@@ -39,8 +39,8 @@
                         <h5>Pilihan :</h5>
                         </p>
                         <p class="card-text">
-                            <a href="/meja" class="btn btn-outline-primary">data meja</a>
-                            <a href="/tambah-menu" class="btn btn-outline-info">data menu</a>
+                            <a href="/admin/meja" class="btn btn-outline-primary">data meja</a>
+                            <a href="/admin/menu" class="btn btn-outline-info">data menu</a>
                             <a href="/data-pesanan" class="btn btn-outline-info">data pesanan</a>
                             <a href="/" class="btn btn-outline-success">lainnya</a>
                         </p>
@@ -112,11 +112,11 @@
                             </center>
 
                             <h5>Nomer Meja :</h5>{{ $p->no_meja }}@if ($p->no_meja == false)
-                                Tidak ada
+                                Tidak Memesan
                             @endif
                             </p>
-                            <h5>Nomer Menu :</h5>{{ $p->id_menu }}@if ($p->id_menu == false)
-                                Tidak ada
+                            <h5>Menu :</h5>{{ $menu[0]->nama }}@if ($p->id_menu == false)
+                                Tidak Memesan
                             @endif
                             </p>
                             <h5>Jam :</h5>{{ $p->jam }}
@@ -125,14 +125,10 @@
                             </p>
                             <p>
                                 @if ($p->status == false)
-                                <form action="/bayar/{{ $p->no_pes }}" method="post">
-                                    @csrf
-                                    <button type="submit" class="btn btn-outline-success">Lanjutkan Bayar</button>
-                                    </form><br>
-                                    <a href="/batal/{{ $p->no_pes }}" class="btn btn-outline-danger">Batalkan
-                                        Pesanan</a>
+                                    <a href="/bayar/{{ $p->no_pes }}" class="btn btn-outline-success">Lanjutkan Bayar</a>
+                                    <a href="/batal/{{ $p->no_pes }}" class="btn btn-outline-danger">Batalkan Pesanan</a>
                                 @else
-                                    <a href="/batal/{{ $p->no_pes }}" class="btn btn-outline-danger">Batal</a>
+                                    <a href="/batal/{{ $p->no_pes }}" class="btn btn-outline-danger">Batalkan Pesanan</a>
                                 @endif
                             </p>
                             <hr>

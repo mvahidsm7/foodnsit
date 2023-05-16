@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\BayarController;
 use App\Http\Controllers\BerandaController;
 use App\Http\Controllers\MejaController;
@@ -31,16 +32,22 @@ Route::get('/pesan', [PesanController::class, 'TampilReservasi']);
 Route::post('/pesan/sukses', [PesanController::class, 'Reservasi']);
 // profil & pesanan
 Route::get('/profil', [ProfilController::class, 'index']);
-Route::post('/bayar/{no_pes}', [BayarController::class, 'index']);
+Route::get('/bayar/{no_pes}', [BayarController::class, 'index']);
+Route::post('/bayar/{no_pes}/sukses', [BayarController::class, 'create']);
 Route::get('batal/{no_pes}', [ProfilController::class, 'batal']);
 
-// admin 
-Route::get('/meja', [MejaController::class, 'index']);
-Route::post('/tambah-meja', [MejaController::class, 'create']);
-Route::post('/tambah-meja/sukses', [MejaController::class, 'store']);
+// admin - meja
+Route::get('/admin/meja', [AdminController::class, 'TampilMeja']);
+Route::post('/tambah-meja', [AdminController::class, 'TambahMejaView']);
+Route::post('/tambah-meja/sukses', [AdminController::class, 'TambahMeja']);
+// admin - pesanan
 Route::get('/data-pesanan', [PesananController::class, 'index']);
 Route::get('/print-pesanan', [PesananController::class, 'pdf']);
 Route::get('/laporan', [PesananController::class, 'laporan']);
+// admin - menu
+Route::get('/admin/menu', [AdminController::class, 'TampilMenu']);
+Route::post('/tambah-menu', [AdminController::class, 'TambahMenuView']);
+Route::post('/tambah-menu/sukses', [AdminController::class, 'TambahMenu']);
 
 Auth::routes();
 

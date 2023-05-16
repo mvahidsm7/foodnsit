@@ -5,27 +5,47 @@ namespace App\Http\Controllers;
 use App\Models\Bayar;
 use App\Http\Requests\StoreBayarRequest;
 use App\Http\Requests\UpdateBayarRequest;
+use App\Models\Meja;
 use App\Models\Pesan;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class BayarController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      */
     public function index($no_pes, Request $request)
     {
         $pes = Pesan::find($no_pes);
+        $mej = 50000;
+        $men = 20000;
+        $tot = $mej + $men;
         // dd($pes);
-        return view('bayar', compact('pes'));
+        return view('bayar', compact('pes', 'mej', 'men', 'tot'));
     }
 
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create($no_pes, Request $request)
     {
-        //
+        $pes = Pesan::find($no_pes);
+        // dd($pes);
+        $bayar = new Bayar;
+        $bayar->id_user = Auth::user()->id_user;
+        $bayar->no_meja = $pes->no_meja;
+        $bayar->id_menu = $pes->id_menu;
+        DB::table('pesan')->where('no_pes', $pes->no_pes)->update(array('status' => true));
+        DB::table('meja')->where('no_meja', $pes->no_meja)->update(array('status' => 'dipesan'));
+        $bayar->save();
+        return redirect('');
+
     }
 
     /**
