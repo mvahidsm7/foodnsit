@@ -37,7 +37,7 @@ class ProfilController extends Controller
     public function BatalSukses($no_pes)
     {
         $pes = Pesan::find($no_pes);
-        DB::table('meja')->where('no_meja', $pes->no_meja)->update(array('status' => 'tersedial'));
+        DB::table('meja')->where('no_meja', $pes->no_meja)->update(array('status' => 'tersedia'));
         $pes->delete();
         return redirect('/profil');
     }
