@@ -83,39 +83,20 @@
             </div>
 
             <div class="row">
+                @foreach ($menu1 as $m)
                 <div class="col-lg-4 col-md-6 text-center">
                     <div class="single-product-item">
                         <div class="product-image">
-                            <a href="single-product.html"><img src="assets/img/products/product-img-1.jpg"
+                            <a href="single-product.html"><img src="{{$m->gambar}}"
                                     alt=""></a>
                         </div>
-                        <h3>Strawberry</h3>
-                        <p class="product-price"><span>Per Kg</span> 85$ </p>
+                        <h3>{{$m->nama}}</h3>
+                        <p class="product-price"><span>Per Kg</span>RP.{{$m->harga}}</p>
+                        <p>{{$m->deskripsi}}</p>
                         <a href="cart.html" class="cart-btn"><i class="fas fa-shopping-cart"></i> Pesan Sekarang</a>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 text-center">
-                    <div class="single-product-item">
-                        <div class="product-image">
-                            <a href="single-product.html"><img src="assets/img/products/product-img-2.jpg"
-                                    alt=""></a>
-                        </div>
-                        <h3>Berry</h3>
-                        <p class="product-price"><span>Per Kg</span> 70$ </p>
-                        <a href="cart.html" class="cart-btn"><i class="fas fa-shopping-cart"></i> Pesan Sekarang</a>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 offset-md-3 offset-lg-0 text-center">
-                    <div class="single-product-item">
-                        <div class="product-image">
-                            <a href="single-product.html"><img src="assets/img/products/product-img-3.jpg"
-                                    alt=""></a>
-                        </div>
-                        <h3>Lemon</h3>
-                        <p class="product-price"><span>Per Kg</span> 35$ </p>
-                        <a href="cart.html" class="cart-btn"><i class="fas fa-shopping-cart"></i> Pesan Sekarang</a>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </div>
@@ -129,10 +110,10 @@
                     <div class="testimonial-sliders">
                         <div class="single-testimonial-slider">
                             <div class="client-avater">
-                                <img src="assets/img/avaters/avatar1.png" alt="">
+                                <img src="assets/img/avaters/avatar1.jpg" alt="">
                             </div>
                             <div class="client-meta">
-                                <h3>Saira Hakim <span>Local shop owner</span></h3>
+                                <h3>Rafli Sofa Ramadhan <span>I-Do</span></h3>
                                 <p class="testimonial-body">
                                     " Sed ut perspiciatis unde omnis iste natus error veritatis et quasi architecto beatae
                                     vitae dict eaque ipsa quae ab illo inventore Sed ut perspiciatis unde omnis iste natus
@@ -145,10 +126,10 @@
                         </div>
                         <div class="single-testimonial-slider">
                             <div class="client-avater">
-                                <img src="assets/img/avaters/avatar2.png" alt="">
+                                <img src="assets/img/avaters/avatar2.jpg" alt="">
                             </div>
                             <div class="client-meta">
-                                <h3>David Niph <span>Local shop owner</span></h3>
+                                <h3>Revan Dwiki <span>UMKM</span></h3>
                                 <p class="testimonial-body">
                                     " Sed ut perspiciatis unde omnis iste natus error veritatis et quasi architecto beatae
                                     vitae dict eaque ipsa quae ab illo inventore Sed ut perspiciatis unde omnis iste natus
@@ -161,10 +142,26 @@
                         </div>
                         <div class="single-testimonial-slider">
                             <div class="client-avater">
-                                <img src="assets/img/avaters/avatar3.png" alt="">
+                                <img src="assets/img/avaters/avatar3.jpg" alt="">
                             </div>
                             <div class="client-meta">
-                                <h3>Jacob Sikim <span>Local shop owner</span></h3>
+                                <h3>Anggia Rahmadita <span>Zoo</span></h3>
+                                <p class="testimonial-body">
+                                    " Sed ut perspiciatis unde omnis iste natus error veritatis et quasi architecto beatae
+                                    vitae dict eaque ipsa quae ab illo inventore Sed ut perspiciatis unde omnis iste natus
+                                    error sit voluptatem accusantium "
+                                </p>
+                                <div class="last-icon">
+                                    <i class="fas fa-quote-right"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="single-testimonial-slider">
+                            <div class="client-avater">
+                                <img src="assets/img/avaters/avatar4.jpg" alt="">
+                            </div>
+                            <div class="client-meta">
+                                <h3>Berlina Shobirah <span>Swim Go</span></h3>
                                 <p class="testimonial-body">
                                     " Sed ut perspiciatis unde omnis iste natus error veritatis et quasi architecto beatae
                                     vitae dict eaque ipsa quae ab illo inventore Sed ut perspiciatis unde omnis iste natus
