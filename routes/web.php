@@ -35,6 +35,7 @@ Route::get('/profil', [ProfilController::class, 'index']);
 Route::get('/bayar/{no_pes}', [BayarController::class, 'index']);
 Route::post('/bayar/{no_pes}/sukses', [BayarController::class, 'create']);
 Route::get('batal/{no_pes}', [ProfilController::class, 'batal']);
+Route::post('batal/{no_pes}/sukses', [ProfilController::class, 'BatalSukses']);
 
 // admin - meja
 Route::get('/admin/meja', [AdminController::class, 'TampilMeja']);

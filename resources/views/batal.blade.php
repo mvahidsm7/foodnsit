@@ -17,7 +17,8 @@
 
     <!-- content -->
     <div class="container mt-150 mb-150">
-        <form action="/cancel/{{$pes->no_res}}" method="post">
+        <form action="/batal/{{$pes->no_pes}}/sukses" method="post">
+            @csrf
             <button type="submit" class="btn btn-danger">Konfirmasi</button>
         </form>
         <a href="/profil" class="btn btn-success">Batal</a>

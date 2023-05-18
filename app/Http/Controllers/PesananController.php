@@ -21,7 +21,7 @@ class PesananController extends Controller
     public function pdf()
     {
         $pes = Pesan::all();
- 
+
     	$pes = Pdf::loadview('laporan', ['pes' =>$pes]);
         // $pes->setPaper('A4', 'landscape');
     	return $pes->download('laporan-pesanan.pdf');

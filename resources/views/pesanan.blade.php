@@ -115,9 +115,9 @@
                                 Tidak Memesan
                             @endif
                             </p>
-                            <h5>Menu :</h5>{{ $menu[0]->nama }}@if ($p->id_menu == false)
+                            {{-- <h5>Menu :</h5>{{ $menu }}@if ($p->id_menu == false)
                                 Tidak Memesan
-                            @endif
+                            @endif --}}
                             </p>
                             <h5>Jam :</h5>{{ $p->jam }}
                             </p>

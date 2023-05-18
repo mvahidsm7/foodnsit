@@ -37,13 +37,13 @@
 
 <body>
 
-    <!--PreLoader-->
+    {{-- <!--PreLoader-->
     <div class="loader">
         <div class="loader-inner">
             <div class="circle"></div>
         </div>
     </div>
-    <!--PreLoader Ends-->
+    <!--PreLoader Ends--> --}}
 
     <!-- header -->
     <div class="top-header-area" id="sticker">
@@ -190,25 +190,25 @@
     <!-- end copyright -->
 
     <!-- jquery -->
-    <script src="assets/js/jquery-1.11.3.min.js"></script>
+    <script src="{{ asset('') }}assets/js/jquery-1.11.3.min.js"></script>
     <!-- bootstrap -->
-    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="{{ asset('') }}assets/bootstrap/js/bootstrap.min.js"></script>
     <!-- count down -->
-    <script src="assets/js/jquery.countdown.js"></script>
+    <script src="{{ asset('') }}assets/js/jquery.countdown.js"></script>
     <!-- isotope -->
-    <script src="assets/js/jquery.isotope-3.0.6.min.js"></script>
+    <script src="{{ asset('') }}assets/js/jquery.isotope-3.0.6.min.js"></script>
     <!-- waypoints -->
-    <script src="assets/js/waypoints.js"></script>
+    <script src="{{ asset('') }}assets/js/waypoints.js"></script>
     <!-- owl carousel -->
-    <script src="assets/js/owl.carousel.min.js"></script>
+    <script src="{{ asset('') }}assets/js/owl.carousel.min.js"></script>
     <!-- magnific popup -->
-    <script src="assets/js/jquery.magnific-popup.min.js"></script>
+    <script src="{{ asset('') }}assets/js/jquery.magnific-popup.min.js"></script>
     <!-- mean menu -->
-    <script src="assets/js/jquery.meanmenu.min.js"></script>
+    <script src="{{ asset('') }}assets/js/jquery.meanmenu.min.js"></script>
     <!-- sticker js -->
-    <script src="assets/js/sticker.js"></script>
+    <script src="{{ asset('') }}assets/js/sticker.js"></script>
     <!-- main js -->
-    <script src="assets/js/main.js"></script>
+    <script src="{{ asset('') }}assets/js/main.js"></script>
 
 </body>
 
