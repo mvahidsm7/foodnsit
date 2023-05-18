@@ -13,7 +13,8 @@ class MenuController extends Controller
      */
     public function index()
     {
-        return view('menu');
+        $menu = Menu::all();
+        return view('menu', compact('menu'));
     }
 
     /**
