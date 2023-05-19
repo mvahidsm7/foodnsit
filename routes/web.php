@@ -8,6 +8,7 @@ use App\Http\Controllers\MenuController;
 use App\Http\Controllers\PesananController;
 use App\Http\Controllers\PesanController;
 use App\Http\Controllers\ProfilController;
+use App\Http\Controllers\TentangController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -53,3 +54,4 @@ Route::post('/tambah-menu/sukses', [AdminController::class, 'TambahMenu']);
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/about', [TentangController::class, 'index']);

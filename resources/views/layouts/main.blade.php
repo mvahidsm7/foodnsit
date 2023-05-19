@@ -63,7 +63,7 @@
                         <nav class="main-menu">
                             <ul>
                                 <li class="current-list-item"><a href="/">Beranda</a></li>
-                                <li><a href="about.html">Tentang Kami</a></li>
+                                <li><a href="/about">Tentang Kami</a></li>
                                 <li><a href="#">Lainnya</a>
                                     <ul class="sub-menu">
                                         <li><a href="404.html">404 page</a></li>
