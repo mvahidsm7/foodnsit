@@ -140,9 +140,9 @@
                     <div class="footer-box get-in-touch">
                         <h2 class="widget-title">Kontak kami</h2>
                         <ul>
-                            <li>34/8, East Hukupara, Gempol, Sadang Serang.</li>
-                            <li>support@fruitkha.com</li>
-                            <li>+00 111 222 3333</li>
+                            <li>Jl. Budi Jl. Raya Cilember, RT.01/RW.04, Sukaraja, Kec. Cicendo, Kota Bandung, Jawa Barat 40153.</li>
+                            <li>smkn11bdg@gmail.com</li>
+                            <li> (022) 6652442</li>
                         </ul>
                     </div>
                 </div>
@@ -168,8 +168,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 col-md-12">
-                    <p>Copyrights &copy; 2023 - <a href="https://instagram.com/xvhxid?igshid=ZGUzMzM3NWJiOQ==">Muhammad
-                            Vahid Sumantri</a>, All Rights Reserved.<br>
+                    <p>Copyrights &copy; 2023 - <a href="https://instagram.com/xvhxid?igshid=ZGUzMzM3NWJiOQ==">FOOD N SIT</a>, All Rights Reserved.<br>
                         Distributed By - <a href="/tentang">Kelompok FOOD n SIT</a>
                     </p>
                 </div>
