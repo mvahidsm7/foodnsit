@@ -6,6 +6,7 @@ use App\Models\Bayar;
 use App\Http\Requests\StoreBayarRequest;
 use App\Http\Requests\UpdateBayarRequest;
 use App\Models\Meja;
+use App\Models\Menu;
 use App\Models\Pesan;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -23,11 +24,12 @@ class BayarController extends Controller
     public function index($no_pes, Request $request)
     {
         $pes = Pesan::find($no_pes);
+        $menu = Menu::find($pes->id_menu);
         $mej = 50000;
         $men = 20000;
         $tot = $mej + $men;
-        // dd($pes);
-        return view('bayar', compact('pes', 'mej', 'men', 'tot'));
+        // dd($menu);
+        return view('bayar', compact('pes', 'mej', 'men', 'tot', 'menu'));
     }
 
     /**

@@ -6,8 +6,8 @@
             <div class="row">
                 <div class="col-lg-8 offset-lg-2 text-center">
                     <div class="breadcrumb-text">
-                        <p>halaman</p>
-                        <h1>Bayar</h1>
+                        <p>Detail</p>
+                        <h1>Pesanan</h1>
                     </div>
                 </div>
             </div>
@@ -33,7 +33,7 @@
                         Tidak ada
                     @endif
                     </p>
-                    <h5>Nomer Menu :</h5>{{ $pes->id_menu }}@if ($pes->id_menu == false)
+                    <h5>Menu :</h5>{{ $menu->nama }}@if ($pes->id_menu == false)
                         Tidak ada
                     @endif
                     </p>
@@ -58,12 +58,20 @@
                     <hr>
                     </p>
                     <p>
-                    <form action="/bayar/{{ $pes->no_pes }}/sukses" method="post">
-                        @csrf
+                        @if ($pes->status == 0)
+                            <form action="/bayar/{{ $pes->no_pes }}/sukses" method="post">
+                                @csrf
+                                <center>
+                                    <button type="submit" class="btn btn-outline-success"
+                                        style="width: 750px">Bayar</button>
+                                </center>
+                            </form>
+                        @else
                         <center>
-                            <button type="submit" class="btn btn-outline-success" style="width: 750px">Bayar</button>
+                            <a href="/batal/{{ $pes->no_pes }}" class="btn btn-outline-danger" style="width: 750px">Batalkan Pesanan</a>
                         </center>
-                    </form>
+                        @endif
+
 
                     </p>
                     <hr>

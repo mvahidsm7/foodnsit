@@ -7,6 +7,7 @@
                 <div class="col-lg-8 offset-lg-2 text-center">
                     <div class="breadcrumb-text">
                         <h1>silahkan konfirmasi</h1>
+                        <b class="text-light"><i>Dana yang akan dikembalikan akan di kirimkan ke rekening anda dengan potongan 10%</i></b>
                         <p>Apakah anda yakin?</p>
                         <center>
                             <form action="/batal/{{ $pes->no_pes }}/sukses" method="post">

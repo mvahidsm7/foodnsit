@@ -111,10 +111,10 @@
                                 </p>
                             </center>
 
-                            <h5>Nomer Meja :</h5>{{ $p->no_meja }}@if ($p->no_meja == false)
+                            {{-- <h5>Nomer Meja :</h5>{{ $p->no_meja }}@if ($p->no_meja == false)
                                 Tidak Memesan
                             @endif
-                            </p>
+                            </p> --}}
                             {{-- <h5>Menu :</h5>{{ $menu }}@if ($p->id_menu == false)
                                 Tidak Memesan
                             @endif --}}
@@ -124,12 +124,10 @@
                             <h5>Tanggal :</h5>{{ $p->tanggal }}
                             </p>
                             <p>
-                                @if ($p->status == false)
-                                    <a href="/bayar/{{ $p->no_pes }}" class="btn btn-outline-success">Lanjutkan Bayar</a>
-                                    <a href="/batal/{{ $p->no_pes }}" class="btn btn-outline-danger">Batalkan Pesanan</a>
-                                @else
-                                    <a href="/batal/{{ $p->no_pes }}" class="btn btn-outline-danger">Batalkan Pesanan</a>
-                                @endif
+
+                                <a href="/bayar/{{ $p->no_pes }}" class="btn btn-outline-success">Detail Pesanan</a>
+                                <a href="/batal/{{ $p->no_pes }}" class="btn btn-outline-danger">Batalkan Pesanan</a>
+
                             </p>
                             <hr>
                         @endforeach
