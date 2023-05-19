@@ -83,7 +83,7 @@
             </div>
 
             <div class="row">
-                @foreach ($menu1 as $m)
+                @foreach ($menu as $m)
                 <div class="col-lg-4 col-md-6 text-center">
                     <div class="single-product-item">
                         <div class="product-image">
@@ -91,7 +91,7 @@
                                     alt=""></a>
                         </div>
                         <h3>{{$m->nama}}</h3>
-                        <p class="product-price"><span>Per Kg</span>RP.{{$m->harga}}</p>
+                        <p class="product-price">IDR {{$m->harga}}</p>
                         <p>{{$m->deskripsi}}</p>
                         <a href="cart.html" class="cart-btn"><i class="fas fa-shopping-cart"></i> Pesan Sekarang</a>
                     </div>

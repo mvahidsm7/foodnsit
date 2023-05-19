@@ -15,7 +15,7 @@ class BerandaController extends Controller
     public function Index()
     {
         $user = Auth::user();
-        $menu1 = Menu::all();
-        return view('index', compact('user', 'menu1'));
+        $menu = Menu::all();
+        return view('index', compact('user', 'menu'));
     }
 }
