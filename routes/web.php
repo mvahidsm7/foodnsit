@@ -54,4 +54,4 @@ Route::post('/tambah-menu/sukses', [AdminController::class, 'TambahMenu']);
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/about', [TentangController::class, 'index']);
+Route::get('/tentang', [TentangController::class, 'index']);

@@ -7,6 +7,11 @@
                 <div class="col-lg-8 offset-lg-2 text-center">
                     <div class="breadcrumb-text">
                         <h1>silahkan konfirmasi</h1>
+                        @if ()
+                            
+                        @else
+                            
+                        @endif
                         <b class="text-light"><i>Dana yang akan dikembalikan akan di kirimkan ke rekening anda dengan potongan 10%</i></b>
                         <p>Apakah anda yakin?</p>
                         <center>

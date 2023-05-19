@@ -1,6 +1,6 @@
 @extends('layouts.main')
 @section('content')
-    @if ($user->name == 'admin')
+    @if ($user->email == 'admin@food.com')
         <!-- breadcrumb-section -->
         <div class="breadcrumb-section breadcrumb-bg">
             <div class="container">
