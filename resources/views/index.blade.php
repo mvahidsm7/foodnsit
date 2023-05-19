@@ -110,7 +110,7 @@
                     <div class="testimonial-sliders">
                         <div class="single-testimonial-slider">
                             <div class="client-avater">
-                                <img src="assets/img/avaters/avatar1.jpg" alt="">
+                                <img src="assets/img/avaters/avatar1.png" alt="">
                             </div>
                             <div class="client-meta">
                                 <h3>Rafli Sofa Ramadhan <span>I-Do</span></h3>
@@ -142,7 +142,7 @@
                         </div>
                         <div class="single-testimonial-slider">
                             <div class="client-avater">
-                                <img src="assets/img/avaters/avatar3.jpg" alt="">
+                                <img src="assets/img/avaters/avatar3.png" alt="">
                             </div>
                             <div class="client-meta">
                                 <h3>Anggia Rahmadita <span>Zoo</span></h3>
@@ -158,7 +158,7 @@
                         </div>
                         <div class="single-testimonial-slider">
                             <div class="client-avater">
-                                <img src="assets/img/avaters/avatar4.jpg" alt="">
+                                <img src="assets/img/avaters/avatar4.png" alt="">
                             </div>
                             <div class="client-meta">
                                 <h3>Berlina Shobirah <span>Swim Go</span></h3>

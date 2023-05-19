@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('menu', function (Blueprint $table) {
             $table->id('id_menu');
             $table->string('nama');
-            $table->enum('kategori', ['makanan', 'minuman']);
+            $table->enum('kategori', ['makanan', 'minuman', 'dessert']);
             $table->string('gambar');
             $table->string('deskripsi');
             $table->decimal('harga');
