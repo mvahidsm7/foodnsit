@@ -63,8 +63,9 @@
                         <nav class="main-menu">
                             <ul>
                                 <li class="current-list-item"><a href="/">Beranda</a></li>
-                                <li><a href="about.html">Tentang Kami</a></li>
-                                <li><a href="#">Lainnya</a>
+                                <li><a href="/pesan">Pesan</a></li>
+                                <li><a href="/tentang">Tentang Kami</a></li>
+                                {{-- <li><a href="#">Lainnya</a>
                                     <ul class="sub-menu">
                                         <li><a href="404.html">404 page</a></li>
                                         <li><a href="about.html">About</a></li>
@@ -74,7 +75,7 @@
                                         <li><a href="news.html">News</a></li>
                                         <li><a href="shop.html">Shop</a></li>
                                     </ul>
-                                </li>
+                                </li> --}}
                                 <li>
                                     <div class="header-icons">
                                         <a class="shopping-cart" href="/profil">

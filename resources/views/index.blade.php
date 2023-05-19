@@ -93,7 +93,7 @@
                         <h3>{{$m->nama}}</h3>
                         <p class="product-price">IDR {{$m->harga}}</p>
                         <p>{{$m->deskripsi}}</p>
-                        <a href="cart.html" class="cart-btn"><i class="fas fa-shopping-cart"></i> Pesan Sekarang</a>
+                        <a href="/pesan" class="cart-btn"><i class="fas fa-shopping-cart"></i> Pesan Sekarang</a>
                     </div>
                 </div>
                 @endforeach

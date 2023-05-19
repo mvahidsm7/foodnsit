@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Pesan;
 use Barryvdh\DomPDF\Facade\Pdf;
 use Barryvdh\DomPDF\PDF as DomPDFPDF;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
 class PesananController extends Controller
@@ -12,10 +13,15 @@ class PesananController extends Controller
     /**
      * Display a listing of the resource.
      */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     public function index()
     {
+        $user = Auth::user();
         $pes = Pesan::all();
-        return view('admin_pesanan', compact('pes'));
+        return view('admin_pesanan', compact('pes', 'user'));
     }
 
     public function pdf()
