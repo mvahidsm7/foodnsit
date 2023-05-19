@@ -20,14 +20,6 @@ return new class extends Migration
             $table->decimal('harga');
             $table->timestamps();
         });
-        Schema::create('menu1', function (Blueprint $table) {
-            $table->id('id_menu');
-            $table->string('nama');
-            $table->string('gambar');
-            $table->string('deskripsi');
-            $table->decimal('harga');
-            $table->timestamps();
-        });
     }
 
     /**
