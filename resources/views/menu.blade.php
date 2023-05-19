@@ -24,9 +24,9 @@
                     <div class="product-filters">
                         <ul>
                             <li class="active" data-filter="*">All</li>
-                            <li data-filter=".strawberry">main chors</li>
-                            <li data-filter=".berry">dessert</li>
-                            <li data-filter=".lemon">drink</li>
+                            <li data-filter=".makanan">Main Course</li>
+                            <li data-filter=".dessert">Dessert</li>
+                            <li data-filter=".minuman">Drink</li>
                         </ul>
                 	</div>
         		</div>
@@ -34,7 +34,7 @@
 
 			<div class="row product-lists">
 				@foreach ($menu as $m)
-				<div class="col-lg-4 col-md-6 text-center strawberry">
+				<div class="col-lg-4 col-md-6 text-center {{$m->kategori}}">
 					<div class="single-product-item">
 						<div class="product-image">
 							<a href="single-product.html"><img src="{{$m->gambar}}" alt=""></a>
