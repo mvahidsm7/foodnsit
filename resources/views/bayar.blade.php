@@ -33,8 +33,11 @@
                         Tidak ada
                     @endif
                     </p>
-                    <h5>Menu :</h5>{{ $menu->nama }}@if ($pes->id_menu == false)
+                    <h5>Menu :</h5>
+                    @if ($pes->id_menu == false)
                         Tidak ada
+                    @else
+                        {{ $menu->nama }}
                     @endif
                     </p>
                     <h5>Jam :</h5>{{ $pes->jam }}

@@ -42,7 +42,7 @@
 						<h3>{{$m->nama}}</h3>
 						<p class="product-price"><span>Per porsi</span>RP.{{$m->harga}}</p>
 						<p>{{$m->deskripsi}}</p>
-						<a href="cart.html" class="cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
+						<a href="/pesan" class="cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
 					</div>
 				</div>
 				@endforeach
