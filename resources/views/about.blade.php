@@ -84,7 +84,7 @@
 				<div class="col-lg-8 offset-lg-2 text-center">
 					<div class="section-title">
 						<h3>Our <span class="orange-text">Team</span></h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, fuga quas itaque eveniet beatae optio.</p>
+						<p>Kelompok KRPL dari PPLG 2 yang membuat dan mengembangkan aplikasi ini</p>
 					</div>
 				</div>
 			</div>
