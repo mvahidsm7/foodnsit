@@ -23,10 +23,10 @@
                 <div class="col-md-12">
                     <div class="product-filters">
                         <ul>
-                            <li class="active" data-filter="*">All</li>
-                            <li data-filter=".makanan">Main Course</li>
-                            <li data-filter=".dessert">Dessert</li>
-                            <li data-filter=".minuman">Drink</li>
+                            <li class="active" data-filter="*">Semua</li>
+                            <li data-filter=".1">Makanan</li>
+                            <li data-filter=".3">Dessert</li>
+                            <li data-filter=".2">Minuman</li>
                         </ul>
                 	</div>
         		</div>
@@ -42,7 +42,7 @@
 						<h3>{{$m->nama}}</h3>
 						<p class="product-price"><span>Per porsi</span>RP.{{$m->harga}}</p>
 						<p>{{$m->deskripsi}}</p>
-						<a href="/pesan" class="cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
+						<a href="/pesan" class="cart-btn"><i class="fas fa-shopping-cart"></i> Pesan</a>
 					</div>
 				</div>
 				@endforeach

@@ -9,6 +9,7 @@ use App\Http\Controllers\PesananController;
 use App\Http\Controllers\PesanController;
 use App\Http\Controllers\ProfilController;
 use App\Http\Controllers\TentangController;
+use App\Http\Controllers\Testing;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -50,6 +51,8 @@ Route::get('/laporan', [PesananController::class, 'laporan']);
 Route::get('/admin/menu', [AdminController::class, 'TampilMenu']);
 Route::post('/tambah-menu', [AdminController::class, 'TambahMenuView']);
 Route::post('/tambah-menu/sukses', [AdminController::class, 'TambahMenu']);
+// test
+Route::get('/test', [Testing::class, 'index']);
 
 Auth::routes();
 

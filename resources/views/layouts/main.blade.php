@@ -63,6 +63,7 @@
                         <nav class="main-menu">
                             <ul>
                                 <li class="current-list-item"><a href="/">Beranda</a></li>
+                                <li><a href="/menu">Menu</a></li>
                                 <li><a href="/pesan">Pesan</a></li>
                                 <li><a href="/tentang">Tentang Kami</a></li>
                                 {{-- <li><a href="#">Lainnya</a>
@@ -151,11 +152,9 @@
                     <div class="footer-box pages">
                         <h2 class="widget-title">Pages</h2>
                         <ul>
-                            <li><a href="index.html">Home</a></li>
-                            <li><a href="about.html">About</a></li>
-                            <li><a href="services.html">Shop</a></li>
-                            <li><a href="news.html">News</a></li>
-                            <li><a href="contact.html">Contact</a></li>
+                            <li><a href="/">Home</a></li>
+                            <li><a href="/tentang">About</a></li>
+                            <li><a href="/profil">Pesanan</a></li>
                         </ul>
                     </div>
                 </div>

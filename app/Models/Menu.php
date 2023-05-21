@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Kategori;
 
 class Menu extends Model
 {
@@ -11,4 +12,8 @@ class Menu extends Model
     protected $table = 'menu';
     protected $fillable = ['nama', 'gambar', 'deskripsi', 'harga'];
     protected $primaryKey = 'id_menu';
+
+    public function harga(){
+        return $this->belongsTo(Kategori::class);
+    }
 }

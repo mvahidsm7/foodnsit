@@ -65,7 +65,7 @@
 									<div class="content">
 										<h3>Bisa Refund</h3>
 										<p>Dipotong 10% dari total biaya.</p>
-                                        <small>*sk berlaku</small>
+                                        <small>*s&k berlaku</small>
 									</div>
 								</div>
 							</div>

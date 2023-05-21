@@ -124,6 +124,14 @@
                             <h5>Tanggal :</h5>{{ $p->tanggal }}
                             </p>
                             <p>
+                            <h5>Status Pembayaran :</h5>
+                            @if ($p->status == 0)
+                            Menunggu Pembayaran
+                            @else
+                            Dibayar
+                            @endif
+                            </p>
+                            <p>
 
                                 <a href="/bayar/{{ $p->no_pes }}" class="btn btn-outline-success">Detail Pesanan</a>
                                 <a href="/batal/{{ $p->no_pes }}" class="btn btn-outline-danger">Batalkan Pesanan</a>
