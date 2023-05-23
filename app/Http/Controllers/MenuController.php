@@ -14,7 +14,10 @@ class MenuController extends Controller
     public function index()
     {
         $menu = Menu::all();
-        return view('menu', compact('menu'));
+        $harga = Menu::join('kategori', 'menu.kategori', '=', 'kategori.id_kategori')
+        ->select('menu.nama','kategori.harga')
+        ->get();
+        return view('menu', compact('menu', 'harga'));
     }
 
     /**

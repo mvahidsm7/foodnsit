@@ -24,9 +24,9 @@
                     <div class="product-filters">
                         <ul>
                             <li class="active" data-filter="*">Semua</li>
-                            <li data-filter=".1">Makanan</li>
-                            <li data-filter=".3">Dessert</li>
-                            <li data-filter=".2">Minuman</li>
+                            <li data-filter=".3">Makanan</li>
+                            <li data-filter=".2">Dessert</li>
+                            <li data-filter=".1">Minuman</li>
                         </ul>
                 	</div>
         		</div>
@@ -40,7 +40,18 @@
 							<a href="single-product.html"><img src="{{$m->gambar}}" alt=""></a>
 						</div>
 						<h3>{{$m->nama}}</h3>
-						<p class="product-price"><span>Per porsi</span>RP.{{$m->harga}}</p>
+						<p class="product-price"><span>Per porsi</span>
+							RP. 
+							@if ($m->kategori == 1)
+								{{$harga[1]->harga}}
+							@endif
+							@if ($m->kategori == 2)
+								{{$harga[2]->harga}}
+							@endif
+							@if ($m->kategori == 3)
+								{{$harga[3]->harga}}
+							@endif
+						</p>
 						<p>{{$m->deskripsi}}</p>
 						<a href="/pesan" class="cart-btn"><i class="fas fa-shopping-cart"></i> Pesan</a>
 					</div>
