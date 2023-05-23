@@ -25,11 +25,28 @@ class BayarController extends Controller
     {
         $pes = Pesan::find($no_pes);
         $menu = Menu::find($pes->id_menu);
-        $mej = 50000;
-        $men = 20000;
-        $tot = $mej + $men;
-        // dd($menu);
-        return view('bayar', compact('pes', 'mej', 'men', 'tot', 'menu'));
+        $harga = Menu::join('kategori', 'menu.kategori', '=', 'kategori.id_kategori')
+            ->select('kategori.harga')
+            ->where('menu.id_menu', '=', $pes->id_menu)
+            ->get();
+        $meja = Meja::find($pes->no_meja);
+        // dd($meja);
+        if ($menu == true) {
+            $men = $harga[0]->harga;
+            return view('bayar', compact('pes', 'men', 'tot', 'menu'));
+            $tot = $men;
+        }
+        elseif ($meja == true) {
+            $mej = $meja->harga;
+            $tot = $mej;
+            return view('bayar', compact('pes', 'mej', 'tot', 'menu'));
+        }
+        else {
+            $men = $harga[0]->harga;
+            $mej = $meja->harga;
+            $tot = $mej + $men;
+            return view('bayar', compact('pes', 'mej', 'men', 'tot', 'menu'));
+        }
     }
 
     /**
@@ -38,17 +55,20 @@ class BayarController extends Controller
     public function create($no_pes, Request $request)
     {
         $pes = Pesan::find($no_pes);
+        $harga = Menu::join('kategori', 'menu.kategori', '=', 'kategori.id_kategori')
+            ->select('kategori.harga')
+            ->where('menu.id_menu', '=', $pes->id_menu)
+            ->get();
         // dd($pes);
         $bayar = new Bayar;
         $bayar->id_user = Auth::user()->id_user;
         $bayar->no_meja = $pes->no_meja;
         $bayar->id_menu = $pes->id_menu;
-        $bayar->total = 50000;
+        $bayar->total = $harga[0]->harga;
         DB::table('pesan')->where('no_pes', $pes->no_pes)->update(array('status' => true));
         DB::table('meja')->where('no_meja', $pes->no_meja)->update(array('status' => 'dipesan'));
         $bayar->save();
         return redirect('');
-
     }
 
     /**

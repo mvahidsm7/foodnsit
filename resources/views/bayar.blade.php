@@ -65,14 +65,18 @@
                             <form action="/bayar/{{ $pes->no_pes }}/sukses" method="post">
                                 @csrf
                                 <center>
-                                    <button type="submit" class="btn btn-outline-success"
-                                        style="width: 750px">Bayar</button>
+                                    <p>
+                                        <button type="submit" class="btn btn-outline-success" style="width: 750px">Bayar</button>
+                                    </p>
+                                    <a href="/batal/{{ $pes->no_pes }}" class="btn btn-outline-danger"
+                                        style="width: 750px">Batalkan Pesanan</a>
                                 </center>
                             </form>
                         @else
-                        <center>
-                            <a href="/batal/{{ $pes->no_pes }}" class="btn btn-outline-danger" style="width: 750px">Batalkan Pesanan</a>
-                        </center>
+                            <center>
+                                <a href="/batal/{{ $pes->no_pes }}" class="btn btn-outline-danger"
+                                    style="width: 750px">Batalkan Pesanan</a>
+                            </center>
                         @endif
 
 
