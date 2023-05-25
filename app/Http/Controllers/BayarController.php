@@ -8,6 +8,7 @@ use App\Http\Requests\UpdateBayarRequest;
 use App\Models\Meja;
 use App\Models\Menu;
 use App\Models\Pesan;
+use Database\Seeders\ReservasiSeeder;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -23,6 +24,7 @@ class BayarController extends Controller
      */
     public function index($no_pes, Request $request)
     {
+        $user = Auth::user();
         $pes = Pesan::find($no_pes);
         $menu = Menu::find($pes->id_menu);
         $harga = Menu::join('kategori', 'menu.kategori', '=', 'kategori.id_kategori')
@@ -34,7 +36,27 @@ class BayarController extends Controller
         $tot = $mej + $men;
         // dd($tot);        
         // dd($menu);
-        return view('bayar', compact('pes', 'mej', 'men', 'tot', 'menu'));
+            // Set your Merchant Server Key
+            \Midtrans\Config::$serverKey = config('midtrans.server_key');
+            // Set to Development/Sandbox Environment (default). Set to true for Production Environment (accept real transaction).
+            \Midtrans\Config::$isProduction = false;
+            // Set sanitization on (default)
+            \Midtrans\Config::$isSanitized = true;
+            // Set 3DS transaction for credit card to true
+            \Midtrans\Config::$is3ds = true;
+
+            $params = array(
+                'transaction_details' => array(
+                    'order_id' => $pes->no_pes,
+                    'gross_amount' => $tot,
+                ),
+                'customer_details' => array(
+                    'first_name' => $user->name,
+                ),
+            );
+
+            $snapToken = \Midtrans\Snap::getSnapToken($params);
+        return view('bayar', compact('snapToken', 'pes', 'mej', 'men', 'tot', 'menu'));
     }
 
     /**
