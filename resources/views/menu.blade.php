@@ -43,13 +43,13 @@
 						<p class="product-price"><span>Per porsi</span>
 							RP. 
 							@if ($m->kategori == 1)
-								{{$harga[1]->harga}}
+								{{$m->harga}}
 							@endif
 							@if ($m->kategori == 2)
-								{{$harga[2]->harga}}
+								{{$m->harga}}
 							@endif
 							@if ($m->kategori == 3)
-								{{$harga[3]->harga}}
+								{{$m->harga}}
 							@endif
 						</p>
 						<p>{{$m->deskripsi}}</p>
