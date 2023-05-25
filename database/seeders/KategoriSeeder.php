@@ -15,15 +15,12 @@ class KategoriSeeder extends Seeder
     {
         ModelsKategori::create([
             "kategori" => "makanan",
-            "harga" => 50000
         ],
         ModelsKategori::create([
             "kategori" => "minuman",
-            "harga" => 20000
         ]),
         ModelsKategori::create([
             "kategori" => "dessert",
-            "harga" => 15000
         ]));
     }
 }
