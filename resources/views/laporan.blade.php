@@ -20,7 +20,7 @@
 						</div>
                         <br>
         <h1>LAPORAN PESANAN</h1>
-        <h3>Bulan:</h3>
+        <h3>Bulan: </h3>
 
     <div class="container mt-150 mb-150">
         <table class="table" border="1" style="width: 100%" cellspacing="0">
