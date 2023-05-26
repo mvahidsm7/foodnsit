@@ -28,7 +28,7 @@
 								<select name="no_meja" id="" class="form-control input-group form-label">
 									<option value="" hidden selected>Pilih Meja</option>
 									@foreach ($meja as $m)
-										<option value="{{$m->no_meja}}" @if ($m->status == 'dipesan') hidden @endif>0{{$m->no_meja}}</option>
+									<option value="{{$m->no_meja}}" @if ($m->status == 'dipesan') hidden @endif>0{{$m->no_meja}} -- Kapasitas {{$m->kapasitas}}</option>
 									@endforeach
 								</select><br>
 								<section>Tanggal :</section>
