@@ -24,25 +24,28 @@
 						<div class="contact-form">
 							<form action="/pesan/sukses" method="post">
 								@csrf
-								<section>Meja :</section>
-								<select name="no_meja" id="" class="form-control input-group form-label">
+								<h6><section>Meja :</section>
+								<select class="form-control form-control-lg" name="no_meja" id="" class="form-control input-group form-label">
 									<option value="" hidden selected>Pilih Meja</option>
 									@foreach ($meja as $m)
 									<option value="{{$m->no_meja}}" @if ($m->status == 'dipesan') hidden @endif>0{{$m->no_meja}} -- Kapasitas {{$m->kapasitas}}</option>
 									@endforeach
 								</select><br>
 								<section>Tanggal :</section>
-								<input type="date" class="form-control input-group form-label" name="tanggal"><br>
+								<input class="form-control form-control-lg" type="date" class="form-control input-group form-label" name="tanggal"><br>
 								<section>Menu :</section>
-								<select name="menu" class="form-control input-group form-label" id="">
+								<select class="form-control form-control-lg" name="menu" class="form-control input-group form-label" id="">
 									<option value="" hidden selected>Pilih Menu</option>
 									@foreach ($menu as $m)
 										<option value="{{$m->id_menu}}">{{$m->nama}}</option>
 									@endforeach	
 								</select><br>
 								<section>Jam :</section>
-								<input type="time" class="form-control input-group form-label" name="jam"><br>
-								<button type="submit" class="btn btn-outline-success">Pesan</button>
+								<input class="form-control form-control-lg" type="time" class="form-control input-group form-label" name="jam"><br>
+								{{-- <button type="submit" class="btn btn-outline-success">Pesan</button> --}}
+								<br>
+								<center><input type="submit" value="PESAN" style="width: 700px"></center>
+								</h6>
 							</form>
 						</div>
 					</div>
