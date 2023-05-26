@@ -104,19 +104,19 @@
                 window.snap.pay('{{ $snapToken }}', {
                     onSuccess: function(result){
                     /* You may add your own implementation here */
-                    alert("payment success!"); console.log(result);
+                    alert("Pembayaran Berhasil!"); console.log(result);
                     },
                     onPending: function(result){
                     /* You may add your own implementation here */
-                    alert("wating your payment!"); console.log(result);
+                    alert("Menunggu Pembayaran"); console.log(result);
                     },
                     onError: function(result){
                     /* You may add your own implementation here */
-                    alert("payment failed!"); console.log(result);
+                    alert("Pembayaran Gagal!"); console.log(result);
                     },
                     onClose: function(){
                     /* You may add your own implementation here */
-                    alert('you closed the popup without finishing the payment');
+                    alert('Pemabyaran Belum Selesai');
                     }
                 })
                 });

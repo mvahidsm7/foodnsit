@@ -96,7 +96,7 @@ class BayarController extends Controller
                 $bayar->save();
                 return view('bayar', compact('snapToken', 'pes', 'mej', 'men', 'tot', 'menu'));
             }
-            
+            return redirect('profil');
     }
 
     /**

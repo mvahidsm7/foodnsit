@@ -126,15 +126,23 @@
                             <p>
                             <h5>Status Pembayaran :</h5>
                             @if ($p->status == 0)
-                            Menunggu Pembayaran
+                                Menunggu Pembayaran
                             @else
-                            Dibayar
+                                Dibayar
                             @endif
                             </p>
                             <p>
+                                @if ($p->status == 0)
+                                    <a href="/bayar/{{ $p->no_pes }}" class="btn btn-outline-success">Bayar</a>
+                                    <a href="/batal/{{ $p->no_pes }}" class="btn btn-outline-danger">Batalkan
+                                        Pesanan</a>
+                                @else
+                                    <a href="/detail/{{ $p->no_pes }}" class="btn btn-outline-success">Detail
+                                        Pesanan</a>
+                                    <a href="/batal/{{ $p->no_pes }}" class="btn btn-outline-danger">Batalkan
+                                            Pesanan</a>
+                                @endif
 
-                                <a href="/bayar/{{ $p->no_pes }}" class="btn btn-outline-success">Detail Pesanan</a>
-                                <a href="/batal/{{ $p->no_pes }}" class="btn btn-outline-danger">Batalkan Pesanan</a>
 
                             </p>
                             <hr>

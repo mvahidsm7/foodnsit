@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Meja;
 use App\Models\Pesan;
+use App\Models\Menu;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -17,7 +18,9 @@ class ProfilController extends Controller
     public function index()
     {
         $user = Auth::user();
-        $pes = DB::table('pesan')->where('id_user', $user->id_user)->get();
+        $pes = DB::table('pesan')
+            ->where('id_user', $user->id_user)
+            ->get();
         // dd($pes[0]->id_menu);
         // $menu = DB::table('menu')->where('id_menu', $pes->id_menu)->get();
         // dd($menu);
@@ -26,7 +29,9 @@ class ProfilController extends Controller
     public function i()
     {
         $user = Auth::user();
-        $pes = DB::table('pesan')->where('id_user', $user->id_user)->get();
+        $pes = DB::table('pesan')
+            ->where('id_user', $user->id_user)
+            ->get();
         dd($pes);
     }
     public function batal($no_pes)
@@ -37,8 +42,17 @@ class ProfilController extends Controller
     public function BatalSukses($no_pes)
     {
         $pes = Pesan::find($no_pes);
-        DB::table('meja')->where('no_meja', $pes->no_meja)->update(array('status' => 'tersedia'));
+        DB::table('meja')
+            ->where('no_meja', $pes->no_meja)
+            ->update(['status' => 'tersedia']);
         $pes->delete();
         return redirect('/profil');
+    }
+    public function detail($no_pes)
+    {
+        $user = Auth::user();
+        $pes = Pesan::find($no_pes);
+        $menu = Menu::find($pes->id_menu);
+        return view('detail', compact('user', 'pes', 'menu'));
     }
 }
