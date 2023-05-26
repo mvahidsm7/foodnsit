@@ -104,7 +104,8 @@
                 window.snap.pay('{{ $snapToken }}', {
                     onSuccess: function(result){
                     /* You may add your own implementation here */
-                    alert("Pembayaran Berhasil!"); console.log(result);
+                    alert("Pembayaran Berhasil!");
+                    location.replace("/");
                     },
                     onPending: function(result){
                     /* You may add your own implementation here */
