@@ -28,6 +28,9 @@ class PesanController extends Controller
         $pesan->tanggal = $request->tanggal;
         $pesan->jam = $request->jam;
         $pesan->save();
-        return redirect('');
+        return redirect('sukses');
+    }
+    public function Sukses(){
+        return view('sukses');
     }
 }

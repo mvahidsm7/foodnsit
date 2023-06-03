@@ -32,6 +32,7 @@ Route::get('/menu', [MenuController::class, 'index']);
 // pesan
 Route::get('/pesan', [PesanController::class, 'TampilReservasi']);
 Route::post('/pesan/sukses', [PesanController::class, 'Reservasi']);
+Route::get('/sukses', [PesanController::class, 'Sukses']);
 // profil & pesanan
 Route::get('/profil', [ProfilController::class, 'index']);
 Route::get('/detail/{no_pes}', [ProfilController::class, 'detail']);
