@@ -31,7 +31,7 @@
                 <tr>
                     <td>{{ $m->id_menu }}</td>
                     <td>{{ $m->nama }}</td>
-                    <td><img src="{{ $m->gambar }}" alt=""></td>
+                    <td>{{ $m->gambar }}</td>
                     <td>{{ $m->deskripsi }}</td>
                     <td>{{ $m->harga }}</td>
                     <td><a href="meja/{{ $m->no_meja }}edit">edit</a></td>

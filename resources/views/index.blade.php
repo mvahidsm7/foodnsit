@@ -7,16 +7,25 @@
                 <div class="col-lg-12 text-center">
                     <div class="hero-text">
                         <div class="hero-text-tablecell">
-                            <p class="subtitle">Selamat datang <q><i>{{$user->name}}</i></q> di</p>
+                            <p class="subtitle">Selamat datang @if (Auth::user() == true)
+                                <q><i>{{$user->name}}</i></q>
+                            @else
+                                
+                            @endif di</p>
                             <h1>FOOD n SIT</h1>
                             <div class="hero-btns">
-                                @if ($user->name == 'admin')
+                                @if ($user == true)
+                                    @if (Auth::user()->name == 'admin')
                                     <a href="/profil" class="boxed-btn">Admin</a>
                                     <a href="/menu" class="bordered-btn">Menu</a>
-                                @else
+                                    @else
                                     <a href="/pesan" class="boxed-btn">Reservasi</a>
                                     <a href="/menu" class="bordered-btn">Menu</a>
+                                     @endif
+                                @else
+                                    
                                 @endif
+                                
                             </div>
                         </div>
                     </div>
