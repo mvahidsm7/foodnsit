@@ -42,15 +42,7 @@
 						<h3>{{$m->nama}}</h3>
 						<p class="product-price"><span>Per porsi</span>
 							RP. 
-							@if ($m->kategori == 1)
-								{{$m->harga}}
-							@endif
-							@if ($m->kategori == 2)
-								{{$m->harga}}
-							@endif
-							@if ($m->kategori == 3)
-								{{$m->harga}}
-							@endif
+							{{$m->harga}}
 						</p>
 						<p>{{$m->deskripsi}}</p>
 						<a href="/pesan" class="cart-btn"><i class="fas fa-shopping-cart"></i> Pesan</a>

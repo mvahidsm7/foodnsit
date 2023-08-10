@@ -21,14 +21,12 @@
                 <td>Nomer</td>
                 <td>Kapasitas</td>
                 <td>Status</td>
-                <td>Lainnya</td>
             </tr>
             @foreach ($meja as $m)
                 <tr>
                     <td>{{ $m->no_meja }}</td>
                     <td>{{ $m->kapasitas }}</td>
                     <td>{{ $m->status }}</td>
-                    <td><a href="meja/{{$m->no_meja}}edit">edit</a></td>
                 </tr>
             @endforeach
         </table>

@@ -109,7 +109,7 @@ class BayarController extends Controller
         $bayar->id_user = Auth::user()->id_user;
         $bayar->no_meja = $pes->no_meja;
         $bayar->id_menu = $pes->id_menu;
-        $bayar->total = $harga[0]->harga;
+        $bayar->total = $pes[0]->harga;
         DB::table('pesan')->where('no_pes', $pes->no_pes)->update(array('status' => true));
         DB::table('meja')->where('no_meja', $pes->no_meja)->update(array('status' => 'dipesan'));
         $bayar->save();
