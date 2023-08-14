@@ -8,24 +8,13 @@
                     <div class="hero-text">
                         <div class="hero-text-tablecell">
                             <p class="subtitle">Selamat datang @if (Auth::user() == true)
-                                <q><i>{{$user->name}}</i></q>
-                            @else
-                                
-                            @endif di</p>
+                                    <q><i>{{ $user->name }}</i></q>
+                                @else
+                                @endif di</p>
                             <h1>FOOD n SIT</h1>
                             <div class="hero-btns">
-                                @if ($user == true)
-                                    @if (Auth::user()->name == 'admin')
-                                    <a href="/profil" class="boxed-btn">Admin</a>
-                                    <a href="/menu" class="bordered-btn">Menu</a>
-                                    @else
-                                    <a href="/pesan" class="boxed-btn">Reservasi</a>
-                                    <a href="/menu" class="bordered-btn">Menu</a>
-                                     @endif
-                                @else
-                                    
-                                @endif
-                                
+                                <a href="/pesan" class="boxed-btn">Reservasi</a>
+                                <a href="/menu" class="bordered-btn">Menu</a>
                             </div>
                         </div>
                     </div>
@@ -93,18 +82,17 @@
 
             <div class="row">
                 @foreach ($menu as $m)
-                <div class="col-lg-4 col-md-6 text-center">
-                    <div class="single-product-item">
-                        <div class="product-image">
-                            <a href="single-product.html"><img src="{{$m->gambar}}"
-                                    alt=""></a>
+                    <div class="col-lg-4 col-md-6 text-center">
+                        <div class="single-product-item">
+                            <div class="product-image">
+                                <a href="single-product.html"><img src="{{ $m->gambar }}" alt=""></a>
+                            </div>
+                            <h3>{{ $m->nama }}</h3>
+                            <p class="product-price">IDR {{ $m->harga }}</p>
+                            <p>{{ $m->deskripsi }}</p>
+                            <a href="/pesan" class="cart-btn"><i class="fas fa-shopping-cart"></i> Pesan Sekarang</a>
                         </div>
-                        <h3>{{$m->nama}}</h3>
-                        <p class="product-price">IDR {{$m->harga}}</p>
-                        <p>{{$m->deskripsi}}</p>
-                        <a href="/pesan" class="cart-btn"><i class="fas fa-shopping-cart"></i> Pesan Sekarang</a>
                     </div>
-                </div>
                 @endforeach
             </div>
         </div>
