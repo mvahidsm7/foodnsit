@@ -66,17 +66,6 @@
                                 <li><a href="/menu">Menu</a></li>
                                 <li><a href="/pesan">Pesan</a></li>
                                 <li><a href="/tentang">Tentang Kami</a></li>
-                                {{-- <li><a href="#">Lainnya</a>
-                                    <ul class="sub-menu">
-                                        <li><a href="404.html">404 page</a></li>
-                                        <li><a href="about.html">About</a></li>
-                                        <li><a href="cart.html">Cart</a></li>
-                                        <li><a href="checkout.html">Check Out</a></li>
-                                        <li><a href="contact.html">Contact</a></li>
-                                        <li><a href="news.html">News</a></li>
-                                        <li><a href="shop.html">Shop</a></li>
-                                    </ul>
-                                </li> --}}
                                 <li>
                                     <div class="header-icons">
                                         <a class="shopping-cart" href="/profil">
@@ -93,8 +82,6 @@
                                                 @endif
 
                                             </i></a>
-                                        <a class="mobile-hide search-bar-icon" href="#"><i
-                                                class="fas fa-search"></i></a>
                                     </div>
                                 </li>
                             </ul>
@@ -147,7 +134,8 @@
                     <div class="footer-box get-in-touch">
                         <h2 class="widget-title">Kontak kami</h2>
                         <ul>
-                            <li>Jl. Budi Jl. Raya Cilember, RT.01/RW.04, Sukaraja, Kec. Cicendo, Kota Bandung, Jawa Barat 40153.</li>
+                            <li>Jl. Budi Jl. Raya Cilember, RT.01/RW.04, Sukaraja, Kec. Cicendo, Kota Bandung, Jawa
+                                Barat 40153.</li>
                             <li>smkn11bdg@gmail.com</li>
                             <li> (022) 6652442</li>
                         </ul>
@@ -173,7 +161,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 col-md-12">
-                    <p>Copyrights &copy; 2023 - <a href="https://instagram.com/xvhxid?igshid=ZGUzMzM3NWJiOQ==">FOOD N SIT</a>, All Rights Reserved.<br>
+                    <p>Copyrights &copy; 2023 - <a href="https://instagram.com/xvhxid?igshid=ZGUzMzM3NWJiOQ==">FOOD N
+                            SIT</a>, All Rights Reserved.<br>
                         Distributed By - <a href="/tentang">Kelompok FnS</a>
                     </p>
                 </div>
