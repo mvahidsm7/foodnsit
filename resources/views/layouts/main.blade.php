@@ -89,9 +89,9 @@
                                                 @if (Auth::user() == true)
                                                     {{ Auth::user()->name }}
                                                 @else
-                                                    Login !
+                                                    Masuk
                                                 @endif
-                                                
+
                                             </i></a>
                                         <a class="mobile-hide search-bar-icon" href="#"><i
                                                 class="fas fa-search"></i></a>

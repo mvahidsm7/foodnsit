@@ -11,16 +11,16 @@
     position: absolute;
     max-width: 430px;
     width: 100%;
-    margin-top: 100px;
-    margin-left: 325px;
+    margin-top: 7%;
+    margin-left: 33%;
     padding: 30px;
     border-radius: 6px;
     background: #CACACA;
 }
 .form.signup{
-    margin-top: 65px;
+    margin-top: 3%;
     opacity: 0;
-    height: 77%;
+    height: 85%;
     pointer-events: none;
     background-color: #CACACA;
 }
@@ -175,5 +175,5 @@ a.google span{
     .form{
         padding: 20px 10px;
     }
-    
+
 }
