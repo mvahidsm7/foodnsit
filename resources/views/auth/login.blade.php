@@ -23,7 +23,7 @@
                 <div class="form-content">
                     <img src="{{ asset('assets/img/logo.png') }}" width="40%" height="30%" class="center">
                     <br>
-                    <header>Masuk</header>
+                    <header>MASUK</header>
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
                         <div class="field input-field">
@@ -65,7 +65,7 @@
                 <div class="form-content">
                     <img src="{{ asset('assets/img/logo.png') }}" width="40%" height="30%" class="center">
                     <br>
-                    <header>Daftar</header>
+                    <header>DAFTAR</header>
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
                         <div class="field input-field">
