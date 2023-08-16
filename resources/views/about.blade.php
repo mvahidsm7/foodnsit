@@ -94,9 +94,7 @@
 						<div class="team-bg team-bg-1"></div>
 						<h4>Muhammad Vahid <span>backend</span></h4>
 						<ul class="social-link-team">
-							<li><a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
-							<li><a href="#" target="_blank"><i class="fab fa-twitter"></i></a></li>
-							<li><a href="#" target="_blank"><i class="fab fa-instagram"></i></a></li>
+							<li><a href="https://instagram.com/xvhxid" target="_blank"><i class="fab fa-instagram"></i></a></li>
 						</ul>
 					</div>
 				</div>
@@ -105,9 +103,7 @@
 						<div class="team-bg team-bg-2"></div>
 						<h4>Monica Reditha <span>frontend</span></h4>
 						<ul class="social-link-team">
-							<li><a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
-							<li><a href="#" target="_blank"><i class="fab fa-twitter"></i></a></li>
-							<li><a href="#" target="_blank"><i class="fab fa-instagram"></i></a></li>
+							<li><a href="https://instagram.com/mniceee_" target="_blank"><i class="fab fa-instagram"></i></a></li>
 						</ul>
 					</div>
 				</div>
@@ -116,9 +112,7 @@
 						<div class="team-bg team-bg-3"></div>
 						<h4>Fajar Fathurohman <span>backend</span></h4>
 						<ul class="social-link-team">
-							<li><a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
-							<li><a href="#" target="_blank"><i class="fab fa-twitter"></i></a></li>
-							<li><a href="#" target="_blank"><i class="fab fa-instagram"></i></a></li>
+							<li><a href="https://instagram.com/fajar.fathurrr" target="_blank"><i class="fab fa-instagram"></i></a></li>
 						</ul>
 					</div>
 				</div>
@@ -127,9 +121,7 @@
 						<div class="team-bg team-bg-4"></div>
 						<h4>Dedi Setiawan <span>frontend</span></h4>
 						<ul class="social-link-team">
-							<li><a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
-							<li><a href="#" target="_blank"><i class="fab fa-twitter"></i></a></li>
-							<li><a href="#" target="_blank"><i class="fab fa-instagram"></i></a></li>
+							<li><a href="https://instagram.com/dedisetiawan_70" target="_blank"><i class="fab fa-instagram"></i></a></li>
 						</ul>
 					</div>
 				</div>
