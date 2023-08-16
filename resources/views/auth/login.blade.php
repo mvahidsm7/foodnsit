@@ -17,12 +17,12 @@
 
     </head>
 
-    <body>
+    <body background="{{ asset('assets/img/background.jpg') }}" class="ukuran">
         <section class="container forms">
             <div class="form login">
                 <div class="form-content">
-                    <header>Masuk</header>
-                    <form method="POST" action="{{ route('login') }}">
+                    <img src="{{ asset('assets/img/logo.png') }}" width="40%" height="30%" class="center">
+                  <br>
                         @csrf
                         <div class="field input-field">
                             <input id="email" type="email" class="form-control @error('email') is-invalid @enderror"
@@ -62,8 +62,8 @@
             <div class="form signup">
                 <div class="form-content">
                     <header>Daftar</header>
-                    <form method="POST" action="{{ route('register') }}">
-                        @csrf
+                    <img src="{{ asset('assets/img/logo.png') }}" width="40%" height="30%" class="center">
+                  <br>
                         <div class="field input-field">
                             <input id="name" type="text" class="form-control @error('name') is-invalid @enderror"
                                 name="name" value="{{ old('name') }}" placeholder="Nama" required autocomplete="name"

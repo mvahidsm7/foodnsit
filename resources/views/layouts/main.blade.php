@@ -89,8 +89,9 @@
                                                 @if (Auth::user() == true)
                                                     {{ Auth::user()->name }}
                                                 @else
-                                                    Login
+                                                    Login !
                                                 @endif
+                                                
                                             </i></a>
                                         <a class="mobile-hide search-bar-icon" href="#"><i
                                                 class="fas fa-search"></i></a>
@@ -146,8 +147,7 @@
                     <div class="footer-box get-in-touch">
                         <h2 class="widget-title">Kontak kami</h2>
                         <ul>
-                            <li>Jl. Budi Jl. Raya Cilember, RT.01/RW.04, Sukaraja, Kec. Cicendo, Kota Bandung, Jawa
-                                Barat 40153.</li>
+                            <li>Jl. Budi Jl. Raya Cilember, RT.01/RW.04, Sukaraja, Kec. Cicendo, Kota Bandung, Jawa Barat 40153.</li>
                             <li>smkn11bdg@gmail.com</li>
                             <li> (022) 6652442</li>
                         </ul>
@@ -173,9 +173,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 col-md-12">
-                    <p>Copyrights &copy; 2023 - <a href="https://instagram.com/xvhxid?igshid=ZGUzMzM3NWJiOQ==">FOOD N
-                            SIT</a>, All Rights Reserved.<br>
-                        Distributed By - <a href="/tentang">Kelompok FOOD n SIT</a>
+                    <p>Copyrights &copy; 2023 - <a href="https://instagram.com/xvhxid?igshid=ZGUzMzM3NWJiOQ==">FOOD N SIT</a>, All Rights Reserved.<br>
+                        Distributed By - <a href="/tentang">Kelompok FnS</a>
                     </p>
                 </div>
                 <div class="col-lg-6 text-right col-md-12">
