@@ -7,12 +7,11 @@
                 <div class="col-lg-8 offset-lg-2 text-center">
                     <div class="breadcrumb-text">
                         <p></p>
-                        <h1>Jumlah Pengunjung</h1>
-                        <form action="/pesan/sukses" method="post" class="mt-5">
+                        <h2 class="text-light">Jumlah Pengunjung</h2>
+                        <form action="/pesan" method="get" class="mt-5">
                             @csrf
-                            <input class="form-control form-control-lg" type="text"
-                                class="form-control input-group form-label" name="jumlah"
-                                placeholder="Masukkan jumlah"><br>
+                            <input class="form-control form-control-lg input-group form-label" type="number" name="jumlah"
+                                placeholder="Masukkan jumlah pengunjung" style="width: 100%"><br>
                             <input type="submit" value="CARI MEJA" style="width: 70%">
                         </form>
                     </div>

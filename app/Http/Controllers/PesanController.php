@@ -14,16 +14,25 @@ class PesanController extends Controller
     {
         $this->middleware('auth');
     }
-    public function setReservasi(){
+    public function setReservasi()
+    {
         return view('setreservasi');
     }
-    public function TampilReservasi(){
-        $meja = Meja::all();
+    public function TampilReservasi(Request $r)
+    {
+        $meja = Meja::all()->where('kapasitas', '>=', $r->jumlah);
         $menu = Menu::all();
         return view('reservasi', compact('meja', 'menu'));
     }
 
-    public function Reservasi(Request $request){
+    public function Reservasi(Request $request)
+    {
+        request()->validate([
+            'no_meja' => 'required',
+            'menu' => 'required',
+            'tanggal' => 'required',
+            'jam' => 'required',
+        ]);
         $pesan = new Pesan;
         $pesan->no_meja = $request->no_meja;
         $pesan->id_user = Auth::user()->id_user;
@@ -33,7 +42,8 @@ class PesanController extends Controller
         $pesan->save();
         return redirect('sukses');
     }
-    public function Sukses(){
+    public function Sukses()
+    {
         return view('sukses');
     }
 }
