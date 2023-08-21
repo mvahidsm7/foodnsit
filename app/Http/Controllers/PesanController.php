@@ -14,6 +14,9 @@ class PesanController extends Controller
     {
         $this->middleware('auth');
     }
+    public function setReservasi(){
+        return view('setreservasi');
+    }
     public function TampilReservasi(){
         $meja = Meja::all();
         $menu = Menu::all();

@@ -13,7 +13,7 @@
                                 @endif di</p>
                             <h1>FOOD n SIT</h1>
                             <div class="hero-btns">
-                                <a href="/pesan" class="boxed-btn">Reservasi</a>
+                                <a href="/set-pesan" class="boxed-btn">Reservasi</a>
                                 <a href="/menu" class="bordered-btn">Menu</a>
                             </div>
                         </div>
