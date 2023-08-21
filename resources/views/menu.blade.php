@@ -34,18 +34,17 @@
 
 			<div class="row product-lists">
 				@foreach ($menu as $m)
-				<div class="col-lg-4 col-md-6 text-center {{$m->kategori}}">
+				<div class="col-lg-4 col-md-4 text-center {{$m->kategori}}">
 					<div class="single-product-item">
 						<div class="product-image">
 							<a href="single-product.html"><img src="{{$m->gambar}}" alt=""></a>
 						</div>
 						<h3>{{$m->nama}}</h3>
 						<p class="product-price"><span>Per porsi</span>
-							RP. 
+							RP.
 							{{$m->harga}}
 						</p>
 						<p>{{$m->deskripsi}}</p>
-						<a href="/pesan" class="cart-btn"><i class="fas fa-shopping-cart"></i> Pesan</a>
 					</div>
 				</div>
 				@endforeach
