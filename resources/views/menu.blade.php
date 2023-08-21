@@ -16,7 +16,7 @@
 	<!-- end breadcrumb section -->
 
 	<!-- products -->
-	<div class="product-section mt-150 mb-150">
+	<div class="product-section mt-3">
 		<div class="container">
 
 			<div class="row">

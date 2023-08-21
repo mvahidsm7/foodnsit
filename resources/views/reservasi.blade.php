@@ -1,7 +1,7 @@
 @extends('layouts.main')
 @section('content')
     <!-- breadcrumb-section -->
-    <div class="breadcrumb-section breadcrumb-bg">
+    <div class="breadcrumb-section breadcrumb-bg" style="height: 100%">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 offset-lg-2">
@@ -45,7 +45,7 @@
     <!-- end breadcrumb section -->
 
     <!-- contact form -->
-    <div class="contact-from-section mt-150 mb-150">
+    {{-- <div class="contact-from-section mt-150 mb-150">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 mb-5 mb-lg-0">
@@ -55,7 +55,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
     <!-- end contact form -->
 
     <!-- find our location -->
