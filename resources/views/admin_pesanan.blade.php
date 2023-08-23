@@ -54,7 +54,7 @@
                 <tr class="table-active">
                     <td>ID Pesanan</td>
                     <td>Nama</td>
-                    <td>No Meja</td>
+                    <td>Nomor Meja</td>
                     <td>Menu</td>
                     <td>Status</td>
                     <td>Lainnya</td>

@@ -27,9 +27,9 @@
                                 <div class="container mt-150 mb-150">
                                     <table class="table" border="1" style="width: 100%" cellspacing="0">
                                         <tr class="table-active">
-                                            <td>Nomer Pesanan</td>
+                                            <td>Nomor Pesanan</td>
                                             <td>ID pengguna</td>
-                                            <td>No Meja</td>
+                                            <td>Nomor Meja</td>
                                             <td>Menu</td>
                                         </tr>
                                         @foreach ($pes as $m)
