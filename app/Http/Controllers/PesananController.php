@@ -20,17 +20,16 @@ class PesananController extends Controller
     public function index()
     {
         $user = Auth::user();
-        $pes = Pesan::all();
+        $pes = Pesan::with('user', 'menu')->get();
+        // dd($pes[0]->user[0]->name);
         return view('admin_pesanan', compact('pes', 'user'));
     }
 
     public function pdf()
     {
-        $pes = Pesan::all();
-
-    	$pes = Pdf::loadview('laporan', ['pes' =>$pes]);
-        // $pes->setPaper('A4', 'landscape');
-    	return $pes->download('laporan-pesanan.pdf');
+        $pes = Pesan::with('user')->where('status', '=', true)->get();
+        $pes = Pdf::loadview('laporan', ['pes' => $pes]);
+        return $pes->download('laporan-pesanan.pdf');
     }
 
     public function laporan()

@@ -26,7 +26,7 @@ use Illuminate\Support\Facades\Route;
 // index
 Auth::routes();
 Route::get('/', [BerandaController::class, 'index']);
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index']);
 // menu
 Route::get('/menu', [MenuController::class, 'index']);
 // pesan
