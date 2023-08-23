@@ -26,15 +26,18 @@
                     <header>MASUK</header>
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
+                        @error('email')
+                            <center>
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>Email atau Kata Sandi Salah</strong>
+                                </span>
+                            </center>
+                        @enderror
                         <div class="field input-field">
                             <input id="email" type="email" class="form-control @error('email') is-invalid @enderror"
-                                name="email" value="{{ old('email') }}" required autocomplete="email" autofocus placeholder="Email">
+                                name="email" value="{{ old('email') }}" required autocomplete="email" autofocus
+                                placeholder="Email">
 
-                            @error('email')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                            @enderror
                         </div><br>
 
                         <div class="field input-field">

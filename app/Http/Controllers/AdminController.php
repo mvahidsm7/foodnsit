@@ -43,4 +43,13 @@ class AdminController extends Controller
         Menu::create($request->except('_token', 'submit'));
         return redirect('/admin/menu');
     }
+
+    public function editMenu($id_menu)
+    {
+        dd($id_menu);
+    }
+    public function UpdateMenu()
+    {
+
+    }
 }

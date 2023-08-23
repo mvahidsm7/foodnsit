@@ -42,7 +42,6 @@
                             <a href="/admin/meja" class="btn btn-outline-primary">data meja</a>
                             <a href="/admin/menu" class="btn btn-outline-info">data menu</a>
                             <a href="/data-pesanan" class="btn btn-outline-info">data pesanan</a>
-                            <a href="/" class="btn btn-outline-success">lainnya</a>
                         </p>
                     </div>
                 </div>

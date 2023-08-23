@@ -8,11 +8,11 @@
     font-family: 'Poppins', sans-serif;
 }
 .form{
-    position: absolute;
+    position: fixed;
     max-width: 430px;
     width: 100%;
     margin-top: 5%;
-    margin-left: 35%;
+    margin-left: 34%;
     padding: 30px;
     border-radius: 6px;
     background: #ddc39d;

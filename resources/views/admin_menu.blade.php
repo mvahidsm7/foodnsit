@@ -34,7 +34,10 @@
                     <td>{{ $m->gambar }}</td>
                     <td>{{ $m->deskripsi }}</td>
                     <td>{{ $m->harga }}</td>
-                    <td><a href="meja/{{ $m->no_meja }}edit">edit</a></td>
+                    <td>
+                        <form action="/edit-menu/{{ $m->id_menu }}" method="post">@csrf<button type="submit">edit</button>
+                        </form>
+                    </td>
                 </tr>
             @endforeach
         </table>

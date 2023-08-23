@@ -55,6 +55,8 @@ Route::get('/laporan', [PesananController::class, 'laporan']);
 Route::get('/admin/menu', [AdminController::class, 'TampilMenu']);
 Route::post('/tambah-menu', [AdminController::class, 'TambahMenuView']);
 Route::post('/tambah-menu/sukses', [AdminController::class, 'TambahMenu']);
+Route::post('/edit-menu/{id_menu}', [AdminController::class, 'editMenu']);
+Route::post('/update-menu/sukses', [AdminController::class, 'UpdateMenu']);
 // test
 Route::get('/test', [Testing::class, 'index']);
 
