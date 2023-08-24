@@ -18,12 +18,7 @@ class ProfilController extends Controller
     public function index()
     {
         $user = Auth::user();
-        $pes = DB::table('pesan')
-            ->where('id_user', $user->id_user)
-            ->get();
-        // dd($pes[0]->id_menu);
-        // $menu = DB::table('menu')->where('id_menu', $pes->id_menu)->get();
-        // dd($menu);
+        $pes = Pesan::all()->where('pengguna', '=', $user->id);
         return view('pesanan', compact('user', 'pes'));
     }
     public function i()
@@ -34,28 +29,32 @@ class ProfilController extends Controller
             ->get();
         dd($pes);
     }
-    public function batal($no_pes)
+    public function batal($kd_pes)
     {
-        $pes = Pesan::find($no_pes);
+        $pes = Pesan::all()->where('kd_pes', '=', $kd_pes);
+        $pes = $pes[0];
         return view('batal', compact('pes'));
     }
-    public function BatalSukses($no_pes)
+    public function BatalSukses($kd_pes)
     {
-        $pes = Pesan::find($no_pes);
+        $pes = Pesan::all()->where('kd_pes', '=', $kd_pes);
+        $pes = $pes[0];
         if ($pes->no_meja == true) {
             DB::table('meja')
                 ->where('no_meja', $pes->no_meja)
                 ->update(['status' => 'tersedia']);
         }
-
         $pes->delete();
         return redirect('/profil');
     }
-    public function detail($no_pes)
+    public function detail($kd_pes)
     {
         $user = Auth::user();
-        $pes = Pesan::find($no_pes);
-        $menu = Menu::find($pes->id_menu);
+        $pes = Pesan::all()->where('kd_pes', '=', $kd_pes);
+        $pes = $pes[0];
+        $menu = Menu::all()->where('id_menu', '=', $pes->id_menu);
+        $menu = $menu[0];
+        // dd($menu);
         return view('detail', compact('user', 'pes', 'menu'));
     }
 }

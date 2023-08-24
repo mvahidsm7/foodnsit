@@ -36,11 +36,11 @@ Route::post('/pesan/sukses', [PesanController::class, 'Reservasi']);
 Route::get('/sukses', [PesanController::class, 'Sukses']);
 // profil & pesanan
 Route::get('/profil', [ProfilController::class, 'index']);
-Route::get('/detail/{no_pes}', [ProfilController::class, 'detail']);
-Route::get('/bayar/{no_pes}', [BayarController::class, 'index']);
-Route::post('/bayar/{no_pes}/sukses', [BayarController::class, 'create']);
-Route::get('batal/{no_pes}', [ProfilController::class, 'batal']);
-Route::post('batal/{no_pes}/sukses', [ProfilController::class, 'BatalSukses']);
+Route::get('/detail/{kd_pes}', [ProfilController::class, 'detail']);
+Route::get('/bayar/{kd_pes}', [BayarController::class, 'index']);
+Route::post('/bayar/{kd_pes}/sukses', [BayarController::class, 'create']);
+Route::get('batal/{kd_pes}', [ProfilController::class, 'batal']);
+Route::post('batal/{kd_pes}/sukses', [ProfilController::class, 'BatalSukses']);
 // Route::post('/midtrans-callback', [BayarController::class, 'callback']);
 
 // admin - meja

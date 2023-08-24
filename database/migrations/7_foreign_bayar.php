@@ -15,10 +15,10 @@ return new class extends Migration
     {
         Schema::table('bayar', function (Blueprint $table){
             $table->unsignedBigInteger('user');
-            $table->unsignedBigInteger('no_pes')->nullable();
+            $table->string('kd_pes')->nullable();
             $table->timestamps();
             $table->foreign('user')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
-            $table->foreign('no_pes')->references('no_pes')->on('pesan')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('kd_pes')->references('kd_pes')->on('pesan')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 

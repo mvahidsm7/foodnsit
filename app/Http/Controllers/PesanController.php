@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Meja;
 use App\Models\Menu;
 use App\Models\Pesan;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -33,9 +34,10 @@ class PesanController extends Controller
             'tanggal' => 'required',
             'jam' => 'required',
         ]);
-        
+        $kode = Str::random(6);
         $pesan = new Pesan;
-        $pesan->pes = 'P' + '';
+        // dd('P' . time() . $kode);
+        $pesan->kd_pes = 'P' . time() . $kode;
         $pesan->no_meja = $request->no_meja;
         $pesan->pengguna = Auth::user()->id;
         $pesan->id_menu = $request->menu;

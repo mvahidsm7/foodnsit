@@ -64,7 +64,7 @@
                             {{-- </form> --}}
                         @else
                             <center>
-                                <a href="/batal/{{ $pes->no_pes }}" class="btn btn-outline-danger"
+                                <a href="/batal/{{ $pes->kd_pes }}" class="btn btn-outline-danger"
                                     style="width: 750px">Batalkan Pesanan</a>
                             </center>
                         @endif

@@ -10,13 +10,19 @@ class Testing extends Controller
 {
     public function index()
     {
-        $menu = Menu::with('harga')->get();
-        $harga = Menu::join('kategori', 'menu.kategori', '=', 'kategori.id_kategori')
-            ->select('menu.nama','kategori.harga')
-            ->get();
-        // dd($harga);
-        return view('test', compact('menu', 'harga'));
+        $char = '01234567890';
+        $numb = strlen($char);
+        $length = 4;
+        $kode = '';
+        while (strlen($kode) < $length) {
+            $position = rand(0, 10);
+            $chara = $char[$position];
+            $kode = $kode.$chara;
+        }
+        $code = date('now').$kode;
+        dd(date('now').$kode);
+        // return view('test');
     }
 
-    
+
 }
