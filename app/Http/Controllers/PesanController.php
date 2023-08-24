@@ -33,9 +33,11 @@ class PesanController extends Controller
             'tanggal' => 'required',
             'jam' => 'required',
         ]);
+        
         $pesan = new Pesan;
+        $pesan->pes = 'P' + '';
         $pesan->no_meja = $request->no_meja;
-        $pesan->id_user = Auth::user()->id_user;
+        $pesan->pengguna = Auth::user()->id;
         $pesan->id_menu = $request->menu;
         $pesan->tanggal = $request->tanggal;
         $pesan->jam = $request->jam;

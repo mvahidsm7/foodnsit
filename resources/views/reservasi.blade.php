@@ -15,7 +15,7 @@
                                     <option value="" hidden selected>Pilih Meja</option>
                                     @foreach ($meja as $m)
                                         <option value="{{ $m->no_meja }}" @if ($m->status == 'dipesan') @disabled(true) @endif>
-                                            0{{ $m->no_meja }} -- Kapasitas {{ $m->kapasitas }} -- {{ $m->status }}</option>
+                                            {{ $m->no_meja }} -- Kapasitas {{ $m->kapasitas }} -- {{ $m->status }}</option>
                                     @endforeach
                                 </select><br>
                                 <section>Tanggal :</section>

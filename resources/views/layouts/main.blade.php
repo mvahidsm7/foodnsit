@@ -64,7 +64,7 @@
                             <ul>
                                 <li class="current-list-item"><a href="/">Beranda</a></li>
                                 <li><a href="/menu">Menu</a></li>
-                                <li><a href="/pesan">Pesan</a></li>
+                                <li><a href="/set-pesan">Pesan</a></li>
                                 <li><a href="/tentang">Tentang Kami</a></li>
                                 <li>
                                     <div class="header-icons">

@@ -10,7 +10,7 @@ class Pesan extends Model
 {
     use HasFactory;
     protected $table = 'pesan';
-    protected $primaryKey = 'no_pes';
+    // protected $primaryKey = 'no_pes';
     protected $fillable = ['id_user','no_meja', 'tanggal', 'jam'];
 
     public function user(){

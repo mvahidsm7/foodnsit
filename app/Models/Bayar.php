@@ -9,6 +9,6 @@ class Bayar extends Model
 {
     use HasFactory;
     protected $table = 'bayar';
-    protected $primaryKey = 'no_pembayaran';
+    // protected $primaryKey = 'no_pembayaran';
     protected $fillable = [''];
 }

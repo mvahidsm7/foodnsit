@@ -11,7 +11,7 @@ class Menu extends Model
     use HasFactory;
     protected $table = 'menu';
     protected $fillable = ['nama', 'gambar', 'deskripsi', 'harga'];
-    protected $primaryKey = 'id_menu';
+    // protected $primaryKey = 'id_menu';
 
     public function harga(){
         return $this->belongsTo(Kategori::class);

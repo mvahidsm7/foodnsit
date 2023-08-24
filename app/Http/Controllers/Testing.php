@@ -17,4 +17,6 @@ class Testing extends Controller
         // dd($harga);
         return view('test', compact('menu', 'harga'));
     }
+
+    
 }
