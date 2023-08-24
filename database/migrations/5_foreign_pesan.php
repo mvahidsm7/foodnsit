@@ -14,10 +14,10 @@ return new class extends Migration
     public function up()
     {
         Schema::table('pesan', function (Blueprint $table){
-            $table->unsignedBigInteger('id_user');
-            $table->unsignedBigInteger('no_meja')->nullable();
-            $table->unsignedBigInteger('id_menu')->nullable();
-            $table->foreign('id_user')->references('id_user')->on('users')->onDelete('cascade')->onUpdate('cascade');
+            $table->unsignedBigInteger('pengguna');
+            $table->string('no_meja')->nullable();
+            $table->string('id_menu')->nullable();
+            $table->foreign('pengguna')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
             $table->foreign('no_meja')->references('no_meja')->on('meja')->onDelete('cascade')->onUpdate('cascade');
             $table->foreign('id_menu')->references('id_menu')->on('menu')->onDelete('cascade')->onUpdate('cascade');
         });

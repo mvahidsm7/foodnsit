@@ -14,13 +14,28 @@ class MejaSeeder extends Seeder
     public function run(): void
     {
         Meja::create([
+            "no_meja" => "MJ001",
             "kapasitas" => "2"
         ],
         Meja::create([
+            "no_meja" => "MJ002",
             "kapasitas" => "2"
         ]),
         Meja::create([
-            "kapasitas" => "2"
+            "no_meja" => "MJ003",
+            "kapasitas" => "4"
+        ]),
+        Meja::create([
+            "no_meja" => "MJ004",
+            "kapasitas" => "4"
+        ]),
+        Meja::create([
+            "no_meja" => "MJ005",
+            "kapasitas" => "6"
+        ]),
+        Meja::create([
+            "no_meja" => "MJ006",
+            "kapasitas" => "6"
         ])
     );
     }

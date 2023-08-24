@@ -12,7 +12,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('pesan', function (Blueprint $table) {
-            $table->id('no_pes');
+            $table->id();
+            $table->unsignedBigInteger('no_pes')->unique();
             $table->date('tanggal');
             $table->time('jam');
             $table->boolean('status')->default(false);
