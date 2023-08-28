@@ -39,7 +39,7 @@ class PesanController extends Controller
         // dd('P' . time() . $kode);
         $pesan->kd_pes = 'P' . time() . $kode;
         $pesan->no_meja = $request->no_meja;
-        $pesan->pengguna = Auth::user()->id;
+        $pesan->user = Auth::user()->id;
         $pesan->id_menu = $request->menu;
         $pesan->tanggal = $request->tanggal;
         $pesan->jam = $request->jam;

@@ -54,16 +54,19 @@
                     <hr>
                     </p>
                     <p>
-                        @if ($pes->status == 0)
-                            {{-- <form action="/bayar/{{ $pes->no_pes }}/sukses" method="post">
-                                    @csrf --}}
+                        @if ($pes->status == 1)
+                            <form action="/bayar/{{ $pes->kd_pes }}/sukses" method="post">
+                                @csrf
+                                <center>
+                                    <button type="submit" class="btn btn-outline-success" id="pay-button"
+                                        style="width: 750px">Bayar</button>
+                                        @dump($pes->kd_pes)
+                                </center>
+                            </form>
+                        @elseif ($pes->status == 2)
                             <center>
-                                <button type="submit" class="btn btn-outline-success" id="pay-button"
-                                    style="width: 750px">Bayar</button>
-                            </center>
-                            {{-- </form> --}}
-                        @else
-                            <center>
+                                <a href="/batal/{{ $pes->kd_pes }}" class="btn btn-outline-danger"
+                                    style="width: 750px">Selesaikan Pesanan</a>
                                 <a href="/batal/{{ $pes->kd_pes }}" class="btn btn-outline-danger"
                                     style="width: 750px">Batalkan Pesanan</a>
                             </center>

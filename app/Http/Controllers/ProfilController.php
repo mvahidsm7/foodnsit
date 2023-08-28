@@ -18,7 +18,7 @@ class ProfilController extends Controller
     public function index()
     {
         $user = Auth::user();
-        $pes = Pesan::all()->where('pengguna', '=', $user->id);
+        $pes = Pesan::all()->where('user', '=', $user->id);
         return view('pesanan', compact('user', 'pes'));
     }
     public function i()

@@ -88,15 +88,15 @@ class BayarController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create($no_pes, Request $request)
+    public function create($kd_pes, Request $request)
     {
-        $pes = Pesan::find($no_pes);
+        $pes = Pesan::find($kd_pes);
         $bayar = new Bayar;
         $bayar->id_user = Auth::user()->id_user;
         $bayar->no_meja = $pes->no_meja;
         $bayar->id_menu = $pes->id_menu;
         $bayar->total = $pes[0]->harga;
-        DB::table('pesan')->where('no_pes', $pes->no_pes)->update(array('status' => true));
+        DB::table('pesan')->where('kd_pes', $pes->kd_pes)->update(array('status' => 2));
         DB::table('meja')->where('no_meja', $pes->no_meja)->update(array('status' => 'dipesan'));
         $bayar->save();
         return redirect('');
