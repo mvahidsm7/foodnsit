@@ -125,7 +125,7 @@
                                 <img src="assets/img/avaters/avatar2.jpg" alt="">
                             </div>
                             <div class="client-meta">
-                                <h3>Revan Dwiki <span>UMKM</span></h3>
+                                <h3>Revan Dwiki <span>ARCTIC FOOD</span></h3>
                                 <p class="testimonial-body">
                                     " Sed ut perspiciatis unde omnis iste natus error veritatis et quasi architecto beatae
                                     vitae dict eaque ipsa quae ab illo inventore Sed ut perspiciatis unde omnis iste natus

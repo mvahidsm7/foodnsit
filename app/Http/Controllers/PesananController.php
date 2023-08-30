@@ -21,7 +21,6 @@ class PesananController extends Controller
     {
         $user = Auth::user();
         $pes = Pesan::with('user', 'menu')->get();
-        // dd($pes[0]->user[0]->name);
         return view('admin_pesanan', compact('pes', 'user'));
     }
 

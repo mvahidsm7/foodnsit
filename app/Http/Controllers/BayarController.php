@@ -22,95 +22,81 @@ class BayarController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index($no_pes, Request $request)
+    public function index($kd_pes, Request $request)
     {
         $user = Auth::user();
-        $pes = Pesan::find($no_pes);
-        $menu = Menu::find($pes->id_menu);
+        $pes = Pesan::all()->where('kd_pes', '=', $kd_pes);
+        $pes = $pes[0];
+        $menu = Menu::all()->where('id_menu', '=', $pes->id_menu);
+        $menu = $menu[0];
         // dd($men);
         if ($menu == false) {
             $mej = 50000;
             $tot = $mej;
-        }
-        elseif ($pes->no_meja == false) {
+        } elseif ($pes->no_meja == false) {
             $men = $menu->harga;
             $tot = $men;
-        }
-        else {
+        } else {
             $mej = 50000;
             $men = $menu->harga;
             $tot = $mej + $men;
         }
-            // Set your Merchant Server Key
-            \Midtrans\Config::$serverKey = config('midtrans.server_key');
-            // Set to Development/Sandbox Environment (default). Set to true for Production Environment (accept real transaction).
-            \Midtrans\Config::$isProduction = false;
-            // Set sanitization on (default)
-            \Midtrans\Config::$isSanitized = true;
-            // Set 3DS transaction for credit card to true
-            \Midtrans\Config::$is3ds = true;
-            
-            $params = array(
-                'transaction_details' => array(
-                    'order_id' => $pes->no_pes,
-                    'gross_amount' => $tot,
-                ),
-                'customer_details' => array(
-                    'first_name' => $user->name,
-                ),
-            );
-            $snapToken = \Midtrans\Snap::getSnapToken($params);
-            if ($menu == false) {
-                $mej = 50000;
-                $bayar = new Bayar;
-                $bayar->id_user = Auth::user()->id_user;
-                $bayar->no_meja = $pes->no_meja;
-                $bayar->total = $mej;
-                DB::table('pesan')->where('no_pes', $pes->no_pes)->update(array('status' => true));
-                DB::table('meja')->where('no_meja', $pes->no_meja)->update(array('status' => 'dipesan'));
-                $bayar->save();
-                return view('bayar', compact('snapToken', 'pes', 'mej', 'tot', 'menu'));
-            }
-            elseif ($pes->no_meja == false) {
-                $men = $menu->harga;
-                $tot = $men;
-                $bayar = new Bayar;
-                $bayar->id_user = Auth::user()->id_user;
-                $bayar->id_menu = $pes->id_menu;
-                $bayar->total = $menu->harga;
-                DB::table('pesan')->where('no_pes', $pes->no_pes)->update(array('status' => true));
-                $bayar->save();
-                return view('bayar', compact('snapToken', 'pes', 'men', 'tot', 'menu'));
-            }
-            else {
-                $mej = 50000;
-                $men = $menu->harga;
-                $tot = $mej + $men;
-                $bayar = new Bayar;
-                $bayar->id_user = Auth::user()->id_user;
-                $bayar->no_meja = $pes->no_meja;
-                $bayar->id_menu = $pes->id_menu;
-                $bayar->total = $menu->harga;
-                DB::table('pesan')->where('no_pes', $pes->no_pes)->update(array('status' => true));
-                DB::table('meja')->where('no_meja', $pes->no_meja)->update(array('status' => 'dipesan'));
-                $bayar->save();
-                return view('bayar', compact('snapToken', 'pes', 'mej', 'men', 'tot', 'menu'));
-            }
-            return redirect('profil');
+        // Set your Merchant Server Key
+        \Midtrans\Config::$serverKey = config('midtrans.server_key');
+        // Set to Development/Sandbox Environment (default). Set to true for Production Environment (accept real transaction).
+        \Midtrans\Config::$isProduction = false;
+        // Set sanitization on (default)
+        \Midtrans\Config::$isSanitized = true;
+        // Set 3DS transaction for credit card to true
+        \Midtrans\Config::$is3ds = true;
+
+        $params = array(
+            'transaction_details' => array(
+                'order_id' => $pes->kd_pes,
+                'gross_amount' => $tot,
+            ),
+            'customer_details' => array(
+                'first_name' => $user->name,
+            ),
+        );
+        $char = '01234567890';
+        $numb = strlen($char);
+        $length = 2;
+        $kode = '';
+        while (strlen($kode) < $length) {
+            $position = rand(0, 10);
+            $chara = $char[$position];
+            $kode = $kode . $chara;
+        }
+        $code = date('now') . $kode;
+        $snapToken = \Midtrans\Snap::getSnapToken($params);
+        $mej = 50000;
+        $men = $menu->harga;
+        $tot = $mej + $men;
+        $bayar = new Bayar;
+        $bayar->user = Auth::user()->id;
+        $bayar->kd_pes = $pes->kd_pes;
+        $bayar->no_pembayaran = $code;
+        $bayar->total = $menu->harga;
+        DB::table('pesan')->where('kd_pes', $pes->kd_pes)->update(array('status' => true));
+        DB::table('meja')->where('no_meja', $pes->no_meja)->update(array('status' => 'dipesan'));
+        $bayar->save();
+        return view('bayar', compact('snapToken', 'pes', 'mej', 'men', 'tot', 'menu'));
+        return redirect('profil');
     }
 
     /**
      * Show the form for creating a new resource.
      */
-    public function create($no_pes, Request $request)
+    public function create($kd_pes, Request $request)
     {
-        $pes = Pesan::find($no_pes);
+        $pes = Pesan::find($kd_pes);
         $bayar = new Bayar;
         $bayar->id_user = Auth::user()->id_user;
         $bayar->no_meja = $pes->no_meja;
         $bayar->id_menu = $pes->id_menu;
         $bayar->total = $pes[0]->harga;
-        DB::table('pesan')->where('no_pes', $pes->no_pes)->update(array('status' => true));
+        DB::table('pesan')->where('kd_pes', $pes->kd_pes)->update(array('status' => 2));
         DB::table('meja')->where('no_meja', $pes->no_meja)->update(array('status' => 'dipesan'));
         $bayar->save();
         return redirect('');

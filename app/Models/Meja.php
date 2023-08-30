@@ -9,6 +9,6 @@ class Meja extends Model
 {
     use HasFactory;
     protected $table = 'meja';
-    protected $primaryKey = 'no_meja';
+    // protected $primaryKey = 'no_meja';
     protected $fillable = ['kapasitas', 'status'];
 }

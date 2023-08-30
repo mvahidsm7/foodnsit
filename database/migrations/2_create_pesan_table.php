@@ -12,10 +12,11 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('pesan', function (Blueprint $table) {
-            $table->id('no_pes');
+            $table->id();
+            $table->string('kd_pes')->unique();
             $table->date('tanggal');
             $table->time('jam');
-            $table->boolean('status')->default(false);
+            $table->enum('status', [1, 2, 3])->default(1);
             $table->timestamps();
         });
     }

@@ -16,7 +16,7 @@
     <!-- end breadcrumb section -->
     <div class="mt-150 mb-150">
         <div class="container">
-            <table class="table">
+            {{-- <table class="table">
                 <thead>
                     <tr class="bg-secondary">
                         <td>nama</td>
@@ -30,30 +30,15 @@
                             <td>{{$h->harga}}</td>
                         </tr>
                     @endforeach
-                    {{-- @foreach (App\Models\Menu::all() as $item)
+                 @foreach (App\Models\Menu::all() as $item)
                         <tr>
                             <td>
                                 {{ $item->nama }}
                             </td>
                         </tr>
-                    @endforeach --}}
+                    @endforeach
                 </tbody>
-            </table>
-            {{-- @foreach ($menu as $item)
-            <p>
-                @dump($item)
-                {{$item->nama}}<br>
-                {{$item->deskripsi}}<br>
-                {{$item->gambar}}<br>
-                {{$item->kategori}}<br>
-                {{$item->harga}}<br>
-            </p>
-            @endforeach --}}
-            {{-- @foreach (app\Models\Menu::join('kategori', 'menu.kategori', '=', 'kategori.id_kategori')
-            ->select('menu.*', 'kategori.harga')
-            ->get(); as $item)
-                {{$item}}
-            @endforeach --}}
+            </table> --}}
         </div>
     </div>
 @endsection

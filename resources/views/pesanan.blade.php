@@ -106,17 +106,9 @@
                         @foreach ($pes as $p)
                             <center>
                                 <p class="card-text">
-                                <h5>Pesanan {{ $p->no_pes }}</h5>
+                                <h5>Pesanan {{ $p->kd_pes }}</h5>
                                 </p>
                             </center>
-
-                            {{-- <h5>Nomer Meja :</h5>{{ $p->no_meja }}@if ($p->no_meja == false)
-                                Tidak Memesan
-                            @endif
-                            </p> --}}
-                            {{-- <h5>Menu :</h5>{{ $menu }}@if ($p->id_menu == false)
-                                Tidak Memesan
-                            @endif --}}
                             </p>
                             <h5>Jam :</h5>{{ $p->jam }}
                             </p>
@@ -124,22 +116,24 @@
                             </p>
                             <p>
                             <h5>Status Pembayaran :</h5>
-                            @if ($p->status == 0)
+                            @if ($p->status == 1)
                                 Menunggu Pembayaran
-                            @else
+                            @elseif ($p->status == 2)
                                 Dibayar
+                            @else
+                                Selesai
                             @endif
                             </p>
                             <p>
                                 @if ($p->status == 0)
-                                    <a href="/bayar/{{ $p->no_pes }}" class="btn btn-outline-success">Bayar</a>
-                                    <a href="/batal/{{ $p->no_pes }}" class="btn btn-outline-danger">Batalkan
+                                    <a href="/bayar/{{ $p->kd_pes }}" class="btn btn-outline-success">Bayar</a>
+                                    <a href="/batal/{{ $p->kd_pes }}" class="btn btn-outline-danger">Batalkan
                                         Pesanan</a>
                                 @else
-                                    <a href="/detail/{{ $p->no_pes }}" class="btn btn-outline-success">Detail
+                                    <a href="/detail/{{ $p->kd_pes }}" class="btn btn-outline-success">Detail
                                         Pesanan</a>
-                                    <a href="/batal/{{ $p->no_pes }}" class="btn btn-outline-danger">Batalkan
-                                            Pesanan</a>
+                                    <a href="/batal/{{ $p->kd_pes }}" class="btn btn-outline-danger">Batalkan
+                                        Pesanan</a>
                                 @endif
 
 
