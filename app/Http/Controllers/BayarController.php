@@ -25,22 +25,11 @@ class BayarController extends Controller
     public function index($kd_pes, Request $request)
     {
         $user = Auth::user();
-        $pes = Pesan::all()->where('kd_pes', '=', $kd_pes);
+        $pes = Pesan::where('kd_pes', '=', $kd_pes)->get();
         $pes = $pes[0];
-        $menu = Menu::all()->where('id_menu', '=', $pes->id_menu);
+        $menu = Menu::where('id_menu', '=', $pes->id_menu)->get();
         $menu = $menu[0];
-        // dd($men);
-        if ($menu == false) {
-            $mej = 50000;
-            $tot = $mej;
-        } elseif ($pes->no_meja == false) {
-            $men = $menu->harga;
-            $tot = $men;
-        } else {
-            $mej = 50000;
-            $men = $menu->harga;
-            $tot = $mej + $men;
-        }
+        $tot = $menu->harga;
         // Set your Merchant Server Key
         \Midtrans\Config::$serverKey = config('midtrans.server_key');
         // Set to Development/Sandbox Environment (default). Set to true for Production Environment (accept real transaction).
@@ -70,15 +59,14 @@ class BayarController extends Controller
         }
         $code = date('now') . $kode;
         $snapToken = \Midtrans\Snap::getSnapToken($params);
-        $mej = 50000;
         $men = $menu->harga;
-        $tot = $mej + $men;
+        $tot = $men;
         $bayar = new Bayar;
         $bayar->user = Auth::user()->id;
         $bayar->kd_pes = $pes->kd_pes;
         $bayar->no_pembayaran = $code;
         $bayar->total = $menu->harga;
-        DB::table('pesan')->where('kd_pes', $pes->kd_pes)->update(array('status' => true));
+        DB::table('pesan')->where('kd_pes', $pes->kd_pes)->update(array('status' => 2));
         DB::table('meja')->where('no_meja', $pes->no_meja)->update(array('status' => 'dipesan'));
         $bayar->save();
         return view('bayar', compact('snapToken', 'pes', 'mej', 'men', 'tot', 'menu'));
@@ -88,15 +76,15 @@ class BayarController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create($kd_pes, Request $request)
+    public function create($no_pes, Request $request)
     {
-        $pes = Pesan::find($kd_pes);
+        $pes = Pesan::find($no_pes);
         $bayar = new Bayar;
         $bayar->id_user = Auth::user()->id_user;
         $bayar->no_meja = $pes->no_meja;
         $bayar->id_menu = $pes->id_menu;
         $bayar->total = $pes[0]->harga;
-        DB::table('pesan')->where('kd_pes', $pes->kd_pes)->update(array('status' => 2));
+        DB::table('pesan')->where('no_pes', $pes->no_pes)->update(array('status' => true));
         DB::table('meja')->where('no_meja', $pes->no_meja)->update(array('status' => 'dipesan'));
         $bayar->save();
         return redirect('');

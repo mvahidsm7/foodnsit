@@ -125,12 +125,14 @@
                             @endif
                             </p>
                             <p>
-                                @if ($p->status == 0)
+                                @if ($p->status == 1)
                                     <a href="/bayar/{{ $p->kd_pes }}" class="btn btn-outline-success">Bayar</a>
                                     <a href="/batal/{{ $p->kd_pes }}" class="btn btn-outline-danger">Batalkan
                                         Pesanan</a>
-                                @else
-                                    <a href="/detail/{{ $p->kd_pes }}" class="btn btn-outline-success">Detail
+                                @elseif ($p->status == 2)
+                                    <a href="{{ $p->kd_pes }}/selesain" class="btn btn-outline-success">Selesaikan
+                                        Pesanan</a>
+                                    <a href="/detail/{{ $p->kd_pes }}" class="btn btn-outline-secondary">Detail
                                         Pesanan</a>
                                     <a href="/batal/{{ $p->kd_pes }}" class="btn btn-outline-danger">Batalkan
                                         Pesanan</a>

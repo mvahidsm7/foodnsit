@@ -75,7 +75,7 @@
                         <hr>
                         </p>
                         <p>
-                            @if ($pes->status == 0)
+                            @if ($pes->status == 1)
                                 {{-- <form action="/bayar/{{ $pes->no_pes }}/sukses" method="post">
                                 @csrf --}}
                                 <center>
