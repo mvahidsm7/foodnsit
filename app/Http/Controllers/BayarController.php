@@ -69,7 +69,7 @@ class BayarController extends Controller
         DB::table('pesan')->where('kd_pes', $pes->kd_pes)->update(array('status' => 2));
         DB::table('meja')->where('no_meja', $pes->no_meja)->update(array('status' => 'dipesan'));
         $bayar->save();
-        return view('bayar', compact('snapToken', 'pes', 'mej', 'men', 'tot', 'menu'));
+        return view('bayar', compact('snapToken', 'pes', 'men', 'tot', 'menu'));
         return redirect('profil');
     }
 
