@@ -26,7 +26,7 @@ class Testing extends Controller
         $code = date('now').$kode;
         // dd(date('now').$kode);
         // dd($tes->bayar->total);
-        return view('laporan', compact('pes'));
+        return view('test');
     }
 
 

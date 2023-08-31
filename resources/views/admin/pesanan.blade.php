@@ -86,34 +86,6 @@
                         </td>
                     </tr>
                 @endforeach
-                {{-- @foreach ($pes as $p)
-                    <tr>
-                        @dump($p)
-                        <td>{{ $p->kd_pes }}</td>
-                        <td>{{ $p->pengguna[0]->name }}</td>
-                        <td>{{ $p->no_meja }}</td>
-                        <td>{{ $p->menu[0]->nama }}</td>
-                        <td>
-                            @if ($m->status == 1)
-                                Menunggu Pembayaran
-                            @elseif ($m->status == 2)
-                                Dibayar
-                            @else
-                                Selesai
-                            @endif
-                        </td>
-                        <td>
-                            @if ($m->status == 1)
-                                <a href="/batal/{{ $m->no_pes }}" class="btn btn-outline-danger">batalkan</a>
-                            @elseif ($m->status == 2)
-                                <a href="" class="btn btn-outline-success">selesaikan</a>
-                                <a href="/batal/{{ $m->no_pes }}" class="btn btn-outline-danger">batalkan</a>
-                            @else
-                                Selesai
-                            @endif
-                        </td>
-                    </tr>
-                @endforeach --}}
             </table>
             <form action="/print-pesanan" method="get">
                 @csrf

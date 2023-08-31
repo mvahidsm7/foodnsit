@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Menu;
+use App\Models\Pesan;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -11,7 +12,18 @@ class BerandaController extends Controller
     public function Index()
     {
         $user = Auth::user();
-        $menu = Menu::paginate(3);
-        return view('index', compact('user', 'menu'));
+        if (Auth::user() == null) {
+            $menu = Menu::paginate(3);
+            return view('index', compact('user', 'menu'));
+        } else {
+            if (Auth::user()->email == 'admin@food.com') {
+                $pes = Pesan::orderby('updated_at', 'desc')->get();
+                // dd($pes);
+                return view('admin.index', compact('pes'));
+            } else {
+                $menu = Menu::paginate(3);
+                return view('index', compact('user', 'menu'));
+            }
+        }
     }
 }
