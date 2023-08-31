@@ -115,7 +115,7 @@
                             <h5>Tanggal :</h5>{{ $p->tanggal }}
                             </p>
                             <p>
-                            <h5>Status Pembayaran :</h5>
+                            <h5>Status Pesanan :</h5>
                             @if ($p->status == 1)
                                 Menunggu Pembayaran
                             @elseif ($p->status == 2)

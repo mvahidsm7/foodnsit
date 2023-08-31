@@ -22,4 +22,7 @@ class Pesan extends Model
     public function meja(){
         return $this->hasMany(Meja::class, 'no_meja', 'no_meja');
     }
+    public function bayar(){
+        return $this->belongsTo(Bayar::class, 'kd_pes', 'kd_pes');
+    }
 }

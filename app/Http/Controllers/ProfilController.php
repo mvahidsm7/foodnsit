@@ -50,7 +50,7 @@ class ProfilController extends Controller
     public function detail($kd_pes)
     {
         $user = Auth::user();
-        $pes = Pesan::all()->where('kd_pes', '=', $kd_pes);
+        $pes = Pesan::where('kd_pes', '=', $kd_pes)->get();
         $pes = $pes[0];
         $menu = Menu::where('id_menu', '=', $pes->id_menu)->get();
         $menu = $menu[0];

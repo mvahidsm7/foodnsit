@@ -4,7 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Models\Meja;
 use App\Models\Menu;
+use App\Models\Pesan;
 use Illuminate\Http\Request;
+use Barryvdh\DomPDF\Facade\Pdf;
+use Illuminate\Support\Facades\Auth;
 
 class AdminController extends Controller
 {
@@ -12,7 +15,7 @@ class AdminController extends Controller
     public function TampilMeja()
     {
         $meja = Meja::all();
-        return view('admin_meja', compact('meja'));
+        return view('admin.meja', compact('meja'));
     }
     public function TambahMejaView()
     {
@@ -32,7 +35,7 @@ class AdminController extends Controller
     public function TampilMenu()
     {
         $menu = Menu::all();
-        return view('admin_menu', compact('menu'));
+        return view('admin.menu', compact('menu'));
     }
     public function TambahMenuView()
     {
@@ -51,5 +54,22 @@ class AdminController extends Controller
     public function UpdateMenu()
     {
 
+    }
+
+    public function TampilPesanan()
+    {
+        $user = Auth::user();
+        $pes = Pesan::with('pengguna')->where('status', '=', 2)->orWhere('status', '=', 3)->get();
+        // $pes = Pesan::all();
+        $pes = $pes[0];
+        // dd($pes);
+        return view('admin.pesanan', compact('pes', 'user'));
+    }
+
+    public function pdf()
+    {
+        $pes = Pesan::with('pengguna')->where('status', '=', 2)->orWhere('status', '=', 3)->get();
+        $pes = Pdf::loadview('laporan', ['pes' => $pes]);
+        return $pes->download('laporan-pesanan.pdf');
     }
 }

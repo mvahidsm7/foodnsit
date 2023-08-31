@@ -48,8 +48,8 @@ Route::get('/admin/meja', [AdminController::class, 'TampilMeja']);
 Route::post('/tambah-meja', [AdminController::class, 'TambahMejaView']);
 Route::post('/tambah-meja/sukses', [AdminController::class, 'TambahMeja']);
 // admin - pesanan
-Route::get('/data-pesanan', [PesananController::class, 'index']);
-Route::get('/print-pesanan', [PesananController::class, 'pdf']);
+Route::get('/data-pesanan', [AdminController::class, 'TampilPesanan']);
+Route::get('/print-pesanan', [AdminController::class, 'pdf']);
 Route::get('/laporan', [PesananController::class, 'laporan']);
 // admin - menu
 Route::get('/admin/menu', [AdminController::class, 'TampilMenu']);
