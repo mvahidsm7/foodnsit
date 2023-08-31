@@ -6,8 +6,10 @@ namespace Database\Seeders;
 
 use App\Models\Meja;
 use App\Models\Menu;
+use App\Models\User;
 use App\Models\Kategori;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Hash;
 
 class DatabaseSeeder extends Seeder
 {
@@ -16,6 +18,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
+        // kategori
         Kategori::create(
             [
                 "kategori" => "makanan",
@@ -28,6 +31,7 @@ class DatabaseSeeder extends Seeder
             ])
         );
 
+        // menu
         Menu::create(
             [
                 "id_menu" => "MN001",
@@ -71,6 +75,7 @@ class DatabaseSeeder extends Seeder
             ]),
         );
 
+        // meja
         Meja::create(
             [
                 "no_meja" => "MJ001",
@@ -96,6 +101,15 @@ class DatabaseSeeder extends Seeder
                 "no_meja" => "MJ006",
                 "kapasitas" => "6"
             ])
+        );
+
+        // admin
+        User::create(
+            [
+                'name' => 'admin',
+                'email' => 'admin@food.com',
+                'password' => Hash::make('admin123'),
+            ]
         );
     }
 }
