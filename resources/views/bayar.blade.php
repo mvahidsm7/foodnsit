@@ -75,7 +75,7 @@
                         <hr>
                         </p>
                         <p>
-                            @if ($pes->status == 0)
+                            @if ($pes->status == 1)
                                 {{-- <form action="/bayar/{{ $pes->no_pes }}/sukses" method="post">
                                 @csrf --}}
                                 <center>
@@ -107,7 +107,7 @@
                     onSuccess: function(result) {
                         /* You may add your own implementation here */
                         alert("Pembayaran Berhasil!");
-                        location.replace("/");
+                        location.replace("/profil");
                     },
                     onPending: function(result) {
                         /* You may add your own implementation here */
@@ -121,7 +121,8 @@
                     },
                     onClose: function() {
                         /* You may add your own implementation here */
-                        alert('Pemabyaran Belum Selesai');
+                        alert('Pembayaran Belum Selesai');
+                        location.replace("/profil");
                     }
                 })
             });

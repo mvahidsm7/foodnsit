@@ -18,7 +18,7 @@
     <div class="container mt-150 mb-150">
         <table class="table">
             <tr class="table-active">
-                <td>Nomer</td>
+                <td>Nomor Meja</td>
                 <td>Kapasitas</td>
                 <td>Status</td>
             </tr>

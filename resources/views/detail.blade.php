@@ -23,56 +23,37 @@
                         <h4 class="card-title">Pesanan Anda</h4>
                     </center>
                     <hr>
-                    <h5>Nomer Meja :</h5>{{ $pes->no_meja }}
-                    @if ($pes->no_meja == false)
-                        Tidak ada
-                    @endif
+                    <p>
+                    <h5>Kode Pesanan :</h5>{{ $pes->kd_pes }}
                     </p>
-                    <h5>Menu :</h5>
-                    @if ($pes->id_menu == false)
-                        Tidak ada
-                    @else
-                        {{ $menu->nama }}
-                    @endif
+                    <p>
+                    <h5>Nomer Meja :</h5>{{ $pes->no_meja }}
+                    </p>
+                    <h5>Menu :</h5>{{ $menu->nama }}
                     </p>
                     <h5>Jam :</h5>{{ $pes->jam }}
                     </p>
                     <h5>Tanggal :</h5>{{ $pes->tanggal }}
                     </p>
-                    {{-- <h3>Total :
-                        @if ($pes->no_meja == false)
-                            {{ $men }}
-                        @endif
-                        @if ($pes->id_menu == false)
-                            {{ $mej }}
-                        @endif
-                        @if ($pes->id_menu == true && $pes->no_meja == true)
-                            {{ $tot }}
-                        @endif
-                    </h3> --}}
-                    </p>
                     <hr>
-                    </p>
                     <p>
                         @if ($pes->status == 1)
-                            <form action="/bayar/{{ $pes->kd_pes }}/sukses" method="post">
-                                @csrf
-                                <center>
-                                    <button type="submit" class="btn btn-outline-success" id="pay-button"
-                                        style="width: 750px">Bayar</button>
-                                        @dump($pes->kd_pes)
-                                </center>
-                            </form>
+                            {{-- <form action="/bayar/{{ $pes->kd_pes }}/sukses" method="post"> --}}
+                            @csrf
+                            <center>
+                                <button type="submit" class="btn btn-outline-success" id="pay-button"
+                                    style="width: 750px">Bayar</button>
+                                @dump($pes->kd_pes)
+                            </center>
+                            {{-- </form> --}}
                         @elseif ($pes->status == 2)
                             <center>
                                 <a href="/batal/{{ $pes->kd_pes }}" class="btn btn-outline-danger"
-                                    style="width: 750px">Selesaikan Pesanan</a>
-                                <a href="/batal/{{ $pes->kd_pes }}" class="btn btn-outline-danger"
-                                    style="width: 750px">Batalkan Pesanan</a>
+                                    style="width: 375px">Batalkan Pesanan</a>
+                                <a href="{{ $pes->kd_pes }}/selesain" class="btn btn-outline-primary"
+                                    style="width: 375px">Selesaikan Pesanan</a>
                             </center>
                         @endif
-
-
                     </p>
                     <hr>
                 </div>

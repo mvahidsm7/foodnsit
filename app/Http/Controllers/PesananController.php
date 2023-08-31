@@ -20,7 +20,7 @@ class PesananController extends Controller
     public function index()
     {
         $user = Auth::user();
-        $pes = Pesan::with('user', 'menu')->get();
+        $pes = Pesan::with('pengguna', 'menu')->get();
         return view('admin_pesanan', compact('pes', 'user'));
     }
 

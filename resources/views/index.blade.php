@@ -8,7 +8,7 @@
                     <div class="hero-text">
                         <div class="hero-text-tablecell">
                             <p class="subtitle">Selamat datang @if (Auth::user() == true)
-                                    <q><i>{{ $user->name }}</i></q>
+                                    <!-- <i>{{ Auth::user()->name }}</i> -->
                                 @else
                                 @endif di</p>
                             <h1>FOOD n SIT</h1>

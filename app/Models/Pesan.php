@@ -13,8 +13,8 @@ class Pesan extends Model
     // protected $primaryKey = 'no_pes';
     protected $fillable = ['id_user','no_meja', 'tanggal', 'jam'];
 
-    public function user(){
-        return $this->hasMany(User::class, 'id', 'pengguna');
+    public function pengguna(){
+        return $this->hasMany(User::class, 'id', 'user');
     }
     public function menu(){
         return $this->hasMany(Menu::class, 'id_menu', 'id_menu');
