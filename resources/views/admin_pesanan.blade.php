@@ -62,7 +62,7 @@
                 @foreach ($pes as $m)
                     <tr>
                         <td>{{ $m->kd_pes }}</td>
-                        <td>{{ $m->user[0]->name }}</td>
+                        <td>{{ $m->pengguna[0]->name }}</td>
                         <td>{{ $m->no_meja }}</td>
                         <td>{{ $m->menu[0]->nama }}</td>
                         <td>{{ $m->status == true ? 'dibayar' : 'belum dibayar' }}</td>

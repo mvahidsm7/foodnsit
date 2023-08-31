@@ -20,7 +20,7 @@
     <div class="container mt-150 mb-150">
         <table class="table">
             <tr class="table-active">
-                <td>ID</td>
+                <td>Kode</td>
                 <td>Nama</td>
                 <td>Gambar</td>
                 <td>Deskripsi</td>
