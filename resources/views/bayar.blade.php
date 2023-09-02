@@ -39,7 +39,7 @@
                         </center>
                         <hr>
                         <p>
-                        <h5>Kode Pembayaran :</h5>
+                        <h5>Kode Pesanan :</h5>
                         {{ $pes->kd_pes }} <br>
                         <p>
                         <h5>Nomer Meja :</h5>{{ $pes->no_meja }}
@@ -75,22 +75,10 @@
                         <hr>
                         </p>
                         <p>
-                            @if ($pes->status == 1)
-                                {{-- <form action="/bayar/{{ $pes->no_pes }}/sukses" method="post">
-                                @csrf --}}
-                                <center>
-                                    <button type="submit" class="btn btn-outline-success" id="pay-button"
-                                        style="width: 750px">Bayar</button>
-                                </center>
-                                {{-- </form> --}}
-                            @else
-                                <center>
-                                    <a href="/batal/{{ $pes->no_pes }}" class="btn btn-outline-danger"
-                                        style="width: 750px">Batalkan Pesanan</a>
-                                </center>
-                            @endif
-
-
+                            <center>
+                                <button type="submit" class="btn btn-outline-success" id="pay-button"
+                                    style="width: 750px">Bayar</button>
+                            </center>
                         </p>
                         <hr>
                     </div>
@@ -107,7 +95,7 @@
                     onSuccess: function(result) {
                         /* You may add your own implementation here */
                         alert("Pembayaran Berhasil!");
-                        location.replace("/profil");
+                        location.replace("/bayar/{{$pes->kd_pes}}/sukses");
                     },
                     onPending: function(result) {
                         /* You may add your own implementation here */
@@ -122,7 +110,6 @@
                     onClose: function() {
                         /* You may add your own implementation here */
                         alert('Pembayaran Belum Selesai');
-                        location.replace("/profil");
                     }
                 })
             });

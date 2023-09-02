@@ -30,6 +30,7 @@ class BayarController extends Controller
         $menu = Menu::where('id_menu', '=', $pes->id_menu)->get();
         $menu = $menu[0];
         $tot = $menu->harga;
+
         // Set your Merchant Server Key
         \Midtrans\Config::$serverKey = config('midtrans.server_key');
         // Set to Development/Sandbox Environment (default). Set to true for Production Environment (accept real transaction).
@@ -48,6 +49,17 @@ class BayarController extends Controller
                 'first_name' => $user->name,
             ),
         );
+        $snapToken = \Midtrans\Snap::getSnapToken($params);
+        $men = $menu->harga;
+        $tot = $men;
+        return view('bayar', compact('snapToken', 'pes', 'men', 'tot', 'menu'));
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     */
+    public function create($kd_pes, Request $request)
+    {
         $char = '01234567890';
         $numb = strlen($char);
         $length = 2;
@@ -58,33 +70,18 @@ class BayarController extends Controller
             $kode = $kode . $chara;
         }
         $code = date('now') . $kode;
-        $snapToken = \Midtrans\Snap::getSnapToken($params);
-        $men = $menu->harga;
-        $tot = $men;
+        $user = Auth::user();
+        $pes = Pesan::where('kd_pes', '=', $kd_pes)->get();
+        $pes = $pes[0];
+        $menu = Menu::where('id_menu', '=', $pes->id_menu)->get();
+        $menu = $menu[0];
+        $tot = $menu->harga;
         $bayar = new Bayar;
-        $bayar->user = Auth::user()->id;
+        $bayar->user = $user->id;
         $bayar->kd_pes = $pes->kd_pes;
         $bayar->no_pembayaran = $code;
         $bayar->total = $menu->harga;
         DB::table('pesan')->where('kd_pes', $pes->kd_pes)->update(array('status' => 2));
-        DB::table('meja')->where('no_meja', $pes->no_meja)->update(array('status' => 'dipesan'));
-        $bayar->save();
-        return view('bayar', compact('snapToken', 'pes', 'men', 'tot', 'menu'));
-        return redirect('profil');
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create($no_pes, Request $request)
-    {
-        $pes = Pesan::find($no_pes);
-        $bayar = new Bayar;
-        $bayar->id_user = Auth::user()->id_user;
-        $bayar->no_meja = $pes->no_meja;
-        $bayar->id_menu = $pes->id_menu;
-        $bayar->total = $pes[0]->harga;
-        DB::table('pesan')->where('no_pes', $pes->no_pes)->update(array('status' => true));
         DB::table('meja')->where('no_meja', $pes->no_meja)->update(array('status' => 'dipesan'));
         $bayar->save();
         return redirect('');
