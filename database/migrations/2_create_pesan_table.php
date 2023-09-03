@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('kd_pes')->unique();
             $table->date('tanggal');
             $table->time('jam');
-            $table->enum('status', [1, 2, 3])->default(1);
+            $table->enum('status', [1, 2, 3, 4])->default(1);
             $table->timestamps();
         });
     }
