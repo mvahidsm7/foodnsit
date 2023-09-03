@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Detail;
 use App\Models\Menu;
 use App\Models\Pesan;
+use App\Models\Detail;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 
 class Testing extends Controller
 {
@@ -33,8 +34,10 @@ class Testing extends Controller
         return view('test', compact('det'));
     }
 
-    public function form()
+    public function form(Request $r)
     {
+        $men = count($r->menu);
+        dd($men);
         $kode = Str::random(6);
         $kode = 'P' . time() . $kode;
         $pesanan = Pesan::create(
@@ -42,19 +45,20 @@ class Testing extends Controller
                 'kd_pes' => $kode,
                 'tanggal' => '2023-09-02',
                 'jam' => '11:00',
-                'status' => '1',
-                'user' => '1',
-                'no_meja' => 'MJ001',
+                'user' => Auth::user()->id,
+                'no_meja' => $r->no_meja,
             ]
         );
-
-        $detail = Detail::create(
-            [
-                'kd_pes' => $pesanan->kd_pes,
-                'id_menu' => 'MN001',
-                'qty' => 3,
-            ]
-        );
+        
+        if ($r->menu != 0) {
+            $detail = Detail::create(
+                [
+                    'kd_pes' => $pesanan->kd_pes,
+                    'id_menu' => 'MN001',
+                    'qty' => $r->menu,
+                ]
+            );
+        }
 
         return redirect('/test');
     }

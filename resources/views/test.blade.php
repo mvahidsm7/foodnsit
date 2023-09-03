@@ -16,15 +16,17 @@
     <!-- end breadcrumb section -->
     <div class="mt-150 mb-150">
         <div class="container">
-            @foreach ($det as $item)
-                <hr>
-                {{$item['id_menu']}}
-                <br>
-                {{$item['qty']}}
-                <hr>
-            @endforeach
             <form action="/test/form" method="post">
                 @csrf
+                <select name="no_meja" id="">
+                    @foreach (App\Models\Meja::all() as $item)
+                        <option value="{{$item->no_meja}}">{{$item->no_meja}}</option>
+                    @endforeach
+                </select><br>
+                @foreach (App\Models\Menu::all() as $item)
+                    <Section>{{$item->nama}}</Section>
+                    <input type="number" name="menu[]" id="" value="0">
+                @endforeach <br>
                 <button type="submit" class="btn btn-primary">
                     tes
                 </button>
