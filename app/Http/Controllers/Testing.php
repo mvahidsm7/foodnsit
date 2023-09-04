@@ -29,15 +29,21 @@ class Testing extends Controller
         // $code = date('now').$kode;
         // dd(date('now').$kode);
         // dd($tes->bayar->total);
-        $det = [['id_menu' => 'MN001', 'qty' => 2], ['id_menu' => 'MN001', 'qty' => 2], ['id_menu' => 'MN001', 'qty' => 2]];
-        // dd($det[0]['qty']);
+
+        $det = Pesan::with('detail')->get();
+        $qty = 5;
+        $id = $det[0]->detail->id_menu;
+        $menu = Menu::where('id_menu', $id)->get();
+        $menu = $menu[0];
+        $total = $menu->harga * $qty;
+        dd($total);
         return view('test', compact('det'));
     }
 
     public function form(Request $r)
     {
         $men = count($r->menu);
-        dd($men);
+        // dd($r['menu']);
         $kode = Str::random(6);
         $kode = 'P' . time() . $kode;
         $pesanan = Pesan::create(
@@ -45,20 +51,22 @@ class Testing extends Controller
                 'kd_pes' => $kode,
                 'tanggal' => '2023-09-02',
                 'jam' => '11:00',
-                'user' => Auth::user()->id,
+                'user' => 1,
                 'no_meja' => $r->no_meja,
             ]
         );
-        
-        if ($r->menu != 0) {
-            $detail = Detail::create(
-                [
-                    'kd_pes' => $pesanan->kd_pes,
-                    'id_menu' => 'MN001',
-                    'qty' => $r->menu,
-                ]
-            );
+        for ($i=1; $i < $men; $i++) {
+            if ($r['menu'][$i - 1] != 0) {
+                $detail = Detail::create(
+                    [
+                        'kd_pes' => $pesanan->kd_pes,
+                        'id_menu' => 'MN' . $i,
+                        'qty' => $r['menu'][$i - 1],
+                    ]
+                );
+            }
         }
+
 
         return redirect('/test');
     }

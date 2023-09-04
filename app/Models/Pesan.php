@@ -25,4 +25,7 @@ class Pesan extends Model
     public function bayar(){
         return $this->belongsTo(Bayar::class, 'kd_pes', 'kd_pes');
     }
+    public function detail(){
+        return $this->belongsTo(Detail::class, 'kd_pes', 'kd_pes');
+    }
 }

@@ -34,7 +34,7 @@ class DatabaseSeeder extends Seeder
         // menu
         Menu::create(
             [
-                "id_menu" => "MN001",
+                "id_menu" => "MN1",
                 "nama" => "smoothcake strobery",
                 "gambar" => "assets\img\products\dessert.png",
                 "deskripsi" => "Cake dengan selai stroberi yang maniss'",
@@ -42,7 +42,7 @@ class DatabaseSeeder extends Seeder
                 "harga" => "100000"
             ],
             Menu::create([
-                "id_menu" => "MN002",
+                "id_menu" => "MN2",
                 "nama" => "Lobster baked ",
                 "gambar" => "assets\img\products\makanan1.png",
                 "deskripsi" => "Daging lobster yang lebut dibaluri bumbu khas rempah",
@@ -50,7 +50,7 @@ class DatabaseSeeder extends Seeder
                 "harga" => 25000
             ]),
             Menu::create([
-                "id_menu" => "MN003",
+                "id_menu" => "MN3",
                 "nama" => "rice gochujang",
                 "gambar" => "assets\img\products\makanan2.jpg ",
                 "deskripsi" => "Nasi shirataki dicampur dengan saus gochujang",
@@ -58,7 +58,7 @@ class DatabaseSeeder extends Seeder
                 "harga" => 15000
             ]),
             Menu::create([
-                "id_menu" => "MN004",
+                "id_menu" => "MN4",
                 "nama" => "donut's  ",
                 "gambar" => "assets\img\paket1.jpg",
                 "deskripsi" => "donat yang sangat lembut dan manis dengan berbagai macam rasa",
@@ -66,7 +66,7 @@ class DatabaseSeeder extends Seeder
                 "harga" => 30000
             ]),
             Menu::create([
-                "id_menu" => "MN005",
+                "id_menu" => "MN5",
                 "nama" => "ice coffee latte",
                 "gambar" => "assets\img\products\minuman1.jpg",
                 "deskripsi" => "Ice coffee latte dibuat dengan bubuk kopi inport dari korea",
@@ -74,7 +74,7 @@ class DatabaseSeeder extends Seeder
                 "harga" => 30000
             ]),
             Menu::create([
-                "id_menu" => "MN006",
+                "id_menu" => "MN6",
                 "nama" => "Ramen Shiburi",
                 "gambar" => "assets\img\products\makanan3.jpg",
                 "deskripsi" => "Mie yang di adoni dengan tepung jepang sehingga membuat mie terasa lembut ketika dimakan",
@@ -82,7 +82,7 @@ class DatabaseSeeder extends Seeder
                 "harga" => 50000
             ]),
             Menu::create([
-                "id_menu" => "MN007",
+                "id_menu" => "MN7",
                 "nama" => "Milky coffee",
                 "gambar" => "assets\img\products\minuman3.jpg",
                 "deskripsi" => "kopi dengan susu almond",
@@ -90,7 +90,7 @@ class DatabaseSeeder extends Seeder
                 "harga" => 30000
             ]),
             Menu::create([
-                "id_menu" => "MN008",
+                "id_menu" => "MN8",
                 "nama" => "Yogurth Sweddish",
                 "gambar" => "assets\img\products\dessert3.jpg",
                 "deskripsi" => "yogurth blubbery yang sweet",
@@ -98,7 +98,7 @@ class DatabaseSeeder extends Seeder
                 "harga" => 45000
             ]),
             Menu::create([
-                "id_menu" => "MN009",
+                "id_menu" => "MN9",
                 "nama" => "Maccaron",
                 "gambar" => "assets\img\products\dessert4.jpg",
                 "deskripsi" => "Maccaron dengan berbagai rasa",

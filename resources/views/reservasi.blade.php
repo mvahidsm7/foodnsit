@@ -1,7 +1,7 @@
 @extends('layouts.main')
 @section('content')
     <!-- breadcrumb-section -->
-    <div class="breadcrumb-section breadcrumb-bg" style="height: 100%">
+    <div class="breadcrumb-section breadcrumb-bg" style="height: max-content">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 offset-lg-2">
@@ -14,26 +14,28 @@
                                     class="form-control input-group form-label">
                                     <option value="" hidden selected>Pilih Meja</option>
                                     @foreach ($meja as $m)
-                                        <option value="{{ $m->no_meja }}" @if ($m->status == 'dipesan') @disabled(true) @endif>
-                                            {{ $m->no_meja }} -- Kapasitas {{ $m->kapasitas }} -- {{ $m->status }}</option>
+                                        <option value="{{ $m->no_meja }}"
+                                            @if ($m->status == 'dipesan') @disabled(true) @endif>
+                                            {{ $m->no_meja }} -- Kapasitas {{ $m->kapasitas }} -- {{ $m->status }}
+                                        </option>
                                     @endforeach
                                 </select><br>
                                 <section>Tanggal :</section>
                                 <input class="form-control form-control-lg" type="date"
                                     class="form-control input-group form-label" name="tanggal"><br>
-                                <section>Menu :</section>
-                                <select class="form-control form-control-lg" name="menu"
-                                    class="form-control input-group form-label" id="">
-                                    <option value="" hidden selected>Pilih Menu</option>
-                                    @foreach ($menu as $m)
-                                        <option value="{{ $m->id_menu }}">{{ $m->nama }}</option>
-                                    @endforeach
-                                </select><br>
                                 <section>Jam :</section>
                                 <input class="form-control form-control-lg" type="time"
                                     class="form-control input-group form-label" name="jam"><br>
-                                {{-- <button type="submit" class="btn btn-outline-success">Pesan</button> --}}
-                                <br>
+                                <section>Menu :</section>
+                                <div class="row mb-5" style="margin-left: 3px">
+                                    @foreach (App\Models\Menu::all() as $item)
+                                        <div class="col-3">
+                                            <h6 style="color: white">{{ $item->nama }}</h6>
+                                            <input type="number" name="menu[]" id="" placeholder="isi jumlah"
+                                                min="0" style="width: 150px">
+                                        </div>
+                                    @endforeach <br>
+                                </div>
                                 <center><input type="submit" value="PESAN" style="width: 100%"></center>
                             </h6>
                         </form>
@@ -57,6 +59,14 @@
         </div>
     </div> --}}
     <!-- end contact form -->
+
+    {{-- <select class="form-control form-control-lg" name="menu"
+                                    class="form-control input-group form-label" id="">
+                                    <option value="" hidden selected>Pilih Menu</option>
+                                    @foreach ($menu as $m)
+                                        <option value="{{ $m->id_menu }}">{{ $m->nama }}</option>
+                                    @endforeach
+                                </select><br> --}}
 
     <!-- find our location -->
     <div class="find-location blue-bg">

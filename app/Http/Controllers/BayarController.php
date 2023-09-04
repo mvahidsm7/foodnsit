@@ -27,8 +27,8 @@ class BayarController extends Controller
         $user = Auth::user();
         $pes = Pesan::where('kd_pes', '=', $kd_pes)->get();
         $pes = $pes[0];
-        $menu = Menu::where('id_menu', '=', $pes->id_menu)->get();
-        $menu = $menu[0];
+        $menu = Menu::where('id_menu', '=', $pes->detail->id_menu)->get();
+        $menu = $pes->detail->id_menu;
         $tot = $menu->harga;
 
         // Set your Merchant Server Key
