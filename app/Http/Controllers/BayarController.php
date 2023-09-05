@@ -8,6 +8,7 @@ use App\Http\Requests\UpdateBayarRequest;
 use App\Models\Meja;
 use App\Models\Menu;
 use App\Models\Pesan;
+use App\Models\Detail;
 use Database\Seeders\ReservasiSeeder;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -25,11 +26,17 @@ class BayarController extends Controller
     public function index($kd_pes, Request $request)
     {
         $user = Auth::user();
-        $pes = Pesan::where('kd_pes', '=', $kd_pes)->get();
+        $pes = Pesan::with('detail')->where('kd_pes', '=', $kd_pes)->get();
         $pes = $pes[0];
-        $menu = Menu::where('id_menu', '=', $pes->detail->id_menu)->get();
-        $menu = $pes->detail->id_menu;
-        $tot = $menu->harga;
+        $menu = Detail::with('menu')->where('kd_pes', $pes->kd_pes)->get();
+        // $menu = $pes->detail->id_menu;
+        // $menu = Menu::where('id_menu', '=', $pes->detail->id_menu)->get();
+        $a = 1;
+        while ($a <= count($menu)) {
+            $harga = Menu::where('id_menu', $menu);
+        }
+        dd($harga);
+        // dd($tot);
 
         // Set your Merchant Server Key
         \Midtrans\Config::$serverKey = config('midtrans.server_key');
@@ -73,7 +80,9 @@ class BayarController extends Controller
         $user = Auth::user();
         $pes = Pesan::where('kd_pes', '=', $kd_pes)->get();
         $pes = $pes[0];
-        $menu = Menu::where('id_menu', '=', $pes->id_menu)->get();
+        $menu = Detail::where('kd_pes', '=', $kd_pes);
+        dd($menu);
+        // $menu = Menu::where('id_menu', '=', $pes->id_menu)->get();
         $menu = $menu[0];
         $tot = $menu->harga;
         $bayar = new Bayar;

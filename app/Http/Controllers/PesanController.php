@@ -22,7 +22,7 @@ class PesanController extends Controller
     }
     public function TampilReservasi(Request $r)
     {
-        $meja = Meja::all()->where('kapasitas', '>=', $r->jumlah);
+        $meja = Meja::all()->where('kapasitas', '=', $r->jumlah);
         $menu = Menu::all();
         return view('reservasi', compact('meja', 'menu'));
     }
