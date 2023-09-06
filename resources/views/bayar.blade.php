@@ -57,7 +57,7 @@
                         <h5>Tanggal :</h5>{{ $pesanan[0]->tanggal }}
                         </p>
                         <h3>Total :
-                            {{$total}}
+                            Rp. {{$total}}
                         </h3>
                         </p>
                         <hr>

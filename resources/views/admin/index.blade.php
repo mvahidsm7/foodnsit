@@ -35,11 +35,16 @@
                     </tr>
                     @foreach ($pes as $p)
                         <tr>
-                            @dump($p->detail)
-                            {{-- <td>{{ $p->kd_pes }}</td>
+                            <td>{{ $p->kd_pes }}</td>
                             <td>{{ $p->pengguna[0]->name }}</td>
                             <td>{{ $p->no_meja }}</td>
-                            <td>{{ $p->menu[0]->nama }}</td>
+                            <td>
+                                @foreach ($p->detail as $item)
+                                    {{ App\Models\Menu::select('nama')->where('id_menu', $item->id_menu)->get()[0]->nama }}
+                                    ({{ $item->qty }}),
+                                @endforeach
+                            </td>
+                            {{-- {{-- <td>{{ $p->menu[0]->nama }}</td> --}}
                             <td>
                                 @if ($p->status == 1)
                                     Menunggu Pembayaran
@@ -53,12 +58,14 @@
                                 @if ($p->status == 1)
                                     <a href="/batal/{{ $p->no_pes }}" class="btn btn-outline-danger">batalkan</a>
                                 @elseif ($p->status == 2)
-                                    <a href="" class="btn btn-outline-success">selesaikan</a>
-                                    <a href="/batal/{{ $p->no_pes }}" class="btn btn-outline-danger">batalkan</a>
+                                <div class="row">
+                                    <a href="" class="btn btn-outline-success col mb-1">selesaikan</a>
+                                    <a href="/batal/{{ $p->no_pes }}" class="btn btn-outline-danger col">batalkan</a>
+                                </div>
                                 @else
                                     Selesai
                                 @endif
-                            </td> --}}
+                            </td>
                         </tr>
                     @endforeach
                 </table>

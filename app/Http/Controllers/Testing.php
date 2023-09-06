@@ -29,15 +29,16 @@ class Testing extends Controller
         // $code = date('now').$kode;
         // dd(date('now').$kode);
         // dd($tes->bayar->total);
-
+        
+        $pesan = Pesan::with('coba')->get();
+        dd($pesan);
         $det = Pesan::with('detail')->get();
         $qty = 5;
         $id = $det[0]->detail->id_menu;
         $menu = Menu::where('id_menu', $id)->get();
         $menu = $menu[0];
         $total = $menu->harga * $qty;
-        dd($det);
-        return view('test', compact('det'));
+        return view('test');
     }
 
     public function form(Request $r)

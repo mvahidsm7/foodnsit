@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Detail;
 use App\Models\Menu;
 use App\Models\Pesan;
 use Illuminate\Http\Request;
@@ -17,7 +18,16 @@ class BerandaController extends Controller
             return view('index', compact('user', 'menu'));
         } else {
             if (Auth::user()->email == 'admin@food.com') {
-                $pes = Pesan::with('detail')->orderby('updated_at', 'desc')->get();
+                $pes = Pesan::all();
+                $detail = Detail::with('menu')->get();
+                foreach ($detail as $key) {
+                    $harga[] = $key->menu->harga;
+                    $qty[] = $key->qty;
+                }
+                $total = 0;
+                foreach ($harga as $key => $value) {
+                    $total += ($value * $qty[$key]);
+                }
                 return view('admin.index', compact('pes'));
             } else {
                 $menu = Menu::paginate(3);
