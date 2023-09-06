@@ -40,21 +40,21 @@
                         <hr>
                         <p>
                         <h5>Kode Pesanan :</h5>
-                        {{ $pes->kd_pes }} <br>
+                        {{ $pesanan[0]->kd_pes }} <br>
                         <p>
-                        <h5>Nomer Meja :</h5>{{ $pes->no_meja }}
-                        @if ($pes->no_meja == false)
+                        <h5>Nomer Meja :</h5>{{ $pesanan[0]->no_meja }}
+                        @if ($pesanan[0]->no_meja == false)
                             Tidak ada
                         @endif
                         </p>
                         <h5>Menu :</h5>
-                        @foreach ($detmen as $menu)
+                        @foreach ($detail as $menu)
                             {{ $menu->menu->nama }} ({{ $menu->qty }}) : <b>{{ $menu->menu->harga * $menu->qty }}</b><br>
                         @endforeach
                         </p>
-                        <h5>Jam :</h5>{{ $pes->jam }}
+                        <h5>Jam :</h5>{{ $pesanan[0]->jam }}
                         </p>
-                        <h5>Tanggal :</h5>{{ $pes->tanggal }}
+                        <h5>Tanggal :</h5>{{ $pesanan[0]->tanggal }}
                         </p>
                         <h3>Total :
                             {{$total}}
@@ -85,7 +85,7 @@
                     onSuccess: function(result) {
                         /* You may add your own implementation here */
                         alert("Pembayaran Berhasil!");
-                        location.replace("/bayar/{{$pes->kd_pes}}/sukses");
+                        location.replace("/bayar/{{$pesanan[0]->kd_pes}}/sukses");
                     },
                     onPending: function(result) {
                         /* You may add your own implementation here */

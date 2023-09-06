@@ -25,27 +25,17 @@ class BayarController extends Controller
      */
     public function index($kd_pes, Request $request)
     {
-        $user = Auth::user();
-        $pes = Pesan::where('kd_pes', '=', $kd_pes)->get();
-        $pes = $pes[0];
-        $det = Detail::where('kd_pes', $kd_pes)->get();
-
-        $detmen = Detail::with('menu')->where('kd_pes', '=', $kd_pes)->get();
-        foreach($detmen as $d){
-            $detail[] = $d;
+        $pesanan = Pesan::where('kd_pes', $kd_pes)->get();
+        $detail = Detail::with('menu')->where('kd_pes', $kd_pes)->get();
+        foreach ($detail as $key) {
+           $harga[] = $key->menu->harga;
+           $qty[] = $key->qty;
         }
-        $detmen = $detail;
-        for ($i=0; $i < count($det); $i++) {
-            $menu[] = Menu::select('harga')->where('id_menu', $det[$i]->id_menu)->get();
+        $total = 0;
+        foreach($harga as $key => $value){
+            $total += ($value * $qty[$key]);
         }
-        // $total = array_sum($total);
-        foreach($menu as $men){
-            $harga[] = $men[0]->harga;
-        }
-        $total = array_sum($harga);
-        // $tot = array_sum();
-        // dd($tot);
-        // Set your Merchant Server Key
+         // Set your Merchant Server Key
         \Midtrans\Config::$serverKey = config('midtrans.server_key');
         // Set to Development/Sandbox Environment (default). Set to true for Production Environment (accept real transaction).
         \Midtrans\Config::$isProduction = false;
@@ -56,15 +46,15 @@ class BayarController extends Controller
 
         $params = array(
             'transaction_details' => array(
-                'order_id' => $pes->kd_pes,
+                'order_id' => $pesanan[0]->kd_pes,
                 'gross_amount' => $total,
             ),
             'customer_details' => array(
-                'first_name' => $user->name,
+                'first_name' => Auth::user()->name,
             ),
         );
         $snapToken = \Midtrans\Snap::getSnapToken($params);
-        return view('bayar', compact('snapToken', 'pes', 'men', 'total', 'menu', 'detmen'));
+        return view('bayar', compact('snapToken', 'pesanan',  'total', 'detail'));
     }
 
     /**
@@ -72,14 +62,16 @@ class BayarController extends Controller
      */
     public function create($kd_pes, Request $request)
     {
-        $det = Detail::where('kd_pes', $kd_pes)->get();
-        for ($i=0; $i < count($det); $i++) {
-            $menu[] = Menu::select('harga')->where('id_menu', $det[$i]->id_menu)->get();
+        $pesanan = Pesan::where('kd_pes', $kd_pes)->get();
+        $detail = Detail::with('menu')->where('kd_pes', $kd_pes)->get();
+        foreach ($detail as $key) {
+           $harga[] = $key->menu->harga;
+           $qty[] = $key->qty;
         }
-        foreach($menu as $men){
-            $harga[] = $men[0]->harga;
+        $total = 0;
+        foreach($harga as $key => $value){
+            $total += ($value * $qty[$key]);
         }
-        $total = array_sum($harga);
         $char = '01234567890';
         $numb = strlen($char);
         $length = 2;
@@ -91,8 +83,7 @@ class BayarController extends Controller
         }
         $code = date('now') . $kode;
         $user = Auth::user();
-        $pes = Pesan::where('kd_pes', '=', $kd_pes)->get();
-        $pes = $pes[0];
+        $pes = $pesanan[0];
         $bayar = new Bayar;
         $bayar->user = $user->id;
         $bayar->kd_pes = $pes->kd_pes;
