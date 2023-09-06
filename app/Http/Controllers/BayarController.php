@@ -29,6 +29,12 @@ class BayarController extends Controller
         $pes = Pesan::where('kd_pes', '=', $kd_pes)->get();
         $pes = $pes[0];
         $det = Detail::where('kd_pes', $kd_pes)->get();
+
+        $detmen = Detail::with('menu')->where('kd_pes', '=', $kd_pes)->get();
+        foreach($detmen as $d){
+            $detail[] = $d;
+        }
+        $detmen = $detail;
         for ($i=0; $i < count($det); $i++) {
             $menu[] = Menu::select('harga')->where('id_menu', $det[$i]->id_menu)->get();
         }
@@ -58,7 +64,7 @@ class BayarController extends Controller
             ),
         );
         $snapToken = \Midtrans\Snap::getSnapToken($params);
-        return view('bayar', compact('snapToken', 'pes', 'men', 'total', 'menu'));
+        return view('bayar', compact('snapToken', 'pes', 'men', 'total', 'menu', 'detmen'));
     }
 
     /**

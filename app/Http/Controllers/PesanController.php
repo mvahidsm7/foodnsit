@@ -41,8 +41,8 @@ class PesanController extends Controller
         $pesanan = Pesan::create(
             [
                 'kd_pes' => $kode,
-                'tanggal' => '2023-09-02',
-                'jam' => '11:00',
+                'tanggal' => $request->tanggal,
+                'jam' => $request->jam,
                 'user' => Auth::user()->id,
                 'no_meja' => $request->no_meja,
             ]

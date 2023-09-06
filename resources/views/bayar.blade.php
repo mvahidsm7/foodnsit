@@ -48,11 +48,9 @@
                         @endif
                         </p>
                         <h5>Menu :</h5>
-                        @if ($pes->id_menu == false)
-                            Tidak ada
-                        @else
-                            {{ $menu->nama }}
-                        @endif
+                        @foreach ($detmen as $menu)
+                            {{ $menu->menu->nama }} ({{ $menu->qty }}) : <b>{{ $menu->menu->harga * $menu->qty }}</b><br>
+                        @endforeach
                         </p>
                         <h5>Jam :</h5>{{ $pes->jam }}
                         </p>
