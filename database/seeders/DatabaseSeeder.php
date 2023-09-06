@@ -39,7 +39,7 @@ class DatabaseSeeder extends Seeder
                 "gambar" => "assets\img\products\dessert.png",
                 "deskripsi" => "Cake dengan selai stroberi yang maniss'",
                 "kategori" => 3,
-                "harga" => "100000"
+                "harga" => 100000
             ],
             Menu::create([
                 "id_menu" => "MN2",
@@ -111,27 +111,27 @@ class DatabaseSeeder extends Seeder
         Meja::create(
             [
                 "no_meja" => "MJ001",
-                "kapasitas" => "2"
+                "kapasitas" => 2
             ],
             Meja::create([
                 "no_meja" => "MJ002",
-                "kapasitas" => "2"
+                "kapasitas" => 2
             ]),
             Meja::create([
                 "no_meja" => "MJ003",
-                "kapasitas" => "4"
+                "kapasitas" => 4
             ]),
             Meja::create([
                 "no_meja" => "MJ004",
-                "kapasitas" => "4"
+                "kapasitas" => 4
             ]),
             Meja::create([
                 "no_meja" => "MJ005",
-                "kapasitas" => "6"
+                "kapasitas" => 6
             ]),
             Meja::create([
                 "no_meja" => "MJ006",
-                "kapasitas" => "6"
+                "kapasitas" => 6
             ])
         );
 
