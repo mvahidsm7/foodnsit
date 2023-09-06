@@ -35,7 +35,8 @@
                     </tr>
                     @foreach ($pes as $p)
                         <tr>
-                            <td>{{ $p->kd_pes }}</td>
+                            @dump($p->detail)
+                            {{-- <td>{{ $p->kd_pes }}</td>
                             <td>{{ $p->pengguna[0]->name }}</td>
                             <td>{{ $p->no_meja }}</td>
                             <td>{{ $p->menu[0]->nama }}</td>
@@ -57,7 +58,7 @@
                                 @else
                                     Selesai
                                 @endif
-                            </td>
+                            </td> --}}
                         </tr>
                     @endforeach
                 </table>

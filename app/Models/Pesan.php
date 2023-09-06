@@ -16,9 +16,6 @@ class Pesan extends Model
     public function pengguna(){
         return $this->hasMany(User::class, 'id', 'user');
     }
-    public function menu(){
-        return $this->hasMany(Menu::class, 'id_menu', 'id_menu');
-    }
     public function meja(){
         return $this->hasMany(Meja::class, 'no_meja', 'no_meja');
     }
@@ -26,6 +23,6 @@ class Pesan extends Model
         return $this->belongsTo(Bayar::class, 'kd_pes', 'kd_pes');
     }
     public function detail(){
-        return $this->belongsTo(Detail::class, 'kd_pes', 'kd_pes');
+        return $this->hasMany(Detail::class, 'kd_pes', 'kd_pes');
     }
 }
