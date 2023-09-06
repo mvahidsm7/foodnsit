@@ -8,6 +8,7 @@ use App\Http\Requests\UpdateBayarRequest;
 use App\Models\Meja;
 use App\Models\Menu;
 use App\Models\Pesan;
+use App\Models\Detail;
 use Database\Seeders\ReservasiSeeder;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -27,9 +28,23 @@ class BayarController extends Controller
         $user = Auth::user();
         $pes = Pesan::where('kd_pes', '=', $kd_pes)->get();
         $pes = $pes[0];
-        $menu = Menu::where('id_menu', '=', $pes->id_menu)->get();
-        $menu = $menu[0];
-        $tot = $menu->harga;
+        $det = Detail::where('kd_pes', $kd_pes)->get();
+
+        $detmen = Detail::with('menu')->where('kd_pes', '=', $kd_pes)->get();
+        foreach($detmen as $d){
+            $detail[] = $d;
+        }
+        $detmen = $detail;
+        for ($i=0; $i < count($det); $i++) {
+            $menu[] = Menu::select('harga')->where('id_menu', $det[$i]->id_menu)->get();
+        }
+        // $total = array_sum($total);
+        foreach($menu as $men){
+            $harga[] = $men[0]->harga;
+        }
+        $total = array_sum($harga);
+        // $tot = array_sum();
+        // dd($tot);
         // Set your Merchant Server Key
         \Midtrans\Config::$serverKey = config('midtrans.server_key');
         // Set to Development/Sandbox Environment (default). Set to true for Production Environment (accept real transaction).
@@ -42,12 +57,29 @@ class BayarController extends Controller
         $params = array(
             'transaction_details' => array(
                 'order_id' => $pes->kd_pes,
-                'gross_amount' => $tot,
+                'gross_amount' => $total,
             ),
             'customer_details' => array(
                 'first_name' => $user->name,
             ),
         );
+        $snapToken = \Midtrans\Snap::getSnapToken($params);
+        return view('bayar', compact('snapToken', 'pes', 'men', 'total', 'menu', 'detmen'));
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     */
+    public function create($kd_pes, Request $request)
+    {
+        $det = Detail::where('kd_pes', $kd_pes)->get();
+        for ($i=0; $i < count($det); $i++) {
+            $menu[] = Menu::select('harga')->where('id_menu', $det[$i]->id_menu)->get();
+        }
+        foreach($menu as $men){
+            $harga[] = $men[0]->harga;
+        }
+        $total = array_sum($harga);
         $char = '01234567890';
         $numb = strlen($char);
         $length = 2;
@@ -58,33 +90,15 @@ class BayarController extends Controller
             $kode = $kode . $chara;
         }
         $code = date('now') . $kode;
-        $snapToken = \Midtrans\Snap::getSnapToken($params);
-        $men = $menu->harga;
-        $tot = $men;
+        $user = Auth::user();
+        $pes = Pesan::where('kd_pes', '=', $kd_pes)->get();
+        $pes = $pes[0];
         $bayar = new Bayar;
-        $bayar->user = Auth::user()->id;
+        $bayar->user = $user->id;
         $bayar->kd_pes = $pes->kd_pes;
         $bayar->no_pembayaran = $code;
-        $bayar->total = $menu->harga;
+        $bayar->total = $total;
         DB::table('pesan')->where('kd_pes', $pes->kd_pes)->update(array('status' => 2));
-        DB::table('meja')->where('no_meja', $pes->no_meja)->update(array('status' => 'dipesan'));
-        $bayar->save();
-        return view('bayar', compact('snapToken', 'pes', 'men', 'tot', 'menu'));
-        return redirect('profil');
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create($no_pes, Request $request)
-    {
-        $pes = Pesan::find($no_pes);
-        $bayar = new Bayar;
-        $bayar->id_user = Auth::user()->id_user;
-        $bayar->no_meja = $pes->no_meja;
-        $bayar->id_menu = $pes->id_menu;
-        $bayar->total = $pes[0]->harga;
-        DB::table('pesan')->where('no_pes', $pes->no_pes)->update(array('status' => true));
         DB::table('meja')->where('no_meja', $pes->no_meja)->update(array('status' => 'dipesan'));
         $bayar->save();
         return redirect('');

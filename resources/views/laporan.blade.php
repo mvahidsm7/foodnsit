@@ -31,16 +31,24 @@
                                             <td>ID pengguna</td>
                                             <td>Nomor Meja</td>
                                             <td>Menu</td>
+                                            <td>Total</td>
                                         </tr>
-                                        @foreach ($pes as $m)
+                                        @foreach ($pes as $p)
                                             <tr>
-                                                <td>{{ $m->no_pes }}</td>
-                                                <td>{{ $m->user[0]->name }}</td>
-                                                <td>{{ $m->no_meja }}</td>
-                                                <td>{{ $m->menu[0]->nama }}</td>
+                                                <td>{{ $p->kd_pes }}</td>
+                                                <td>{{ $p->pengguna[0]->name }}</td>
+                                                <td>{{ $p->no_meja }}</td>
+                                                <td>{{ $p->menu[0]->nama }}</td>
+                                                <td>{{ $p->bayar->total }}</td>
                                             </tr>
                                         @endforeach
                                     </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
 </body>
 

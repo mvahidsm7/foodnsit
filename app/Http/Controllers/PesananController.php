@@ -21,12 +21,13 @@ class PesananController extends Controller
     {
         $user = Auth::user();
         $pes = Pesan::with('pengguna', 'menu')->get();
+        $pes = $pes[0];
         return view('admin_pesanan', compact('pes', 'user'));
     }
 
     public function pdf()
     {
-        $pes = Pesan::with('user')->where('status', '=', true)->get();
+        $pes = Pesan::with('pengguna')->where('status', '=', 2)->orWhere('status', '=', 3)->get();
         $pes = Pdf::loadview('laporan', ['pes' => $pes]);
         return $pes->download('laporan-pesanan.pdf');
     }

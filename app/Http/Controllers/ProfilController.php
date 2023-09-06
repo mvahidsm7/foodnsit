@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Meja;
 use App\Models\Pesan;
 use App\Models\Menu;
+use App\Models\Detail;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -50,10 +51,13 @@ class ProfilController extends Controller
     public function detail($kd_pes)
     {
         $user = Auth::user();
-        $pes = Pesan::all()->where('kd_pes', '=', $kd_pes);
+        $pes = Pesan::where('kd_pes', '=', $kd_pes)->get();
         $pes = $pes[0];
-        $menu = Menu::where('id_menu', '=', $pes->id_menu)->get();
-        $menu = $menu[0];
+        $det = Detail::with('menu')->where('kd_pes', '=', $kd_pes)->get();
+        foreach($det as $d){
+            $detail[] = $d;
+        }
+        $menu = $detail;
         // dd($menu);
         return view('detail', compact('user', 'pes', 'menu'));
     }

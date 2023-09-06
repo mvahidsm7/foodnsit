@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Detail;
 use App\Models\Meja;
 use App\Models\Menu;
 use App\Models\Pesan;
@@ -21,7 +22,7 @@ class PesanController extends Controller
     }
     public function TampilReservasi(Request $r)
     {
-        $meja = Meja::all()->where('kapasitas', '>=', $r->jumlah);
+        $meja = Meja::all()->where('kapasitas', '=', $r->jumlah);
         $menu = Menu::all();
         return view('reservasi', compact('meja', 'menu'));
     }
@@ -34,16 +35,31 @@ class PesanController extends Controller
             'tanggal' => 'required',
             'jam' => 'required',
         ]);
+        $men = count($request->menu);
         $kode = Str::random(6);
-        $pesan = new Pesan;
-        // dd('P' . time() . $kode);
-        $pesan->kd_pes = 'P' . time() . $kode;
-        $pesan->no_meja = $request->no_meja;
-        $pesan->user = Auth::user()->id;
-        $pesan->id_menu = $request->menu;
-        $pesan->tanggal = $request->tanggal;
-        $pesan->jam = $request->jam;
-        $pesan->save();
+        $kode = 'P' . time() . $kode;
+        $pesanan = Pesan::create(
+            [
+                'kd_pes' => $kode,
+                'tanggal' => $request->tanggal,
+                'jam' => $request->jam,
+                'user' => Auth::user()->id,
+                'no_meja' => $request->no_meja,
+            ]
+        );
+        for ($i=1; $i < $men; $i++) {
+            if ($request['menu'][$i - 1] != 0) {
+                $harga =  Menu::where('id_menu', ('MN'.$i))->get();
+                $detail = Detail::create(
+                    [
+                        'kd_pes' => $pesanan->kd_pes,
+                        'id_menu' => 'MN' . $i,
+                        'harga' => $harga[0]->harga,
+                        'qty' => $request['menu'][$i - 1],
+                    ]
+                );
+            }
+        }
         return redirect('sukses');
     }
     public function Sukses()

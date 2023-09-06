@@ -1,54 +1,5 @@
 @extends('layouts.main')
 @section('content')
-    @if ($user->email == 'admin@food.com')
-        <!-- breadcrumb-section -->
-        <div class="breadcrumb-section breadcrumb-bg">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 offset-lg-2 text-center">
-                        <div class="breadcrumb-text">
-                            <p>halaman</p>
-                            <h1>Admin</h1>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- end breadcrumb section -->
-
-        {{-- Profil --}}
-        <div class="cart-section mt-5 mb-5">
-            <div class="container">
-                <div class="card">
-                    <div class="card-body">
-                        <center>
-                            <h4 class="card-title">Profil</h4>
-                        </center>
-                        <p class="card-text">
-                        <h5>Nama :</h5>
-                        </p>
-                        <p class="card-text">
-                            {{ $user->name }}
-                            <a href="{{ route('logout') }}"
-                                onclick="event.preventDefault(); document.getElementById('logout-form').submit();">{{ __('Logout') }}</a>
-                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                            @csrf
-                        </form>
-                        </p>
-                        <p class="card-text">
-                        <h5>Pilihan :</h5>
-                        </p>
-                        <p class="card-text">
-                            <a href="/admin/meja" class="btn btn-outline-primary">data meja</a>
-                            <a href="/admin/menu" class="btn btn-outline-info">data menu</a>
-                            <a href="/data-pesanan" class="btn btn-outline-info">data pesanan</a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        {{-- end Profil --}}
-    @else
         <!-- breadcrumb-section -->
         <div class="breadcrumb-section breadcrumb-bg">
             <div class="container">
@@ -72,6 +23,7 @@
                         <center>
                             <h4 class="card-title">Profil</h4>
                         </center>
+                        <hr>
                         <p class="card-text">
                         <h5>Nama :</h5>
                         </p>
@@ -88,6 +40,7 @@
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                             @csrf
                         </form>
+                        <hr>
                     </div>
                 </div>
             </div>
@@ -115,7 +68,7 @@
                             <h5>Tanggal :</h5>{{ $p->tanggal }}
                             </p>
                             <p>
-                            <h5>Status Pembayaran :</h5>
+                            <h5>Status Pesanan :</h5>
                             @if ($p->status == 1)
                                 Menunggu Pembayaran
                             @elseif ($p->status == 2)
@@ -147,5 +100,4 @@
             </div>
         </div>
         {{-- end Pesanan --}}
-    @endif
 @endsection

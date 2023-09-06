@@ -29,7 +29,9 @@
                     <p>
                     <h5>Nomer Meja :</h5>{{ $pes->no_meja }}
                     </p>
-                    <h5>Menu :</h5>{{ $menu->nama }}
+                    <h5>Menu :</h5>@foreach ($menu as $men)
+                        {{ $men->menu->nama }} ({{ $men->qty }})<br>
+                    @endforeach
                     </p>
                     <h5>Jam :</h5>{{ $pes->jam }}
                     </p>

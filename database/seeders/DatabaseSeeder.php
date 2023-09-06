@@ -34,44 +34,76 @@ class DatabaseSeeder extends Seeder
         // menu
         Menu::create(
             [
-                "id_menu" => "MN001",
-                "nama" => "Paket Makan Bareng 1",
-                "gambar" => "assets\img\paket4.jpg",
-                "deskripsi" => "sashimi,sushi roll,aburi salmon,namon belly",
-                "kategori" => 1,
+                "id_menu" => "MN1",
+                "nama" => "smoothcake strobery",
+                "gambar" => "assets\img\products\dessert.png",
+                "deskripsi" => "Cake dengan selai stroberi yang maniss'",
+                "kategori" => 3,
                 "harga" => "100000"
             ],
             Menu::create([
-                "id_menu" => "MN002",
-                "nama" => "Paket Makan Bareng 2",
-                "gambar" => "assets\img\paket5.jpg",
-                "deskripsi" => "Ayam Semur,beef slice asam manis,sambal jeruk,oseng toge,Salad",
+                "id_menu" => "MN2",
+                "nama" => "Lobster baked ",
+                "gambar" => "assets\img\products\makanan1.png",
+                "deskripsi" => "Daging lobster yang lebut dibaluri bumbu khas rempah",
                 "kategori" => 1,
                 "harga" => 25000
             ]),
             Menu::create([
-                "id_menu" => "MN003",
-                "nama" => "Paket Makan Bareng 3",
-                "gambar" => "assets\img\paket3.jpg",
-                "deskripsi" => "Nasi Goreng katsu+telor,Chicken Katsu ,Nasi Beef Asam Manis,Salad,Saus BBQ,Pudding Matcha",
+                "id_menu" => "MN3",
+                "nama" => "rice gochujang",
+                "gambar" => "assets\img\products\makanan2.jpg ",
+                "deskripsi" => "Nasi shirataki dicampur dengan saus gochujang",
                 "kategori" => 1,
                 "harga" => 15000
             ]),
             Menu::create([
-                "id_menu" => "MN004",
-                "nama" => "Paket Ngemil",
+                "id_menu" => "MN4",
+                "nama" => "donut's  ",
                 "gambar" => "assets\img\paket1.jpg",
-                "deskripsi" => "Macam Macam donat: choco cookies,greentea,cheeses,choclate cheese",
+                "deskripsi" => "donat yang sangat lembut dan manis dengan berbagai macam rasa",
                 "kategori" => 3,
                 "harga" => 30000
             ]),
             Menu::create([
-                "id_menu" => "MN005",
-                "nama" => "Paket Anti Haus",
-                "gambar" => "assets\img\paket1.jpg",
-                "deskripsi" => "Minuman segar : Jus Jeruk, Jus Alpukat, Jus Mangga",
-                "kategori" => 1,
+                "id_menu" => "MN5",
+                "nama" => "ice coffee latte",
+                "gambar" => "assets\img\products\minuman1.jpg",
+                "deskripsi" => "Ice coffee latte dibuat dengan bubuk kopi inport dari korea",
+                "kategori" => 2,
                 "harga" => 30000
+            ]),
+            Menu::create([
+                "id_menu" => "MN6",
+                "nama" => "Ramen Shiburi",
+                "gambar" => "assets\img\products\makanan3.jpg",
+                "deskripsi" => "Mie yang di adoni dengan tepung jepang sehingga membuat mie terasa lembut ketika dimakan",
+                "kategori" => 1,
+                "harga" => 50000
+            ]),
+            Menu::create([
+                "id_menu" => "MN7",
+                "nama" => "Milky coffee",
+                "gambar" => "assets\img\products\minuman3.jpg",
+                "deskripsi" => "kopi dengan susu almond",
+                "kategori" => 2,
+                "harga" => 30000
+            ]),
+            Menu::create([
+                "id_menu" => "MN8",
+                "nama" => "Yogurth Sweddish",
+                "gambar" => "assets\img\products\dessert3.jpg",
+                "deskripsi" => "yogurth blubbery yang sweet",
+                "kategori" => 2,
+                "harga" => 45000
+            ]),
+            Menu::create([
+                "id_menu" => "MN9",
+                "nama" => "Maccaron",
+                "gambar" => "assets\img\products\dessert4.jpg",
+                "deskripsi" => "Maccaron dengan berbagai rasa",
+                "kategori" => 3,
+                "harga" => 25000
             ]),
         );
 
@@ -109,6 +141,13 @@ class DatabaseSeeder extends Seeder
                 'name' => 'admin',
                 'email' => 'admin@food.com',
                 'password' => Hash::make('admin123'),
+            ]
+        );
+        User::create(
+            [
+                'name' => 'vahid',
+                'email' => 'vahid@gmail.com',
+                'password' => Hash::make('vahid123'),
             ]
         );
     }

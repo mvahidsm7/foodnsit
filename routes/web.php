@@ -38,7 +38,7 @@ Route::get('/sukses', [PesanController::class, 'Sukses']);
 Route::get('/profil', [ProfilController::class, 'index']);
 Route::get('/detail/{kd_pes}', [ProfilController::class, 'detail']);
 Route::get('/bayar/{kd_pes}', [BayarController::class, 'index']);
-Route::get('/bayar/{kd_pes}/sukses', [BayarController::class, 'sukses']);
+Route::get('/bayar/{kd_pes}/sukses', [BayarController::class, 'create']);
 Route::get('batal/{kd_pes}', [ProfilController::class, 'batal']);
 Route::post('batal/{kd_pes}/sukses', [ProfilController::class, 'BatalSukses']);
 // Route::post('/midtrans-callback', [BayarController::class, 'callback']);
@@ -48,8 +48,8 @@ Route::get('/admin/meja', [AdminController::class, 'TampilMeja']);
 Route::post('/tambah-meja', [AdminController::class, 'TambahMejaView']);
 Route::post('/tambah-meja/sukses', [AdminController::class, 'TambahMeja']);
 // admin - pesanan
-Route::get('/data-pesanan', [PesananController::class, 'index']);
-Route::get('/print-pesanan', [PesananController::class, 'pdf']);
+Route::get('/data-pesanan', [AdminController::class, 'TampilPesanan']);
+Route::get('/print-pesanan', [AdminController::class, 'pdf']);
 Route::get('/laporan', [PesananController::class, 'laporan']);
 // admin - menu
 Route::get('/admin/menu', [AdminController::class, 'TampilMenu']);
@@ -59,6 +59,7 @@ Route::post('/edit-menu/{id_menu}', [AdminController::class, 'editMenu']);
 Route::post('/update-menu/sukses', [AdminController::class, 'UpdateMenu']);
 // test
 Route::get('/test', [Testing::class, 'index']);
+Route::post('/test/form', [Testing::class, 'form']);
 
 Auth::routes();
 
