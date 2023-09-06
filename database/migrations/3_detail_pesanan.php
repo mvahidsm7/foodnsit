@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('det_pes', function (Blueprint $table) {
             $table->id();
             $table->integer('qty');
+            $table->integer('harga');
             $table->timestamps();
         });
     }

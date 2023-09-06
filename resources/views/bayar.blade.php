@@ -59,15 +59,7 @@
                         <h5>Tanggal :</h5>{{ $pes->tanggal }}
                         </p>
                         <h3>Total :
-                            @if ($pes->no_meja == false)
-                                {{ $men }}
-                            @endif
-                            @if ($pes->id_menu == false)
-                                {{ $mej }}
-                            @endif
-                            @if ($pes->id_menu == true && $pes->no_meja == true)
-                                {{ $tot }}
-                            @endif
+                            {{$total}}
                         </h3>
                         </p>
                         <hr>

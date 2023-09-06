@@ -36,7 +36,7 @@ class Testing extends Controller
         $menu = Menu::where('id_menu', $id)->get();
         $menu = $menu[0];
         $total = $menu->harga * $qty;
-        dd($total);
+        dd($det);
         return view('test', compact('det'));
     }
 

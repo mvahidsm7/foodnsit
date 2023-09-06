@@ -49,10 +49,12 @@ class PesanController extends Controller
         );
         for ($i=1; $i < $men; $i++) {
             if ($request['menu'][$i - 1] != 0) {
+                $harga =  Menu::where('id_menu', ('MN'.$i))->get();
                 $detail = Detail::create(
                     [
                         'kd_pes' => $pesanan->kd_pes,
                         'id_menu' => 'MN' . $i,
+                        'harga' => $harga[0]->harga,
                         'qty' => $request['menu'][$i - 1],
                     ]
                 );
