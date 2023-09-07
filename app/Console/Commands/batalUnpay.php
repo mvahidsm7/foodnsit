@@ -20,7 +20,7 @@ class batalUnpay extends Command
      *
      * @var string
      */
-    protected $description = 'Command description';
+    protected $description = 'Membatalkan pesanan yg belum di bayar';
 
     /**
      * Execute the console command.
