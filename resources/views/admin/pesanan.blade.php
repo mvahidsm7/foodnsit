@@ -1,6 +1,6 @@
 @extends('layouts.main')
 @section('content')
-    @if (Auth::user()->email !== 'admin@food.com')
+    @if (Auth::user()->email != 'admin@food.com')
         <!-- breadcrumb-section -->
         <div class="breadcrumb-section breadcrumb-bg">
             <div class="container">
@@ -54,6 +54,7 @@
                 <tr class="table-active">
                     <td>ID Pesanan</td>
                     <td>Nama</td>
+                    <td>Tanggal & Jam</td>
                     <td>Nomor Meja</td>
                     <td>Menu</td>
                     <td>Status</td>
@@ -64,6 +65,7 @@
                     <tr>
                         <td>{{ $p->kd_pes }}</td>
                         <td>{{ $p->pengguna[0]->name }}</td>
+                        <td>{{ $p->jam }} {{ $p->tanggal }}</td>
                         <td>{{ $p->no_meja }}</td>
                         <td>
                             @foreach ($p->detail as $item)

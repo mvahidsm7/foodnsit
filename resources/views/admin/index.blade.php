@@ -28,6 +28,7 @@
                     <tr class="table-active">
                         <td>Kode Pesanan</td>
                         <td>Nama</td>
+                        <td>Tanggal & Jam</td>
                         <td>Nomor Meja</td>
                         <td>Menu</td>
                         <td>Status</td>
@@ -37,6 +38,7 @@
                         <tr>
                             <td>{{ $p->kd_pes }}</td>
                             <td>{{ $p->pengguna[0]->name }}</td>
+                            <td>{{ $p->jam }} {{ $p->tanggal }}</td>
                             <td>{{ $p->no_meja }}</td>
                             <td>
                                 @foreach ($p->detail as $item)
