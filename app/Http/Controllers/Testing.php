@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Menu;
 use App\Models\Pesan;
 use App\Models\Detail;
+use Carbon\Carbon;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -29,9 +30,9 @@ class Testing extends Controller
         // $code = date('now').$kode;
         // dd(date('now').$kode);
         // dd($tes->bayar->total);
+        $waktu = Carbon::now()->addHour(2);
+        dd($waktu);
         
-        $pesan = Pesan::with('coba')->get();
-        dd($pesan);
         $det = Pesan::with('detail')->get();
         $qty = 5;
         $id = $det[0]->detail->id_menu;
