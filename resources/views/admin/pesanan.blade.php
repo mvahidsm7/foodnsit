@@ -41,7 +41,7 @@
                     <div class="col-lg-8 offset-lg-2 text-center">
                         <div class="breadcrumb-text">
                             <p>Halaman</p>
-                            <h1>Data Pesanan</h1>
+                            <h1>Rekap Pesanan</h1>
                         </div>
                     </div>
                 </div>
@@ -57,14 +57,22 @@
                     <td>Nomor Meja</td>
                     <td>Menu</td>
                     <td>Status</td>
+                    <td>Total</td>
                     <td>Lainnya</td>
                 </tr>
-                @foreach (App\Models\Pesan::with('pengguna', 'bayar')->where('status', '=', 2)->orWhere('status', '=', 3)->get() as $p)
+                @foreach (App\Models\Pesan::with('pengguna', 'bayar', 'detail')->where('status', '=', 2)->orWhere('status', '=', 3)->get() as $p)
                     <tr>
                         <td>{{ $p->kd_pes }}</td>
                         <td>{{ $p->pengguna[0]->name }}</td>
                         <td>{{ $p->no_meja }}</td>
-                        <td>{{ $p->menu[0]->nama }}</td>
+                        <td>
+                            @foreach ($p->detail as $item)
+                                {{ App\Models\Menu::select('nama')->where('id_menu', $item->id_menu)->get()[0]->nama }}
+                                ({{ $item->qty }})
+                                ,
+                            @endforeach
+                        </td>
+                        {{-- {{-- <td>{{ $p->menu[0]->nama }}</td> --}}
                         <td>
                             @if ($p->status == 1)
                                 Menunggu Pembayaran
@@ -75,11 +83,18 @@
                             @endif
                         </td>
                         <td>
+                            {{ $p->bayar->total }}
+                        </td>
+                        <td>
                             @if ($p->status == 1)
-                                <a href="/batal/{{ $p->no_pes }}" class="btn btn-outline-danger">batalkan</a>
+                            <div class="row">
+                                <a href="/batal/{{ $p->no_pes }}" class="btn btn-outline-danger col">batalkan</a>
+                            </div>
                             @elseif ($p->status == 2)
-                                <a href="" class="btn btn-outline-success">selesaikan</a>
-                                <a href="/batal/{{ $p->no_pes }}" class="btn btn-outline-danger">batalkan</a>
+                                <div class="row">
+                                    <a href="" class="btn btn-outline-success col mb-1">selesaikan</a>
+                                    <a href="/batal/{{ $p->no_pes }}" class="btn btn-outline-danger col">batalkan</a>
+                                </div>
                             @else
                                 Selesai
                             @endif
