@@ -22,23 +22,28 @@
                                 </div>
                                 <br>
                                 <h1>LAPORAN PESANAN</h1>
-                                <h3>Bulan: </h3>
 
                                 <div class="container mt-150 mb-150">
                                     <table class="table" border="1" style="width: 100%" cellspacing="0">
                                         <tr class="table-active">
                                             <td>Nomor Pesanan</td>
-                                            <td>ID pengguna</td>
+                                            <td>Nama</td>
                                             <td>Nomor Meja</td>
                                             <td>Menu</td>
                                             <td>Total</td>
                                         </tr>
-                                        @foreach ($pes as $p)
+                                        @foreach (App\Models\Pesan::with('pengguna', 'bayar', 'detail')->where('status', '=', 2)->orWhere('status', '=', 3)->get() as $p)
                                             <tr>
                                                 <td>{{ $p->kd_pes }}</td>
                                                 <td>{{ $p->pengguna[0]->name }}</td>
                                                 <td>{{ $p->no_meja }}</td>
-                                                <td>{{ $p->menu[0]->nama }}</td>
+                                                <td>
+                                                    @foreach ($p->detail as $item)
+                                                        {{ App\Models\Menu::select('nama')->where('id_menu', $item->id_menu)->get()[0]->nama }}
+                                                        ({{ $item->qty }})
+                                                        ,
+                                                    @endforeach
+                                                </td>
                                                 <td>{{ $p->bayar->total }}</td>
                                             </tr>
                                         @endforeach

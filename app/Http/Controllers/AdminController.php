@@ -53,7 +53,6 @@ class AdminController extends Controller
     }
     public function UpdateMenu()
     {
-
     }
 
     public function TampilPesanan()
@@ -68,7 +67,7 @@ class AdminController extends Controller
 
     public function pdf()
     {
-        $pes = Pesan::with('pengguna')->where('status', '=', 2)->orWhere('status', '=', 3)->get();
+        $pes = Pesan::with('pengguna', 'bayar', 'detail')->where('status', '=', 2)->orWhere('status', '=', 3)->get();
         $pes = Pdf::loadview('laporan', ['pes' => $pes]);
         return $pes->download('laporan-pesanan.pdf');
     }
