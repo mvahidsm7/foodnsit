@@ -73,8 +73,10 @@
                                 Menunggu Pembayaran
                             @elseif ($p->status == 2)
                                 Dibayar
-                            @else
+                            @elseif ($p->status == 3)
                                 Selesai
+                            @elseif ($p->status == 4)
+                                Batal
                             @endif
                             </p>
                             <p>

@@ -30,8 +30,8 @@ class Testing extends Controller
         // $code = date('now').$kode;
         // dd(date('now').$kode);
         // dd($tes->bayar->total);
-        $waktu = Carbon::now()->addHour(2);
-        dd($waktu);
+        $pes = Pesan::where('status', 1)->where('expired_at', '<=', now())->get();
+        dd($pes);
         
         $det = Pesan::with('detail')->get();
         $qty = 5;

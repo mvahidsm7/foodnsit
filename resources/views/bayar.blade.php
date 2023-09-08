@@ -61,7 +61,7 @@
                         </h3>
                         </p>
                         <hr>
-                        <i>Bayar melalui bank dengan memasukkan kode tersebut di pembayaran lainnya</i>
+                        <i>Harap bayar pesanan anda sebelum {{$pesanan[0]->expired_at}}</i>
                         <hr>
                         </p>
                         <p>
