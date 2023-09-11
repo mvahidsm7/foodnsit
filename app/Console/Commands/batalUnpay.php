@@ -28,9 +28,17 @@ class batalUnpay extends Command
     public function handle()
     {
         $pesan = Pesan::where('status', 1)->where('expired_at', '<=', now())->get();
-        foreach($pesan as $pes){
-            $pes->status = 4;
-            $pes->save();
+        $this->info($pesan);
+        if ($pesan == false) {
+            foreach($pesan as $pes){
+                $pes->status = 4;
+                $pes->save();
+            }
+            $this->info('berhasil');
+        }
+
+        else {
+            $this->info('data tidak ditemukan, gagal');
         }
     }
 }
