@@ -11,7 +11,7 @@ class Pesan extends Model
     use HasFactory;
     protected $table = 'pesan';
     // protected $primaryKey = 'no_pes';
-    protected $fillable = ['user','no_meja', 'tanggal', 'jam', 'kd_pes'];
+    protected $fillable = ['user','no_meja', 'tanggal', 'jam', 'kd_pes', 'expired_at'];
 
     public function pengguna(){
         return $this->hasMany(User::class, 'id', 'user');

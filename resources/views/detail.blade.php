@@ -14,6 +14,7 @@
         </div>
     </div>
     <!-- end breadcrumb section -->
+
     {{-- Pesanan --}}
     <div class="cart-section mt-5 mb-5">
         <div class="container">
@@ -24,13 +25,16 @@
                     </center>
                     <hr>
                     <p>
-                    <h5>Kode Pesanan :</h5>{{ $pes->kd_pes }}
+                    <h5>Kode Pesanan :</h5>
+                    {{ $pes->kd_pes }}
                     </p>
                     <p>
                     <h5>Nomer Meja :</h5>{{ $pes->no_meja }}
                     </p>
-                    <h5>Menu :</h5>@foreach ($menu as $men)
-                        {{ $men->menu->nama }} ({{ $men->qty }})<br>
+                    <h5>Menu :</h5>
+                    @foreach ($menu as $men)
+                        {{ $men->menu->nama }} ({{ $men->qty }})
+                        <br>
                     @endforeach
                     </p>
                     <h5>Jam :</h5>{{ $pes->jam }}
@@ -39,23 +43,27 @@
                     </p>
                     <hr>
                     <p>
-                        @if ($pes->status == 1)
-                            {{-- <form action="/bayar/{{ $pes->kd_pes }}/sukses" method="post"> --}}
-                            @csrf
-                            <center>
-                                <button type="submit" class="btn btn-outline-success" id="pay-button"
-                                    style="width: 750px">Bayar</button>
-                                @dump($pes->kd_pes)
-                            </center>
-                            {{-- </form> --}}
-                        @elseif ($pes->status == 2)
-                            <center>
-                                <a href="/batal/{{ $pes->kd_pes }}" class="btn btn-outline-danger"
-                                    style="width: 375px">Batalkan Pesanan</a>
-                                <a href="{{ $pes->kd_pes }}/selesain" class="btn btn-outline-primary"
-                                    style="width: 375px">Selesaikan Pesanan</a>
-                            </center>
-                        @endif
+                        <center>
+                            @if ($pes->status == 1)
+                                @if ($pes->expired_at < now())
+                                    <form action="/expired/{{ $pes->kd_pes }}" method="post">
+                                        @csrf
+                                        <button type="submit" class="btn btn-outline-secondary"
+                                            style="width: 750px">Kembali</button>
+                                    </form>
+                                @else
+                                    <a href="">bayar</a>
+                                @endif
+                            @elseif ($pes->status == 2)
+                                <a href="/profil" class="btn btn-outline-info mb-3" style="width: 750px">unduh bukti
+                                    pesanan</a>
+                                <a href="/profil" class="btn btn-outline-secondary" style="width: 750px">Kembali</a>
+                            @elseif ($pes->status == 3)
+                                <a href="/profil" class="btn btn-outline-secondary" style="width: 750px">Kembali</a>
+                            @else
+                                <a href="/profil" class="btn btn-outline-secondary" style="width: 750px">Kembali</a>
+                            @endif
+                        </center>
                     </p>
                     <hr>
                 </div>

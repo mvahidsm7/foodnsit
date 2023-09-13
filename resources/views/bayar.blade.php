@@ -26,12 +26,10 @@
                     <hr>
                     <p>
                     <h5>Kode Pesanan :</h5>
-                    {{ $pesanan[0]->kd_pes }} <br>
+                    {{ $pesanan[0]->kd_pes }}
+                    </p>
                     <p>
                     <h5>Nomer Meja :</h5>{{ $pesanan[0]->no_meja }}
-                    @if ($pesanan[0]->no_meja == false)
-                        Tidak ada
-                    @endif
                     </p>
                     <h5>Menu :</h5>
                     @foreach ($detail as $menu)
@@ -54,8 +52,12 @@
                     </p>
                     <p>
                         <center>
-                            <button type="submit" class="btn btn-outline-success" id="pay-button"
-                                style="width: 750px">Bayar</button>
+                            @if ($pesanan[0]->expired_at > now())
+                                <button type="submit" class="btn btn-outline-success" id="pay-button"
+                                    style="width: 750px">Bayar</button>
+                            @else
+                                <a href="/profil" class="btn btn-outline-secondary" style="width: 750px">Kembali</a>
+                            @endif
                         </center>
                     </p>
                     <hr>
@@ -73,7 +75,8 @@
     <script>
         // Ambil tanggal dan waktu kadaluwarsa dari server atau dari data pesanan
         var expirationDate = new Date(
-            '{{ $pesanan[0]->expired_at }}'); // Ganti dengan tanggal dan waktu kadaluwarsa sesuai dengan format dari server
+            '{{ $pesanan[0]->expired_at }}'
+        ); // Ganti dengan tanggal dan waktu kadaluwarsa sesuai dengan format dari server
 
         function updateCountdown() {
             var now = new Date();

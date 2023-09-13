@@ -9,6 +9,7 @@ use App\Models\Pesan;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class PesanController extends Controller
 {
@@ -45,11 +46,12 @@ class PesanController extends Controller
                 'jam' => $request->jam,
                 'user' => Auth::user()->id,
                 'no_meja' => $request->no_meja,
+                'expired_at' => now()->addHours(2)
             ]
         );
-        for ($i=1; $i < $men; $i++) {
+        for ($i = 1; $i < $men; $i++) {
             if ($request['menu'][$i - 1] != 0) {
-                $harga =  Menu::where('id_menu', ('MN'.$i))->get();
+                $harga =  Menu::where('id_menu', ('MN' . $i))->get();
                 $detail = Detail::create(
                     [
                         'kd_pes' => $pesanan->kd_pes,
@@ -65,5 +67,10 @@ class PesanController extends Controller
     public function Sukses()
     {
         return view('sukses');
+    }
+    public function expired($kd_pes)
+    {
+        DB::table('pesan')->where('kd_pes', $kd_pes)->update(array('status' => 4));
+        return redirect('/profil');
     }
 }

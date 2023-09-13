@@ -54,7 +54,7 @@ class ProfilController extends Controller
         $pes = Pesan::where('kd_pes', '=', $kd_pes)->get();
         $pes = $pes[0];
         $det = Detail::with('menu')->where('kd_pes', '=', $kd_pes)->get();
-        foreach($det as $d){
+        foreach ($det as $d) {
             $detail[] = $d;
         }
         $menu = $detail;
