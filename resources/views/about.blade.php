@@ -22,7 +22,7 @@
 			<div class="row">
 				<div class="col-lg-7">
 					<div class="featured-text">
-						<h2 class="pb-3">Kenapa <span class="orange-text">Food n Sit ?</span></h2>
+						<h2 class="pb-3">Kenapa Harus <span class="orange-text">Food n Sit ?</span></h2>
 						<div class="row">
 							<div class="col-lg-6 col-md-6 mb-4 mb-md-5">
 								<div class="list-box d-flex">
@@ -41,8 +41,8 @@
 										<i class="fas fa-money-bill-alt"></i>
 									</div>
 									<div class="content">
-										<h3>Harga Termurah</h3>
-										<p>ga juga sih sama aja kaya restoran lain.</p>
+										<h3>Harga Standar</h3>
+										<p>Ada Harga Ada Kualitas.</p>
 									</div>
 								</div>
 							</div>
@@ -52,8 +52,8 @@
 										<i class="fas fa-briefcase"></i>
 									</div>
 									<div class="content">
-										<h3>Platting Cantik</h3>
-										<p>sama kayak monica.</p>
+										<h3>Service Yang Berkualitas</h3>
+										<p>Anda Nyaman Kami Senang.</p>
 									</div>
 								</div>
 							</div>
