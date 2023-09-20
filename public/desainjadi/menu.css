@@ -1,0 +1,1027 @@
+/*form 1*/
+.Produk1{
+    width: 300px; 
+    height: 493px; 
+    left: 100px; 
+    top: 100px; 
+    position: absolute
+}
+
+.Rectangle1{
+    width: 389px; 
+    height: 493px; 
+    left: 0px; 
+    top: 0px; 
+    position: absolute; 
+    background: #FFF8F0; 
+    border-radius: 20px; 
+    border: 1px black solid
+}
+
+.Dessert1{
+    width: 300px; 
+    height: 300px; 
+    left: 52px; 
+    top: 30px; 
+    position: absolute; 
+    border-radius: 20px
+}
+
+.IceGelato1{
+    width: 211px; 
+    height: 28px; 
+    left: 96px; 
+    top: 345px; 
+    position: absolute; 
+    text-align: center; 
+    color: black; 
+    font-size: 30px; 
+    font-family: Moul; 
+    font-weight: 400; 
+    word-wrap: break-word
+}
+
+.Pilih1{
+    width: 200px; 
+    height: 28px;
+    left: 108px; 
+    top: 385px; 
+    position: absolute; 
+    text-align: center; 
+    color: black; 
+    font-size: 15px; 
+    font-family: Mulish; 
+    font-weight: 400; 
+    word-wrap: break-word
+}
+
+.Rectangle2{
+    width: 175px; 
+    height: 42px; 
+    left: 122px; 
+    top: 413px; 
+    position: absolute; 
+    background: #FFF8F0; 
+    border-radius: 30px; 
+    border: 1px black solid
+}
+
+.Caretdown1{
+    width: 22px; 
+    height: 21px; 
+    left: 245px; 
+    top: 423px; 
+    position: absolute
+}
+
+.Vector1{
+    width: 15.94px; 
+    height: 9.82px; 
+    left: 3.03px; 
+    top: 5.25px; 
+    position: absolute; 
+    background: black
+}
+
+
+/*form 2*/
+
+.Produk2{
+    width: 300px; 
+    height: 493px; 
+    left: 600px; 
+    top: 100px;
+    position: absolute
+}
+
+.Rectangle3{
+    width: 389px; 
+    height: 493px; 
+    left: 0px; 
+    top: 0px; 
+    position: absolute; 
+    background: #FFF8F0; 
+    border-radius: 20px; 
+    border: 1px black solid
+}
+
+.Dessert2{
+    width: 300px; 
+    height: 300px; 
+    left: 52px; 
+    top: 30px; 
+    position: absolute; 
+    border-radius: 20px
+}
+
+.IceGelato2{
+    width: 211px; 
+    height: 28px; 
+    left: 96px; 
+    top: 345px; 
+    position: absolute; 
+    text-align: center; 
+    color: black; 
+    font-size: 30px; 
+    font-family: Moul; 
+    font-weight: 400; 
+    word-wrap: break-word
+}
+
+.Pilih2{
+    width: 200px; 
+    height: 28px;
+    left: 108px; 
+    top: 385px; 
+    position: absolute; 
+    text-align: center; 
+    color: black; 
+    font-size: 15px; 
+    font-family: Mulish; 
+    font-weight: 400; 
+    word-wrap: break-word
+}
+
+.Rectangle4{
+    width: 175px; 
+    height: 42px; 
+    left: 122px; 
+    top: 413px; 
+    position: absolute; 
+    background: #FFF8F0; 
+    border-radius: 30px; 
+    border: 1px black solid
+}
+
+.Caretdown2{
+    width: 22px; 
+    height: 21px; 
+    left: 245px; 
+    top: 423px; 
+    position: absolute
+}
+
+.Vector2{
+    width: 15.94px;
+    height: 9.82px; 
+    left: 3.03px; 
+    top: 5.25px; 
+    position: absolute; 
+    background: black
+}
+
+
+/*form 3*/
+.Produk3{
+    width: 389px;
+    height: 493px; 
+    left: 1100px; 
+    top: 100px; 
+    position: absolute
+}
+
+.Rectangle5{
+    width: 389px; 
+    height: 493px; 
+    left: 0px; 
+    top: 0px; 
+    position: absolute; 
+    background: #FFF8F0; 
+    border-radius: 20px; 
+    border: 1px black solid
+}
+
+.Dessert3{
+    width: 300px; 
+    height: 300px; 
+    left: 52px; 
+    top: 30px; 
+    position: absolute; 
+    border-radius: 20px
+}
+
+.IceGelato3{
+    width: 211px; 
+    height: 28px; 
+    left: 96px; 
+    top: 345px; 
+    position: absolute; 
+    text-align: center; 
+    color: black; 
+    font-size: 30px; 
+    font-family: Moul; 
+    font-weight: 400; 
+    word-wrap: break-word
+}
+
+.Pilih3{
+    width: 200px; 
+    height: 28px;
+    left: 108px; 
+    top: 385px; 
+    position: absolute; 
+    text-align: center; 
+    color: black; 
+    font-size: 15px; 
+    font-family: Mulish; 
+    font-weight: 400; 
+    word-wrap: break-word
+}
+
+.Rectangle6{
+    width: 175px; 
+    height: 42px; 
+    left: 122px; 
+    top: 413px; 
+    position: absolute; 
+    background: #FFF8F0; 
+    border-radius: 30px; 
+    border: 1px black solid
+}
+
+.Caretdown3{
+    width: 22px; 
+    height: 21px; 
+    left: 245px; 
+    top: 423px; 
+    position: absolute
+}
+
+.Vector3{
+    width: 15.94px; 
+    height: 9.82px; 
+    left: 3.03px; 
+    top: 5.25px; 
+    position: absolute; 
+    background: black
+}
+
+/*form 4*/
+.Produk4{
+    width: 389px; 
+    height: 493px; 
+    left: 1600px; 
+    top: 100px; 
+    position: absolute
+}
+
+.Rectangle7{
+    width: 389px; 
+    height: 493px; 
+    left: 0px; 
+    top: 0px; 
+    position: absolute; 
+    background: #FFF8F0; 
+    border-radius: 20px; 
+    border: 1px black solid
+}
+
+.Dessert4{
+    width: 300px; 
+    height: 300px; 
+    left: 52px; 
+    top: 30px; 
+    position: absolute; 
+    border-radius: 20px
+}
+
+.IceGelato4{
+    width: 211px; 
+    height: 28px; 
+    left: 96px; 
+    top: 345px; 
+    position: absolute; 
+    text-align: center; 
+    color: black; 
+    font-size: 30px; 
+    font-family: Moul; 
+    font-weight: 400; 
+    word-wrap: break-word
+}
+
+.Pilih4{
+    width: 200px; 
+    height: 28px;
+    left: 108px; 
+    top: 385px; 
+    position: absolute; 
+    text-align: center; 
+    color: black; 
+    font-size: 15px; 
+    font-family: Mulish; 
+    font-weight: 400; 
+    word-wrap: break-word
+}
+
+.Rectangle8{
+    width: 175px; 
+    height: 42px; 
+    left: 122px; 
+    top: 413px; 
+    position: absolute; 
+    background: #FFF8F0; 
+    border-radius: 30px; 
+    border: 1px black solid
+}
+
+.Caretdown4{
+    width: 22px; 
+    height: 21px; 
+    left: 245px; 
+    top: 423px; 
+    position: absolute
+}
+
+.Vector4{
+    width: 15.94px; 
+    height: 9.82px; 
+    left: 3.03px; 
+    top: 5.25px; 
+    position: absolute; 
+    background: black
+}
+
+/*form 5*/
+.Produk5{
+    width: 389px; 
+    height: 493px; 
+    left: 100px; 
+    top: 700px; 
+    position: absolute
+}
+
+.Rectangle9{
+    width: 389px; 
+    height: 493px; 
+    left: 0px; 
+    top: 0px; 
+    position: absolute; 
+    background: #FFF8F0; 
+    border-radius: 20px; 
+    border: 1px black solid
+}
+
+.Makanan1{
+    width: 300px; 
+    height: 300px; 
+    left: 52px; 
+    top: 30px; 
+    position: absolute; 
+    border-radius: 20px
+}
+
+.IceGelato5{
+    width: 211px; 
+    height: 28px; 
+    left: 96px; 
+    top: 345px; 
+    position: absolute; 
+    text-align: center; 
+    color: black; 
+    font-size: 30px; 
+    font-family: Moul; 
+    font-weight: 400; 
+    word-wrap: break-word
+}
+
+.Pilih5{
+    width: 200px; 
+    height: 28px;
+    left: 108px; 
+    top: 385px; 
+    position: absolute; 
+    text-align: center; 
+    color: black; 
+    font-size: 15px; 
+    font-family: Mulish; 
+    font-weight: 400; 
+    word-wrap: break-word
+}
+
+.Rectangle10{
+    width: 175px; 
+    height: 42px; 
+    left: 122px; 
+    top: 413px; 
+    position: absolute; 
+    background: #FFF8F0; 
+    border-radius: 30px; 
+    border: 1px black solid
+}
+
+.Caretdown5{
+    width: 22px; 
+    height: 21px; 
+    left: 245px; 
+    top: 423px; 
+    position: absolute
+}
+
+.Vector5{
+    width: 15.94px; 
+    height: 9.82px; 
+    left: 3.03px; 
+    top: 5.25px; 
+    position: absolute; 
+    background: black
+}
+
+/*form 6*/
+.Produk6{
+    width: 389px; 
+    height: 493px; 
+    left: 600px; 
+    top: 700px; 
+    position: absolute
+}
+
+.Rectangle11{
+    width: 389px; 
+    height: 493px; 
+    left: 0px; 
+    top: 0px; 
+    position: absolute; 
+    background: #FFF8F0; 
+    border-radius: 20px; 
+    border: 1px black solid
+}
+
+.Makanan6{
+    width: 300px; 
+    height: 300px; 
+    left: 52px; 
+    top: 30px; 
+    position: absolute; 
+    border-radius: 20px
+}
+
+.IceGelato6{
+    width: 211px; 
+    height: 28px; 
+    left: 96px; 
+    top: 345px; 
+    position: absolute; 
+    text-align: center; 
+    color: black; 
+    font-size: 30px; 
+    font-family: Moul; 
+    font-weight: 400; 
+    word-wrap: break-word
+}
+
+.Pilih6{
+    width: 200px; 
+    height: 28px;
+    left: 108px; 
+    top: 385px; 
+    position: absolute; 
+    text-align: center; 
+    color: black; 
+    font-size: 15px; 
+    font-family: Mulish; 
+    font-weight: 400; 
+    word-wrap: break-word
+}
+
+.Rectangle12{
+    width: 175px; 
+    height: 42px; 
+    left: 122px; 
+    top: 413px; 
+    position: absolute; 
+    background: #FFF8F0; 
+    border-radius: 30px; 
+    border: 1px black solid
+}
+
+.Caretdown6{
+    width: 22px; 
+    height: 21px; 
+    left: 245px; 
+    top: 423px; 
+    position: absolute
+}
+
+.Vector6{
+    width: 15.94px; 
+    height: 9.82px; 
+    left: 3.03px; 
+    top: 5.25px; 
+    position: absolute; 
+    background: black
+}
+
+
+/*form 7*/
+.Produk7{
+    width: 389px; 
+    height: 493px; 
+    left: 1100px; 
+    top:700px; 
+    position: absolute
+}
+    
+.Rectangle13{
+    width: 389px; 
+    height: 493px; 
+    left: 0px; 
+    top: 0px; 
+    position: absolute; 
+    background: #FFF8F0; 
+    border-radius: 20px; 
+    border: 1px black solid
+}
+
+.Makanan7{
+    width: 300px; 
+    height: 300px; 
+    left: 54px; 
+    top: 23px; 
+    position: absolute; 
+    border-radius: 20px
+}
+
+.IceGelato7{
+    width: 211px; 
+    height: 28px; 
+    left: 96px; 
+    top: 345px; 
+    position: absolute; 
+    text-align: center; 
+    color: black; 
+    font-size: 30px; 
+    font-family: Moul; 
+    font-weight: 400; 
+    word-wrap: break-word
+}
+
+.Pilih7{
+    width: 200px; 
+    height: 28px;
+    left: 108px; 
+    top: 385px; 
+    position: absolute; 
+    text-align: center; 
+    color: black; 
+    font-size: 15px; 
+    font-family: Mulish; 
+    font-weight: 400; 
+    word-wrap: break-word
+}
+
+.Rectangle14{
+    width: 175px; 
+    height: 42px; 
+    left: 121px; 
+    top: 412px; 
+    position: absolute; 
+    background: #FFF8F0; 
+    border-radius: 30px; 
+    border: 1px black solid
+}
+
+.Caretdown7{
+    width: 22px; 
+    height: 21px; 
+    left: 244px; 
+    top: 422px; 
+    position: absolute
+}
+
+.Vector7{
+    width: 15.94px; 
+    height: 9.82px; 
+    left: 3.03px; 
+    top: 5.25px; 
+    position: absolute; 
+    background: black
+}
+
+
+
+/*form 8*/
+.Produk8{
+    width: 389px; 
+    height: 493px; 
+    left: 1600px; 
+    top: 700px; 
+    position: absolute
+}
+
+.Rectangle15{
+    width: 389px; 
+    height: 493px; 
+    left: 0px; 
+    top: 0px; 
+    position: absolute; 
+    background: #FFF8F0; 
+    border-radius: 20px; 
+    border: 1px black solid
+}
+
+.Makanan8{
+    width: 300px; 
+    height: 300px; 
+    left: 52px; 
+    top: 30px; 
+    position: absolute; 
+    border-radius: 20px
+}
+
+.IceGelato8{
+    width: 211px; 
+    height: 28px; 
+    left: 96px; 
+    top: 345px; 
+    position: absolute; 
+    text-align: center; 
+    color: black; 
+    font-size: 30px; 
+    font-family: Moul; 
+    font-weight: 400; 
+    word-wrap: break-word
+}
+
+.Pilih8{
+    width: 200px; 
+    height: 28px;
+    left: 108px; 
+    top: 385px; 
+    position: absolute; 
+    text-align: center; 
+    color: black; 
+    font-size: 15px; 
+    font-family: Mulish; 
+    font-weight: 400; 
+    word-wrap: break-word
+}
+
+.Rectangle16{
+    width: 175px; 
+    height: 42px; 
+    left: 122px; 
+    top: 413px; 
+    position: absolute; 
+    background: #FFF8F0; 
+    border-radius: 30px; 
+    border: 1px black solid
+}
+
+.Caretdown8{
+    width: 22px; 
+    height: 21px; 
+    left: 245px; 
+    top: 423px; 
+    position: absolute
+}
+
+.Vector8{
+    width: 15.94px; 
+    height: 9.82px; 
+    left: 3.03px; 
+    top: 5.25px; 
+    position: absolute; 
+    background: black
+}
+
+/*Form9*/
+.Produk9{
+    width: 389px; 
+    height: 493px; 
+    left: 100px; 
+    top: 1300px; 
+    position: absolute
+}
+
+.Rectangle17{
+    width: 389px; 
+    height: 493px; 
+    left: 0px; 
+    top: 0px; 
+    position: absolute; 
+    background: #FFF8F0;
+    border-radius: 20px; 
+    border: 1px black solid
+}
+
+.Minuman9{
+    width: 281px; 
+    height: 281px; 
+    left: 50px; 
+    top: 33px; 
+    position: absolute; 
+    border-radius: 20px
+}
+
+.IceGelato9{
+    width: 211px; 
+    height: 28px; 
+    left: 96px; 
+    top: 345px; 
+    position: absolute; 
+    text-align: center; 
+    color: black; 
+    font-size: 30px; 
+    font-family: Moul; 
+    font-weight: 400; 
+    word-wrap: break-word
+}
+
+.Pilih9{
+    width: 200px; 
+    height: 28px;
+    left: 108px; 
+    top: 385px; 
+    position: absolute; 
+    text-align: center; 
+    color: black; 
+    font-size: 15px; 
+    font-family: Mulish; 
+    font-weight: 400; 
+    word-wrap: break-word
+}
+.Rectangle18{
+   width: 175px; 
+    height: 42px; 
+    left: 122px; 
+    top: 413px; 
+    position: absolute; 
+    background: #FFF8F0; 
+    border-radius: 30px; 
+    border: 1px black solid
+}
+
+.Caretdown9{
+    width: 22px; 
+    height: 21px; 
+    left: 235px; 
+    top: 418px; 
+    position: absolute
+}
+
+.Vector9{
+    width: 15.94px; 
+    height: 9.82px; 
+    left: 3.03px; 
+    top: 5.25px; 
+    position: absolute; 
+    background: black
+}
+
+
+/*Produk 10*/
+.Produk10{
+    width: 389px; 
+    height: 493px; 
+    left: 600px; 
+    top:  1300px;  
+    position: absolute
+}
+
+.Rectangle19{
+    width: 389px; 
+    height: 493px; 
+    left: 0px; 
+    top: 0px; 
+    position: absolute; 
+    background: #FFF8F0;
+    border-radius: 20px; 
+    border: 1px black solid
+}
+
+.Minuman10{
+    width: 281px; 
+    height: 281px; 
+    left: 50px; 
+    top: 33px; 
+    position: absolute; 
+    border-radius: 20px
+}
+
+.IceGelato10{
+    width: 211px; 
+    height: 28px; 
+    left: 96px; 
+    top: 345px; 
+    position: absolute; 
+    text-align: center; 
+    color: black; 
+    font-size: 30px; 
+    font-family: Moul; 
+    font-weight: 400; 
+    word-wrap: break-word
+}
+
+.Pilih10{
+    width: 200px; 
+    height: 28px;
+    left: 108px; 
+    top: 385px; 
+    position: absolute; 
+    text-align: center; 
+    color: black; 
+    font-size: 15px; 
+    font-family: Mulish; 
+    font-weight: 400; 
+    word-wrap: break-word
+}
+
+.Rectangle20{
+    width: 175px; 
+    height: 42px; 
+    left: 112px; 
+    top: 408px; 
+    position: absolute; 
+    background: #FFF8F0; 
+    border-radius: 30px; 
+    border: 1px black solid
+}
+
+.Caretdown10{
+    width: 22px; 
+    height: 21px; 
+    left: 235px; 
+    top: 418px; 
+    position: absolute
+}
+
+.Vector10{
+    width: 15.94px; 
+    height: 9.82px; 
+    left: 3.03px; 
+    top: 5.25px; 
+    position: absolute; 
+    background: black
+}
+
+/*Form 11*/
+.Produk11{
+    width: 389px; 
+    height: 493px; 
+    left: 1100px; 
+    top:  1300px; 
+    position: absolute
+}
+
+.Rectangle21{
+    width: 389px; 
+    height: 493px; 
+    left: 0px; 
+    top: 0px; 
+    position: absolute; 
+    background: #FFF8F0;
+    border-radius: 20px; 
+    border: 1px black solid
+}
+
+.Minuman11{
+    width: 281px; 
+    height: 281px; 
+    left: 50px; 
+    top: 33px; 
+    position: absolute; 
+    border-radius: 20px
+}
+
+.IceGelato11{
+    width: 211px; 
+    height: 28px; 
+    left: 96px; 
+    top: 345px; 
+    position: absolute; 
+    text-align: center; 
+    color: black; 
+    font-size: 30px; 
+    font-family: Moul; 
+    font-weight: 400; 
+    word-wrap: break-wordd
+}
+
+.Pilih11{
+    width: 200px; 
+    height: 28px;
+    left: 108px; 
+    top: 385px; 
+    position: absolute; 
+    text-align: center; 
+    color: black; 
+    font-size: 15px; 
+    font-family: Mulish; 
+    font-weight: 400; 
+    word-wrap: break-word
+}
+
+.Rectangle22{
+    width: 175px; 
+    height: 42px; 
+    left: 112px; 
+    top: 408px; 
+    position: absolute; 
+    background: #FFF8F0; 
+    border-radius: 30px; 
+    border: 1px black solid
+}
+
+.Caretdown11{
+    width: 22px; 
+    height: 21px; 
+    left: 235px; 
+    top: 418px; 
+    position: absolute
+}
+
+.Vector11{
+    width: 15.94px; 
+    height: 9.82px; 
+    left: 3.03px; 
+    top: 5.25px; 
+    position: absolute; 
+    background: black
+}
+
+/*Form12*/
+.Produk12{
+    width: 389px; 
+    height: 493px; 
+    left: 1600px; 
+    top:  1300px; 
+    position: absolute
+}
+
+.Rectangle23{
+    width: 389px; 
+    height: 493px; 
+    left: 0px; 
+    top: 0px; 
+    position: absolute; 
+    background: #FFF8F0;
+    border-radius: 20px; 
+    border: 1px black solid
+}
+
+.Minuman12{
+    width: 281px; 
+    height: 281px; 
+    left: 50px; 
+    top: 33px; 
+    position: absolute; 
+    border-radius: 20px
+}
+
+.IceGelato12{
+    width: 211px; 
+    height: 28px; 
+    left: 96px; 
+    top: 345px; 
+    position: absolute; 
+    text-align: center; 
+    color: black; 
+    font-size: 30px; 
+    font-family: Moul; 
+    font-weight: 400; 
+    word-wrap: break-word
+}
+
+.Pilih12{
+    width: 200px; 
+    height: 28px;
+    left: 108px; 
+    top: 385px; 
+    position: absolute; 
+    text-align: center; 
+    color: black; 
+    font-size: 15px; 
+    font-family: Mulish; 
+    font-weight: 400; 
+    word-wrap: break-word
+}
+
+.Rectangle24{
+    width: 175px; 
+    height: 42px; 
+    left: 112px; 
+    top: 408px; 
+    position: absolute; 
+    background: #FFF8F0; 
+    border-radius: 30px; 
+    border: 1px black solid
+}
+
+.Caretdown12{
+    width: 22px; 
+    height: 21px; 
+    left: 235px; 
+    top: 418px; 
+    position: absolute
+}
+
+.Vector12{
+    width: 15.94px; 
+    height: 9.82px; 
+    left: 3.03px; 
+    top: 5.25px; 
+    position: absolute; 
+    background: black
+}
+
+

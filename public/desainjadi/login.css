@@ -1,0 +1,258 @@
+.Login{
+    width: 1440px;
+     height: 1834px; 
+     top: -150px;
+     left: -100px;
+     position: absolute;
+     margin-top: auto;
+     margin-left: 100px;
+
+}
+
+.Desktop{
+    width: 1000px; 
+    height: 800px; 
+    left: 0px; 
+    top: 0px; 
+    position: absolute; 
+    background: #F9F9E6;
+}
+
+.imgdesktop{    
+    width: 450px; 
+    height: 816px; 
+    left: 666px; 
+    top: -16px; 
+    position: absolute;
+}
+.Rectangle1{
+    width: 537px;
+    height: 529px; 
+    left: 69px; 
+    top: 202px; 
+    position: absolute; 
+    background: #896D4E; 
+    box-shadow: 4px 4px 4px; 
+    border-radius: 20px; 
+    border: 0.50px gray solid; 
+    filter: blur(2px);;
+}
+
+.Group1{
+    width: 306px; 
+    height: 1546px; 
+    left: 188px; 
+    top: 288px; 
+    position: absolute;
+}
+
+.Login1{
+    width: 215px; 
+    height: 109px; 
+    left: 46px; 
+    top: 37px; 
+    position: absolute; 
+    text-align: center; 
+    color: black; 
+    font-size: 36px; 
+    font-family: Times New Roman; 
+    font-weight: 400; 
+    word-wrap: break-word;
+}
+
+.DonTHaveAccountCreateYourAccount{
+    left: 54px; 
+    top: 95px; 
+    position: absolute; 
+    text-align: center; 
+    color: #070606; 
+    font-size: 11px; 
+    font-family: Mulish; 
+    font-weight: 200; 
+    word-wrap: break-word;
+}
+
+.Rectangle2{
+    width: 306px; 
+    height: 38px; 
+    left: 0px; 
+    top: 140px; 
+    position: absolute; 
+    background: #D9D9D9; 
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)
+    inset; border-radius: 50px;
+}
+
+.Rectangle3{
+    width: 306px; 
+    height: 38px; 
+    left: 0px; 
+    top: 196px; 
+    position: absolute; 
+    background: #D9D9D9; 
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25) 
+    inset; border-radius: 50px;
+}
+
+.RememberMe{
+    width: 65px;
+    height: 12px; 
+    left: 17px; 
+    top: 245px; 
+    position: absolute; 
+    text-align: center; 
+    color: black; 
+    font-size: 6px; 
+    font-family: 
+    Newsreader; 
+    font-weight: 400; 
+    word-wrap: break-word;
+}
+
+.ForgotPasswoard{
+    width: 65px;
+    height: 12px; 
+    left: 241px; 
+    top: 241px; 
+    position: absolute; 
+    text-align: center; 
+    color: black; 
+    font-size: 6px; 
+    font-family: Newsreader; 
+    font-weight: 400; 
+    word-wrap: break-word;
+}
+
+.Rectangle4{
+    width: 104px;
+    height: 25px; 
+    left: 101px; 
+    top: 277px; 
+    position: absolute; 
+    background: #FFF8F0; 
+    border-radius: 50px;
+}
+
+.Login2{
+    width: 65px;
+    height: 12px; 
+    left: 124px; 
+    top: 283px; 
+    position: absolute; 
+    text-align: center; 
+    color: black; 
+    font-size: 13px; 
+    font-family: Newsreader; 
+    font-weight: 700; 
+    word-wrap: break-word;
+}
+
+.Logo1{
+    width: 158px;
+    height: 37px; 
+    left: 74px; 
+    top: 0px; 
+    position: absolute; 
+    backdrop-filter: blur(4px);
+}
+
+.Vector1{
+    width: 13px; 
+    height: 15px; 
+    left: 280px; 
+    top: 209px; 
+    position: absolute; 
+    opacity: 0; 
+    background: white;
+}
+
+.Checkcircle{
+    width: 11px;
+    height: 10px; 
+    left: 14px; 
+    top: 242px; 
+    position: absolute;
+}
+
+.Vector2{
+    width: 11px; 
+    height: 10px; 
+    left: 0px; 
+    top: 0px; 
+    position: absolute; 
+    background: black;
+}
+
+.Vector3{
+    width: 5.59px; 
+    height: 4.06px; 
+    left: 2.83px; 
+    top: 2.97px; 
+    position: absolute; 
+    background: black;
+}
+
+.Boxarrowinright{
+    width: 12px; 
+    height: 13px; 
+    left: 109px; 
+    top: 283px; 
+    position: absolute;
+}
+
+.Vector4{
+    width: 8.25px; 
+    height: 9.75px; 
+    left: 3.75px; 
+    top: 1.62px; 
+    position: absolute; 
+    background: black;
+}
+
+.Vector5{
+    width: 8.25px;
+    height: 5.69px; 
+    left: 0.75px; 
+    top: 3.66px; 
+    position: absolute; 
+    background: black;
+}
+
+.Personfill{
+    width: 18px; 
+    height: 18px; 
+    left: 16px; 
+    top: 151px; 
+    position: absolute;
+}
+
+.Shieldfillcheck{
+    width: 18px; 
+    height: 18px; 
+    left: 71px; 
+    top: 1528px; 
+    position: absolute;
+}
+
+.Email{
+    left: 23px; 
+    top: 151px; 
+    position: absolute; 
+    text-align: center; 
+    color: rgba(0, 0, 0, 0.37); 
+    font-size: 13px; 
+    font-family: Neuton; 
+    font-weight: 400; word-wrap: break-word;
+}
+
+.Password{
+    left: 23px; 
+    top: 210px; 
+    position: absolute; 
+    text-align: center; 
+    color: rgba(0, 0, 0, 0.25); 
+    font-size: 12px; 
+    font-family: Neuton; 
+    font-weight: 400; 
+    word-wrap: break-word;
+}
