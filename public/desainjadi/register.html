@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="Register.css">
 </head>
 <body>
+  <form>
   <div class="Register" >
     <img class="Logo" src="assets/foto/back.png" />
     <div class="Rectangle2"></div>
@@ -14,39 +15,33 @@
     <div class="CreateYourAccountNow">Create your account now!</div>
     <img class="Logo1" src="assets/foto/logo.png" />
     <div class="ButtomRegister">
-      <div class="Rectangle4"></div>
-      <div class="Register2" >Register</div>
-      <div class="Vector" ></div>
-      <div class="Vector1"></div>
+      <button type="submit" class="btn btn-primary">Submit</button>
     </div>
     <div class="Nama" >
-      <div class="Rectangle5" ></div>
-      <div class="Vector2"></div>
-      <div class="Vector3" ></div>
-      <div class="Nama1" >Nama:</span></div>
+      <label for="nama" class="form-label">Nama</label>
+      <input type="nama" class="form-control" id="nama" aria-describedby="nama">
+      <div id="nama" class="form-text"></div>
     </div>
-    <div class="Email" >
-      <div class="Rectangle6"></div>
-      <div class="Vector4"></div>
-      <div class="Email1" >Email:</span></div>
-    </div>
-    <div class="Password">
-      <div class="Rectangle7"></div>
-      <div class="Vector5"></div>
-      <div class="Vector6"></div>
-      <div class="Vector7"></div>
-      <div class="Vector8" ></div>
-      <div class="Vector9"></div>
-      <div class="Password1" >Password:</span></div>
-    </div>
-    <div class="Konfir">
-      <div class="Rectangle8" ></div>
-      <div class="Vector10"></div>
-      <div class="Vector11"></div>
-      <div class="Vector12"></div>
-      <div class="KonfirmasiPassword">konfirmasi password:</div>
-    </div>
+  
+  <div class="Email" >    
+          <label for="exampleInputEmail1" class="form-label">Email</label>
+          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+          <div id="emailHelp" class="form-text"></div>
   </div>
+
+
+  <div class="Password">   
+          <label for="exampleInputPassword1" class="form-label">Password</label>
+          <input type="password" class="form-control" id="exampleInputPassword1">
+   </div>
+   
+  <div class="Konfir">
+     
+          <label for="exampleInputPassword1" class="form-label">Password</label>
+          <input type="password" class="form-control" id="exampleInputPassword1">
+  </div>
+  
+</form>
          
 </body>
 </html>

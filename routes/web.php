@@ -60,6 +60,7 @@ Route::post('/edit-menu/{id_menu}', [AdminController::class, 'editMenu']);
 Route::post('/update-menu/sukses', [AdminController::class, 'UpdateMenu']);
 // test
 Route::get('/test', [Testing::class, 'index']);
+Route::get('/template', function(){return view('templating');});
 Route::post('/test/form', [Testing::class, 'form']);
 
 Auth::routes();
