@@ -9,7 +9,19 @@
 }
 
 body {
-    background-color: #2f1800;
+    justify-content: center;
+}
+
+.bg {
+    position: absolute;
+    background-image: url(../../assets/img/background.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+    width: 100%;
+    filter: blur(3px);
+    -webkit-filter: blur(3px);
 }
 
 .form {
@@ -21,6 +33,11 @@ body {
     padding: 30px;
     border-radius: 6px;
     background: #ddc39d;
+}
+
+.forem {
+    margin-left: 110px;
+    position: fixed;
 }
 
 .form.signup {
@@ -47,10 +64,6 @@ header {
     font-weight: 600;
     color: #232836;
     text-align: center;
-}
-
-form {
-    margin-top: 30px;
 }
 
 .form .field {

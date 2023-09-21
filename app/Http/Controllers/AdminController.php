@@ -69,6 +69,6 @@ class AdminController extends Controller
     {
         $pes = Pesan::with('pengguna', 'bayar', 'detail')->where('status', '=', 2)->orWhere('status', '=', 3)->get();
         $pes = Pdf::loadview('laporan', ['pes' => $pes]);
-        return $pes->download('laporan-pesanan.pdf');
+        return $pes->stream('laporan-pesanan.pdf');
     }
 }
