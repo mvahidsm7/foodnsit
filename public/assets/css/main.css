@@ -2420,9 +2420,6 @@ ul.social-link-team li a {
 # Shop Page Styles
 
 ----------------------------------------------------------------------------- */
-.product-filters {
-    margin-bottom: 80px;
-}
 
 .product-filters ul {
     margin: 0;
@@ -2770,6 +2767,20 @@ table.order-details tbody td {
     box-shadow: 0 0 20px #e4e4e4;
     padding-bottom: 50px;
     border-radius: 5px;
+}
+
+.product-section {
+    max-height: max-content;
+    min-height: max-content;
+}
+
+.menu {
+    border-radius: 2em;
+}
+
+.menu img {
+    border-top-right-radius: 2em;
+    border-top-left-radius: 2em;
 }
 
 /* -----------------------------------------------------------------------------
