@@ -1,4 +1,4 @@
-/.phpunit.cache
+php artisan serve/.phpunit.cache
 /node_modules
 /public/build
 /public/hot
@@ -17,3 +17,4 @@ yarn-error.log
 /.fleet
 /.idea
 /.vscode
+storage/logs/laravel.log
