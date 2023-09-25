@@ -18,13 +18,6 @@
     <div class="bg"></div>
     <form action="{{ route('login') }}" method="post">
         @csrf
-        @error('email')
-            <center>
-                <span class="invalid-feedback" role="alert">
-                    <strong>Email atau Kata Sandi Salah</strong>
-                </span>
-            </center>
-        @enderror
         <div class="forem container mt-5">
             <div class="d-flex">
                 <div class="kartu ms-5 field shadow-lg w-50">
@@ -32,24 +25,34 @@
                         <center>
                             <img class="w-50 mb-2" src="{{ asset('desainjadi/assets/foto/logo.png') }}">
                         </center>
-                        <h2 class="card-title mb-5 text-center">Login</h2>
+                        <h2 class="card-title mb-3 text-center">Login</h2>
+                        @if ($errors->has('email'))
+                            <div class="text-center mb-2">
+                                <span class="text-danger">{{ $errors->first('email') }}</span>
+                            </div>
+                        @endif
                         <div class="container mb-1">
                             <div class="row d-flex mb-3">
                                 <input id="email" type="email" class="" name="email"
                                     value="{{ old('email') }}" required autocomplete="email" autofocus
                                     placeholder="Email">
                             </div>
-                            <div class="row d-flex mb-3">
-                                <input id="password" type="password"
-                                    class="form-control @error('password') is-invalid @enderror" name="password"
+                            <div class="row d-flex mb-3" id="formPw">
+                                <input id="password" type="password" class="form-control col-11" name="password"
                                     required autocomplete="current-password" placeholder="Password">
+                                <svg class="lihat" xmlns="http://www.w3.org/2000/svg" height="1em"
+                                    viewBox="0 0 576 512" onclick="lihatPassword()"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                                    <path
+                                        d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM144 256a144 144 0 1 1 288 0 144 144 0 1 1 -288 0zm144-64c0 35.3-28.7 64-64 64c-7.1 0-13.9-1.2-20.3-3.3c-5.5-1.8-11.9 1.6-11.7 7.4c.3 6.9 1.3 13.8 3.2 20.7c13.7 51.2 66.4 81.6 117.6 67.9s81.6-66.4 67.9-117.6c-11.1-41.5-47.8-69.4-88.6-71.1c-5.8-.2-9.2 6.1-7.4 11.7c2.1 6.4 3.3 13.2 3.3 20.3z" />
+                                </svg>
                             </div>
                         </div>
                         <div class="mb-3">
                             <button type="submit" class="btn">Masuk</button>
                         </div>
                         <div class="text-center">
-                            Belum Punya Akun? <a class="text-decoration-none" href="{{ route('register') }}">Buat Akun</a>
+                            Belum Punya Akun? <a class="text-decoration-none" href="{{ route('register') }}">Buat
+                                Akun</a>
                         </div>
                     </div>
                 </div>
@@ -61,5 +64,16 @@
     </form>
 
 </body>
+
+<script>
+    function lihatPassword() {
+        var x = document.getElementById("password");
+        if (x.type === "password") {
+            x.type = "text";
+        } else {
+            x.type = "password";
+        }
+    }
+</script>
 
 </html>

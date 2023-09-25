@@ -25,7 +25,7 @@ use Illuminate\Support\Facades\Route;
 */
 // index
 Auth::routes();
-Route::get('/', [BerandaController::class, 'index']);
+Route::get('/', [BerandaController::class, 'index'])->name('index');
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index']);
 // menu
 Route::get('/menu', [MenuController::class, 'index']);
