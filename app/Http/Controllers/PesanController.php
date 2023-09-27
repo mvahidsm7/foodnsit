@@ -49,13 +49,13 @@ class PesanController extends Controller
                 'expired_at' => now()->addHours(2)
             ]
         );
-        for ($i = 1; $i < $men; $i++) {
+        for ($i = 1; $i <= $men; $i++) {
             if ($request['menu'][$i - 1] != 0) {
                 $harga =  Menu::where('id_menu', ('MN' . $i))->get();
                 $detail = Detail::create(
                     [
                         'kd_pes' => $pesanan->kd_pes,
-                        'id_menu' => 'MN' . $i + 1,
+                        'id_menu' => 'MN' . $i,
                         'harga' => $harga[0]->harga,
                         'qty' => $request['menu'][$i - 1],
                     ]
