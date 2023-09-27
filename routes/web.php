@@ -3,6 +3,7 @@
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\BayarController;
 use App\Http\Controllers\BerandaController;
+use App\Http\Controllers\emailController;
 use App\Http\Controllers\MejaController;
 use App\Http\Controllers\MenuController;
 use App\Http\Controllers\PesananController;
@@ -39,6 +40,7 @@ Route::get('/profil', [ProfilController::class, 'index']);
 Route::get('/detail/{kd_pes}', [ProfilController::class, 'detail']);
 Route::get('/bayar/{kd_pes}', [BayarController::class, 'index']);
 Route::get('/bayar/{kd_pes}/sukses', [BayarController::class, 'create']);
+Route::get('email', [emailController::class, 'email'])->name('email');
 Route::get('batal/{kd_pes}', [ProfilController::class, 'batal']);
 Route::post('batal/{kd_pes}/sukses', [ProfilController::class, 'BatalSukses']);
 Route::post('/expired/{kd_pes}', [PesanController::class, 'expired']);

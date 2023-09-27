@@ -6,6 +6,7 @@ $vendorDir = dirname(__DIR__);
 $baseDir = dirname($vendorDir);
 
 return array(
+    'App\\Console\\Commands\\batalUnpay' => $baseDir . '/app/Console/Commands/batalUnpay.php',
     'App\\Console\\Kernel' => $baseDir . '/app/Console/Kernel.php',
     'App\\Exceptions\\Handler' => $baseDir . '/app/Exceptions/Handler.php',
     'App\\Http\\Controllers\\AdminController' => $baseDir . '/app/Http/Controllers/AdminController.php',
@@ -43,7 +44,9 @@ return array(
     'App\\Http\\Requests\\UpdateBayarRequest' => $baseDir . '/app/Http/Requests/UpdateBayarRequest.php',
     'App\\Http\\Requests\\UpdateKategoriRequest' => $baseDir . '/app/Http/Requests/UpdateKategoriRequest.php',
     'App\\Http\\Requests\\UpdateMenuRequest' => $baseDir . '/app/Http/Requests/UpdateMenuRequest.php',
+    'App\\Jobs\\autoCancel' => $baseDir . '/app/Jobs/autoCancel.php',
     'App\\Models\\Bayar' => $baseDir . '/app/Models/Bayar.php',
+    'App\\Models\\Detail' => $baseDir . '/app/Models/Detail.php',
     'App\\Models\\Kategori' => $baseDir . '/app/Models/Kategori.php',
     'App\\Models\\Meja' => $baseDir . '/app/Models/Meja.php',
     'App\\Models\\Menu' => $baseDir . '/app/Models/Menu.php',
