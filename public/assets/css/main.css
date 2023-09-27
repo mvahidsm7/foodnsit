@@ -24,7 +24,7 @@ body {
     font-size: 1rem;
     letter-spacing: 0.1px;
     line-height: 1.8;
-    color: #051922;
+    color: #FFB3B3;
     overflow-x: hidden;
 }
 
@@ -436,7 +436,7 @@ p:last-child {
 }
 
 .orange-text {
-    color: #e87121;
+    color: #C1224F   ;
 }
 
 .blue-bg {
@@ -446,16 +446,16 @@ p:last-child {
 a.boxed-btn {
     font-family: 'Poppins', sans-serif;
     display: inline-block;
-    background-color: #e87121;
-    color: #fff;
+    color: #ffffff;
+    border: 2px solid #C1EFFF;
     padding: 10px 20px;
 }
 
 a.bordered-btn {
     font-family: 'Poppins', sans-serif;
     display: inline-block;
-    color: #fff;
-    border: 2px solid #e87121;
+    color: #ffffff;
+    border: 2px solid #C1EFFF;
     padding: 7px 20px;
 }
 
@@ -493,7 +493,7 @@ a.cart-btn {
     bottom: 0px;
     width: 50px;
     height: 2px;
-    background-color: #e87121;
+    background-color: #000000;
     margin: 0 auto;
 }
 
@@ -559,7 +559,7 @@ a.cart-btn {
 ----------------------------------------------------------------------------- */
 ul.navbar-nav li.nav-item a.nav-link,
 ul.navbar-nav li.nav-item.active a.nav-link {
-    color: #051922;
+    color: #FFB3B3;
 }
 
 .top-header-area {
@@ -666,7 +666,7 @@ ul.sub-menu li:last-child {
 }
 
 .mean-bar a.meanmenu-reveal {
-    background-color: #e87121;
+    background-color: #C1EFFF;
 }
 
 .main-menu-wrap {
@@ -763,7 +763,7 @@ nav.main-menu li a {
 }
 
 .sticky-wrapper.is-sticky .top-header-area {
-    background-color: #051922;
+    background-color: #FFB3B3;
     padding: 15px 0;
 }
 
@@ -903,7 +903,7 @@ a.mobile-show {
 }
 
 .footer-area {
-    background-color: #051922;
+    background-color: #4797B1;
     color: #fff;
     padding: 150px 0;
 }
@@ -1054,8 +1054,8 @@ a.boxed-btn {
 }
 
 a.boxed-btn:hover {
-    background-color: #051922;
-    color: #e87121;
+    background-color: #C1EFFF;
+    color: #000000;
 }
 
 a.bordered-btn {
@@ -1065,7 +1065,7 @@ a.bordered-btn {
 }
 
 a.bordered-btn:hover {
-    background-color: #e87121;
+    background-color: #FFB3B3;
     color: #fff;
 }
 
@@ -1076,7 +1076,7 @@ ul.sub-menu a {
 }
 
 ul.sub-menu li:hover a {
-    color: #e87121;
+    color: #000000;
 }
 
 .single-tof-box {
@@ -1403,7 +1403,7 @@ a.mobile-show.search-bar-icon:hover {
 
 ----------------------------------------------------------------------------- */
 .hero-bg {
-    background-image: url(https://a.1stdibscdn.com/trade/TRADE_PROJECT/1536598597_cq817/ELEMENTS-2.jpg?disable=upscale&auto=webp&quality=60&width=1280);
+    background-image: url(https://www.thenewburyboston.com/sites/default/files/styles/gallery_1568x1024/public/2021-11/Ken%20Fulk%20-%20Contessa1278.jpg?itok=3dCZtsHw);
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -1436,13 +1436,12 @@ body {
     width: 100%;
     height: 100%;
     content: "";
-    background-color: #07212e;
     z-index: -1;
     opacity: 0.6;
 }
 
 .hero-text p.subtitle {
-    color: #e87121;
+    color: #000000;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 7px;
@@ -1619,12 +1618,12 @@ div.owl-controls,
     display: block;
     font-size: 24px;
     margin-right: 15px;
-    color: #e87121;
+    color: #FFB3B3;
     width: 65px;
     height: 65px;
     text-align: center;
     line-height: 60px;
-    border: 2px #e87121 dotted;
+    border: 2px #000000 dotted;
     border-radius: 999px;
 }
 
