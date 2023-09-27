@@ -12,7 +12,7 @@ class emailController extends Controller
 {
     public function email()
     {
-        $user = \Auth::user();
+        $user = Auth::user();
         Mail::to($user->email)->send(new kirimInvoice());
         return redirect('');
     }
