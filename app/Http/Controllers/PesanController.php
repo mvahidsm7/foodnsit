@@ -68,6 +68,7 @@ class PesanController extends Controller
     {
         return view('sukses');
     }
+    
     public function expired($kd_pes)
     {
         DB::table('pesan')->where('kd_pes', $kd_pes)->update(array('status' => 4));
