@@ -2515,7 +2515,7 @@
             },
             "time": "2021-08-23T08:52:05+00:00",
             "type": "library",
-            "installation-source": "dist",
+            "installation-source": "source",
             "autoload": {
                 "psr-4": {
                     "Midtrans\\": "Midtrans/"
