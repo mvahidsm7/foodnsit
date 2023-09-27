@@ -565,6 +565,7 @@ class ComposerStaticInit8e954656e11afcd5f7f5514d514599c4
     );
 
     public static $classMap = array (
+        'App\\Console\\Commands\\batalUnpay' => __DIR__ . '/../..' . '/app/Console/Commands/batalUnpay.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
         'App\\Http\\Controllers\\AdminController' => __DIR__ . '/../..' . '/app/Http/Controllers/AdminController.php',
@@ -602,7 +603,9 @@ class ComposerStaticInit8e954656e11afcd5f7f5514d514599c4
         'App\\Http\\Requests\\UpdateBayarRequest' => __DIR__ . '/../..' . '/app/Http/Requests/UpdateBayarRequest.php',
         'App\\Http\\Requests\\UpdateKategoriRequest' => __DIR__ . '/../..' . '/app/Http/Requests/UpdateKategoriRequest.php',
         'App\\Http\\Requests\\UpdateMenuRequest' => __DIR__ . '/../..' . '/app/Http/Requests/UpdateMenuRequest.php',
+        'App\\Jobs\\autoCancel' => __DIR__ . '/../..' . '/app/Jobs/autoCancel.php',
         'App\\Models\\Bayar' => __DIR__ . '/../..' . '/app/Models/Bayar.php',
+        'App\\Models\\Detail' => __DIR__ . '/../..' . '/app/Models/Detail.php',
         'App\\Models\\Kategori' => __DIR__ . '/../..' . '/app/Models/Kategori.php',
         'App\\Models\\Meja' => __DIR__ . '/../..' . '/app/Models/Meja.php',
         'App\\Models\\Menu' => __DIR__ . '/../..' . '/app/Models/Menu.php',
