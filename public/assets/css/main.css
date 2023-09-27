@@ -825,7 +825,7 @@ a.mobile-show {
     padding: 15px;
     width: 60%;
     background-color: transparent;
-    border-bottom: 1px solid #e87121;
+    border-bottom: 1px solid #FFF8F0;
     display: block;
     margin: 0 auto;
     text-align: center;
@@ -837,7 +837,7 @@ a.mobile-show {
 
 .search-bar-tablecell button[type=submit] {
     border: none;
-    background-color: #e87121;
+    background-color: #FFF8F0;
     padding: 15px 30px;
     cursor: pointer;
     display: inline-block;
@@ -1217,8 +1217,8 @@ input[type="submit"] {
 }
 
 input[type="submit"]:hover {
-    background-color: #051922;
-    color: #e87121;
+    background-color: #FFF8F0;
+    color: black;
 }
 
 div.owl-controls,
@@ -1499,7 +1499,7 @@ body {
 }
 
 input[type="submit"] {
-    background-color: #e87121;
+    background-color: #FFFFAA;
     color: #051922;
     font-weight: 700;
     text-transform: uppercase;
@@ -2420,9 +2420,6 @@ ul.social-link-team li a {
 # Shop Page Styles
 
 ----------------------------------------------------------------------------- */
-.product-filters {
-    margin-bottom: 80px;
-}
 
 .product-filters ul {
     margin: 0;
@@ -2770,6 +2767,26 @@ table.order-details tbody td {
     box-shadow: 0 0 20px #e4e4e4;
     padding-bottom: 50px;
     border-radius: 5px;
+}
+
+.product-section {
+    max-height: max-content;
+    min-height: max-content;
+}
+
+.menu {
+    border-radius: 20px;
+    background-color: #FFF8F0;
+}
+
+.menu img {
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+}
+
+.menu input {
+    border-radius: 20px;
+    background-color: #FFFFAA;
 }
 
 /* -----------------------------------------------------------------------------

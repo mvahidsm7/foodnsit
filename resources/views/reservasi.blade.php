@@ -9,7 +9,7 @@
                         <form action="/pesan/sukses" method="post">
                             @csrf
                             <h6 class="text-light">
-                                <section>Meja :</section>
+                                <section class="mb-2">Meja :</section>
                                 <select class="form-control form-control-lg" name="no_meja" id=""
                                     class="form-control input-group form-label">
                                     <option value="" hidden selected>Pilih Meja</option>
@@ -20,20 +20,31 @@
                                         </option>
                                     @endforeach
                                 </select><br>
-                                <section>Tanggal :</section>
+                                <section class="mb-2">Tanggal :</section>
                                 <input class="form-control form-control-lg" type="date"
                                     class="form-control input-group form-label" name="tanggal"><br>
-                                <section>Jam :</section>
+                                <section class="mb-2">Jam :</section>
                                 <input class="form-control form-control-lg" type="time"
                                     class="form-control input-group form-label" name="jam"><br>
-                                <section>Menu :</section>
-                                <div class="row mb-5" style="margin-left: 3px">
+                                <section class="mb-2">Menu :</section>
+                                <div class="row mb-5">
                                     @foreach (App\Models\Menu::all() as $item)
-                                        <div class="col-3">
+                                        <div class="col-sm-4 mb-4">
+                                            <div class="menu card h-100 text-center">
+                                                <img class="card-img-top" src="{{ $item->gambar }}" alt="Title">
+                                                <div class="card-body">
+                                                    <h4 class="card-title">{{ $item->nama }}</h4>
+                                                    <h6>Rp. {{ $item->harga }}</h6>
+                                                    <input class="w-100" type="number" name="menu[]" id=""
+                                                        placeholder="isi jumlah" min="0">  
+                                                </div>
+                                            </div>
+                                        </div>
+                                        {{-- <div class="col-3">
                                             <h6 style="color: white">{{ $item->nama }}</h6>
                                             <input type="number" name="menu[]" id="" placeholder="isi jumlah"
                                                 min="0" style="width: 150px">
-                                        </div>
+                                        </div> --}}
                                     @endforeach <br>
                                 </div>
                                 <center><input type="submit" value="PESAN" style="width: 100%"></center>
