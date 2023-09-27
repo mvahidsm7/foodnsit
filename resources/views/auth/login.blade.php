@@ -57,7 +57,7 @@
                     </div>
                 </div>
                 <div class="gambar w-25 h-25 shadow-lg">
-                    <img src="{{ asset('desainjadi/assets/foto/back.png') }}" alt="">
+                    <img src="{{ asset('desainjadi/assets/foto/gmbr.jpg') }}" alt="">
                 </div>
             </div>
         </div>

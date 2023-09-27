@@ -107,13 +107,13 @@ header {
 .btn {
     height: 35px;
     color: #000000;
-    background-color: #FFB3B3;
+    background-color: #D7C0AE;
     transition: all 0.3s ease;
     cursor: pointer;
 }
 
 .btn:hover {
-    background-color: #C1EFFF;
+    background-color: #BE8C63;
     color: #000000;
 }
 
@@ -220,8 +220,8 @@ a.google span {
 .kartu {
     height: 602px;
     padding: 5%;
-    border: #FFE9AE solid;
-    background-color: #FFDBA4;
+    border: #967E76 solid;
+    background-color: #355764;
     border-top-left-radius: 1em;
     border-bottom-left-radius: 1em;
 }
