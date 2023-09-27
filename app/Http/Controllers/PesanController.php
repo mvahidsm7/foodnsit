@@ -55,7 +55,7 @@ class PesanController extends Controller
                 $detail = Detail::create(
                     [
                         'kd_pes' => $pesanan->kd_pes,
-                        'id_menu' => 'MN' . $i,
+                        'id_menu' => 'MN' . $i + 1,
                         'harga' => $harga[0]->harga,
                         'qty' => $request['menu'][$i - 1],
                     ]
@@ -64,10 +64,17 @@ class PesanController extends Controller
         }
         return redirect('sukses');
     }
+
     public function Sukses()
     {
         return view('sukses');
     }
+
+    public function selesai()
+    {
+        return 'awokawok';
+    }
+
     public function expired($kd_pes)
     {
         DB::table('pesan')->where('kd_pes', $kd_pes)->update(array('status' => 4));
