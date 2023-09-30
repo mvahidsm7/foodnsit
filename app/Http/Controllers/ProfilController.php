@@ -3,12 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Models\Meja;
-use App\Models\Pesan;
 use App\Models\Menu;
+use App\Models\Bayar;
+use App\Models\Pesan;
 use App\Models\Detail;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 
 class ProfilController extends Controller
 {
@@ -60,5 +61,20 @@ class ProfilController extends Controller
         $menu = $detail;
         // dd($menu);
         return view('detail', compact('user', 'pes', 'menu'));
+    }
+    public function invoice($kd_pes)
+    {
+        $user = Auth::user();
+        $bayar = Bayar::where('kd_pes', '=', $kd_pes)->get();
+        $pes = Pesan::where('kd_pes', '=', $kd_pes)->get();
+        $pes = $pes[0];
+        $bayar = $bayar[0];
+        $det = Detail::with('menu')->where('kd_pes', '=', $kd_pes)->get();
+        foreach ($det as $d) {
+            $detail[] = $d;
+        }
+        $menu = $detail;
+        $noUrut = 1;
+        return view('invoice', compact('user', 'pes', 'menu', 'bayar', 'noUrut'));
     }
 }

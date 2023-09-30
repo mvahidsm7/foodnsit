@@ -38,6 +38,7 @@ Route::get('/sukses', [PesanController::class, 'Sukses']);
 // profil & pesanan
 Route::get('/profil', [ProfilController::class, 'index']);
 Route::get('/detail/{kd_pes}', [ProfilController::class, 'detail']);
+Route::get('/invoice/{kd_pes}', [ProfilController::class, 'invoice']);
 Route::get('/bayar/{kd_pes}', [BayarController::class, 'index']);
 Route::get('/bayar/{kd_pes}/sukses', [BayarController::class, 'create']);
 Route::get('email', [emailController::class, 'email'])->name('email');
