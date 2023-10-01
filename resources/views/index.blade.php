@@ -82,14 +82,14 @@
 
             <div class="row">
                 @foreach ($menu as $m)
-                    <div class="col-lg-4 col-md-6 text-center">
-                        <div class="single-product-item">
-                            <div class="product-image">
-                                <a href="single-product.html"><img src="{{ $m->gambar }}" alt=""></a>
+                    <div class="col-sm-4 mb-4">
+                        <div class="menu card h-100 text-center">
+                            <img class="card-img-top" src="{{ $m->gambar }}" alt="Title">
+                            <div class="card-body">
+                                <h4 class="card-title">{{ $m->nama }}</h4>
+                                <h6>Rp. {{ $m->harga }}</h6>
+                                <p class="card-text">{{ $m->deskripsi }}</p>
                             </div>
-                            <h3>{{ $m->nama }}</h3>
-                            <p class="product-price">IDR {{ $m->harga }}</p>
-                            <p>{{ $m->deskripsi }}</p>
                         </div>
                     </div>
                 @endforeach
