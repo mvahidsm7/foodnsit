@@ -95,12 +95,15 @@
                                         Pesanan</a>
                                 @endif
                             @elseif ($p->status == 2)
-                                <a href="{{ $p->kd_pes }}/selesain" class="btn btn-outline-success">Selesaikan
-                                    Pesanan</a>
-                                <a href="/detail/{{ $p->kd_pes }}" class="btn btn-outline-secondary">Detail
-                                    Pesanan</a>
-                                <a href="/batal/{{ $p->kd_pes }}" class="btn btn-outline-danger">Batalkan
-                                    Pesanan</a>
+                                <form action="selesai/{{ $p->kd_pes }}" method="post">
+                                    @csrf
+                                    <button type="submit" class="btn btn-outline-success">Selesaikan
+                                        Pesanan</button>
+                                    <a href="/detail/{{ $p->kd_pes }}" class="btn btn-outline-secondary">Detail
+                                        Pesanan</a>
+                                    <a href="/batal/{{ $p->kd_pes }}" class="btn btn-outline-danger">Batalkan
+                                        Pesanan</a>
+                                </form>
                             @else
                                 <a href="/detail/{{ $p->kd_pes }}" class="btn btn-outline-secondary">Detail
                                     Pesanan</a>

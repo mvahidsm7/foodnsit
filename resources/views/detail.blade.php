@@ -55,9 +55,12 @@
                                     <a href="">bayar</a>
                                 @endif
                             @elseif ($pes->status == 2)
-                                <a href="/invoice/{{ $pes->kd_pes }}" class="btn btn-outline-info mb-3" style="width: 750px">Invoice</a>
+                                <a href="/invoice/{{ $pes->kd_pes }}" class="btn btn-outline-info mb-3"
+                                    style="width: 750px">Invoice</a>
                                 <a href="/profil" class="btn btn-outline-secondary" style="width: 750px">Kembali</a>
                             @elseif ($pes->status == 3)
+                                <a href="/invoice/{{ $pes->kd_pes }}" class="btn btn-outline-info mb-3"
+                                    style="width: 750px">Invoice</a>
                                 <a href="/profil" class="btn btn-outline-secondary" style="width: 750px">Kembali</a>
                             @else
                                 <a href="/profil" class="btn btn-outline-secondary" style="width: 750px">Kembali</a>

@@ -35,6 +35,7 @@ Route::get('/set-pesan', [PesanController::class, 'setReservasi']);
 Route::get('/pesan', [PesanController::class, 'TampilReservasi']);
 Route::post('/pesan/sukses', [PesanController::class, 'Reservasi']);
 Route::get('/sukses', [PesanController::class, 'Sukses']);
+Route::post('/selesai/{kd_pes}', [PesanController::class, 'selesai']);
 // profil & pesanan
 Route::get('/profil', [ProfilController::class, 'index']);
 Route::get('/detail/{kd_pes}', [ProfilController::class, 'detail']);
