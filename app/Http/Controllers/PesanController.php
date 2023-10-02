@@ -75,4 +75,13 @@ class PesanController extends Controller
         DB::table('pesan')->where('kd_pes', $kd_pes)->update(array('status' => 4));
         return redirect('/profil');
     }
+
+    public function selesai($kd_pes)
+    {
+        $pesanan = Pesan::where('kd_pes', $kd_pes)->get();
+        $pesanan = $pesanan[0];
+        DB::table('pesan')->where('kd_pes', $kd_pes)->update(array('status' => 3));
+        DB::table('meja')->where('no_meja', $pesanan->no_meja)->update(array('status' => 'tersedia'));
+        return redirect('/');
+    }
 }
