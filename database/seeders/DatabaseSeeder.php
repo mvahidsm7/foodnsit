@@ -140,7 +140,7 @@ class DatabaseSeeder extends Seeder
         User::create(
             [
                 'name' => 'vahid',
-                'email' => 'mavhidsm7@gmail.com',
+                'email' => 'mvahidsm7@gmail.com',
                 'password' => Hash::make('vahid123'),
             ]
         );

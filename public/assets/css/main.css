@@ -1,3 +1,9 @@
+:root {
+    --first: #27374D;
+    --second: #526D82;
+    --third: #9DB2BF;
+    --fourth: #DDE6ED;
+}
 /*
 Template Name: Fruitkha - Responsive Bootstrap4 Shop Template
 Template URI:
@@ -2777,7 +2783,7 @@ table.order-details tbody td {
 
 .menu {
     border-radius: 20px;
-    background-color: #FFF8F0;
+    background-color: var(--fourth);
 }
 
 .menu img {
@@ -2787,7 +2793,7 @@ table.order-details tbody td {
 
 .menu input {
     border-radius: 20px;
-    background-color: #BFCCB5;
+    background-color: var(--third);
 }
 
 /* -----------------------------------------------------------------------------
