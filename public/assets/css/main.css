@@ -4,6 +4,7 @@
     --third: #9DB2BF;
     --fourth: #DDE6ED;
 }
+
 /*
 Template Name: Fruitkha - Responsive Bootstrap4 Shop Template
 Template URI:
@@ -442,7 +443,7 @@ p:last-child {
 }
 
 .orange-text {
-    color: var(--second)   ;
+    color: var(--second);
 }
 
 .blue-bg {
@@ -674,7 +675,7 @@ ul.sub-menu li:last-child {
 .mean-bar a.meanmenu-reveal {
     background-color: var(--first);
 }
- 
+
 .main-menu-wrap {
     position: relative;
 }
@@ -1449,7 +1450,7 @@ body {
 }
 
 .hero-text p.subtitle {
-    color:white;
+    color: white;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 7px;
@@ -2794,6 +2795,27 @@ table.order-details tbody td {
 .menu input {
     border-radius: 20px;
     background-color: var(--third);
+}
+
+.input {
+    margin: 0;
+    height: 2.5em;
+    background-color: #9DB2BF;
+    color: white;
+    border: none;
+    border-bottom: none;
+    outline: none;
+    border-radius: 20px;
+}
+
+.input::placeholder {
+    color: #DDE6ED;
+}
+
+.input:focus {
+    outline: none;
+    border-bottom: var(--second) solid 3px;
+    transition: 250ms;
 }
 
 /* -----------------------------------------------------------------------------

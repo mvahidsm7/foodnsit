@@ -10,7 +10,7 @@
                             @csrf
                             <h6 class="text-light">
                                 <section class="mb-2">Meja :</section>
-                                <select class="form-control form-control-lg" name="no_meja" id=""
+                                <select class="input w-100 form-control-lg" name="no_meja" id=""
                                     class="form-control input-group form-label">
                                     <option value="" hidden selected>Pilih Meja</option>
                                     @foreach ($meja as $m)
@@ -21,10 +21,10 @@
                                     @endforeach
                                 </select><br>
                                 <section class="mb-2">Tanggal :</section>
-                                <input class="form-control form-control-lg" type="date"
+                                <input class="input w-100 form-control-lg" type="date"
                                     class="form-control input-group form-label" name="tanggal"><br>
                                 <section class="mb-2">Jam :</section>
-                                <input class="form-control form-control-lg" type="time"
+                                <input class="input w-100 form-control-lg" type="time"
                                     class="form-control input-group form-label" name="jam"><br>
                                 <section class="mb-2">Menu :</section>
                                 <div class="row mb-5">
