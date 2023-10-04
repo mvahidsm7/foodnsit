@@ -51,6 +51,7 @@ class BayarController extends Controller
             ),
             'customer_details' => array(
                 'first_name' => Auth::user()->name,
+                'email' => Auth::user()-> email
             ),
         );
         $snapToken = \Midtrans\Snap::getSnapToken($params);
