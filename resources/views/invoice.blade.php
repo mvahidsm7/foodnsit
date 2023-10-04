@@ -14,15 +14,15 @@
 
     <!-- Google fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
     <!-- Custom Stylesheet -->
     <link type="text/css" rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
 </head>
 <body>
 
-<!-- Invoice 2 start -->
-<div class="invoice-2 invoice-content">
+<!-- Invoice 6 start -->
+<div class="invoice-6 invoice-content">
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
@@ -40,85 +40,87 @@
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
-                                    <div class="invoice-id">
-                                        <div class="info">
-                                            <h1 class="inv-header-1">Invoice</h1>
-                                            <p class="mb-1">Invoice Nomor: <span>{{ $pes->kd_pes }}</span></p>
-                                            {{-- <p class="mb-0">Invoice Tanggal: <span>24 Jan 2022</span></p> --}}
+                                    <div class="invoice-contact-us">
+                                        <h1>Hubungi Kami</h1>
+                                        <ul class="link">
+                                            <li>
+                                                <i class="fa fa-map-marker"></i> Jalan Budhi, Bandung
+                                            </li>
+                                            <li>
+                                                <i class="fa fa-envelope"></i> <a href="mailto:sales@hotelempire.com">info@foodnsit.com</a>
+                                            </li>
+                                            <li>
+                                                <i class="fa fa-phone"></i> <a href="tel:+55-417-634-7071">+62 123 647 840</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="invoice-contant">
+                            <div class="invoice-top">
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <h1 class="invoice-name">Invoice</h1>
+                                    </div>
+                                    <div class="col-sm-6 mb-30">
+                                        <div class="invoice-number-inner">
+                                            <h2 class="name"></h2>
+                                            <p class="mb-0">Tanggal Invoice: <span>{{ $pes->tanggal }}</span></p>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6 mb-30">
+                                        <div class="invoice-number">
+                                            <h4 class="inv-title-1">Invoice To</h4>
+                                            <h2 class="name mb-10">{{ Auth::user()->name }}</h2>
+                                            <p class="invo-addr-1 mb-0">
+                                            {{ Auth::user()->email }} <br/>
+                                            Nomor Meja          : {{ $pes->no_meja }} <br/>
+                                            </p>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="invoice-top">
-                            <div class="row">
-                                <div class="col-sm-6">
-                                    <div class="invoice-number mb-30">
-                                        <h4 class="inv-title-1">Kepada:</h4> <br/>
-                                        <h2 class="name">{{ Auth::user()->name }}</h2>
-                                        <p class="invo-addr-1">
-                                            Email               : {{ Auth::user()->email }} <br/>
-                                            Nomor Meja          : {{ $pes->no_meja }} <br/>
-                                            Tanggal Reservasi   : {{ $pes->tanggal }}
-                                        </p>
+                            <div class="invoice-center">
+                                <div class="order-summary">
+                                    <div class="table-outer">
+                                        <table class="default-table invoice-table">
+                                            <thead>
+                                            <tr>
+                                                <th>Menu</th>
+                                                <th>Harga</th>
+                                                <th>Jumlah</th>
+                                                <th>Total</th>
+                                            </tr>
+                                            </thead>
+                                            @foreach ($menu as $men)
+                                            <tbody>
+                                            <tr>
+                                                <td>{{ $men->menu->nama }}</td>
+                                                <td>Rp.{{ $men->harga }}</td>
+                                                <td>{{ $men->qty }}</td>
+                                                <td>Rp.{{ $men->menu->harga * $men->qty }}</td>
+                                            </tr>
+                                            @endforeach
+                                            <tr>
+                                                <td></td>
+                                                <td></td>
+                                                <td><strong>Total</strong></td>
+                                                <td><strong>Rp.{{ $bayar->total }}</strong></td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="invoice-center">
-                            <div class="table-responsive">
-                                <table class="table mb-0 table-striped invoice-table">
-                                    <thead class="bg-active">
-                                    <tr class="tr">
-                                        <th>No.</th>
-                                        <th class="pl0 text-start">Menu</th>
-                                        <th class="text-center">Harga</th>
-                                        <th class="text-center">Jumlah</th>
-                                        <th class="text-end">Total</th>
-                                    </tr>
-                                    </thead>
-                                    <tbody>
-                                        @foreach ($menu as $men)
-                                    <tr class="tr">
-                                        <td>
-                                            <div class="item-desc-1">
-                                                <span>{{ $noUrut++ }}</span>
-                                            </div>
-                                        </td>
-                                        <td class="pl0">{{ $men->menu->nama }}</td>
-                                        <td class="text-center">Rp.{{ $men->harga }}</td>
-                                        <td class="text-center">{{ $men->qty }}</td>
-                                        <td class="text-end">Rp.{{ $men->menu->harga * $men->qty }}</td>
-                                    </tr>
-                                        @endforeach
-                                    <tr class="tr2">
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td class="text-center f-w-600 active-color">Total</td>
-                                        <td class="f-w-600 text-end active-color">Rp.{{ $bayar->total }}</td>
-                                    </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                        <div class="invoice-bottom">
-                            <div class="row">
-                                <div class="col-lg-6 col-md-7 col-sm-7">
-                                    <div class="terms-conditions mb-30">
-                                        <h3 class="inv-title-1">Syarat & Ketentuan</h3>
-                                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy has</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="invoice-contact clearfix">
-                            <div class="row g-0">
-                                <div class="col-sm-12">
-                                    <div class="contact-info clearfix">
-                                        <a href="#" class="d-flex"><i class="fa fa-phone"></i> +62 123 647 840</a>
-                                        <a href="#" class="d-flex"><i class="fa fa-envelope"></i> info@foodnsit.com</a>
-                                        <a href="#" class="mr-0 d-flex d-none-580"><i class="fa fa-map-marker"></i> Jalan Budhi, Bandung</a>
+                            <div class="invoice-bottom">
+                                <div class="row">
+                                    <div class="col-lg-7 col-md-7 col-sm-7">
+                                        <br class="terms-conditions mb-30">
+                                            <h3 class="inv-title-1 mb-10">Syarat dan Ketentuan</h3>
+                                            Invoice ini sah dan diproses oleh komputer<br>
+                                            <font size="1"><i>Silakan hubungi foodnsit@gmail.com apabila kamu membutuhkan bantuan.</i></font>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -128,16 +130,13 @@
                         <a href="javascript:window.print()" class="btn btn-lg btn-print">
                             <i class="fa fa-print"></i> Print Invoice
                         </a>
-                        <a id="invoice_download_btn" class="btn btn-lg btn-download btn-theme">
-                            <i class="fa fa-download"></i> Download Invoice
-                        </a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-<!-- Invoice 2 end -->
+<!-- Invoice 6 end -->
 
 <script src="assets/js/jquery.min.js"></script>
 <script src="assets/js/jspdf.min.js"></script>

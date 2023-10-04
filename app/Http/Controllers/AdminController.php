@@ -19,7 +19,7 @@ class AdminController extends Controller
     }
     public function TambahMejaView()
     {
-        return view('tambah-meja');
+        return view('admin.tambah-meja');
     }
     public function TambahMeja(Request $request)
     {
