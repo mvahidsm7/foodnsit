@@ -12,6 +12,7 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+    height: 100% !important;
 }
 
 * {
@@ -28,7 +29,7 @@ body {
 .body {
     position: relative;
     height: 550px;
-    margin: 15px auto;
+    margin: 10px auto;
     background-color: var(--third);
     border-radius: 10px;
     overflow: hidden;
@@ -118,6 +119,7 @@ body {
 }
 
 .input {
+    margin: 0;
     height: 2.5em;
     background-color: #9DB2BF;
     color: white;
@@ -147,6 +149,12 @@ body {
 .tombol:hover {
     background-color: var(--second);
     transition: 500ms;
+}
+
+.lihat {
+    position: relative;
+    bottom: 2em;
+    left: 9em;
 }
 
 @media (max-width:767px) {

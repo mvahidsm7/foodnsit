@@ -89,7 +89,8 @@
                             <button type="submit" class="tombol w-100">Masuk</button>
                         </div>
                         <div class="text-center">
-                            Belum Punya Akun? <a class="text-decoration-none" href="">Buat Akun</a>
+                            Belum Punya Akun? <a class="text-decoration-none" href="{{ route('register') }}">Buat
+                                Akun</a>
                         </div>
                         </center>
 
