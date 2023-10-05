@@ -86,14 +86,6 @@ class MenuSeeder extends Seeder
                 "kategori" => 2,
                 "harga" => 25000
             ]),
-            Menu::create([
-                "id_menu" => "MN10",
-                "nama" => "Bagelend",
-                "gambar" => "assets\img\products\tmbdsrt1.png",
-                "deskripsi" => "roti bagelend dengan cream cheese",
-                "kategori" => 2,
-                "harga" => 30000
-            ]),
         );
     }
 }
