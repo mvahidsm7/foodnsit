@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Menu;
+use App\Models\Kategori;
 use App\Http\Requests\StoreMenuRequest;
 use App\Http\Requests\UpdateMenuRequest;
 
@@ -13,6 +14,7 @@ class MenuController extends Controller
      */
     public function index()
     {
+        $kategori = Kategori::all();
         $menu = Menu::all();
         return view('menu', compact('menu'));
     }

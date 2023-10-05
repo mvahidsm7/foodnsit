@@ -16,7 +16,7 @@
 
     <!-- products -->
     <div class="container">
-{{-- 
+
         <div class="row mb-3">
             <div class="col-md-12">
                 <div class="product-filters">
@@ -28,9 +28,9 @@
                     </ul>
                 </div>
             </div>
-        </div> --}}
+        </div>
 
-        <div class="row">
+        <div class="row product-lists">
             @foreach ($menu as $m)
                 {{-- <div class="col-sm-4 text-center {{$m->kategori}}">
 					<div class="single-product-item">
@@ -45,8 +45,8 @@
 						<p>{{$m->deskripsi}}</p>
 					</div>
 				</div> --}}
-                <div class="col-sm-3 mb-4">
-                    <div class="menu card h-100 text-center">
+                <div class="col-sm-3 mb-4 {{$m->kategori}}">
+                    <div class="menu card h-100 text-center single-product-item">
                         <img class="card-img-top" src="{{ $m->gambar }}" alt="Title">
                         <div class="card-body">
                             <h4 class="card-title">{{ $m->nama }}</h4>
