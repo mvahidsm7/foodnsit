@@ -102,6 +102,134 @@ class DatabaseSeeder extends Seeder
             "kategori" => 3,
             "harga" => 25000
         ]);
+        Menu::create([
+            "id_menu" => "MN10",
+            "nama" => "Bagelend",
+            "gambar" => "assets\img\products\dsrt1.png",
+            "deskripsi" => "roti bagelend dengan cream cheese",
+            "kategori" => 3,
+            "harga" => 30000
+        ]);
+        Menu::create([
+            "id_menu" => "MN11",
+            "nama" => "Fruit Salad",
+            "gambar" => "assets\img\products\dsrt2.png",
+            "deskripsi" => "salad dengan buah buahan yang segar dan peeling yang manis",
+            "kategori" => 3,
+            "harga" => 250000
+        ]);
+        Menu::create([
+            "id_menu" => "MN12",
+            "nama" => "Dessert Box",
+            "gambar" => "assets\img\products\dsrt3.png",
+            "deskripsi" => "cake dengan lumeran selai coklat",
+            "kategori" => 3,
+            "harga" => 32000
+        ]);
+        Menu::create([
+            "id_menu" => "MN13",
+            "nama" => "Waffle Fruit",
+            "gambar" => "assets\img\products\dsrt4.png",
+            "deskripsi" => "waffle yang lembut dengan buah buahan yang segar",
+            "kategori" => 3,
+            "harga" => 30000
+        ]);
+        Menu::create([
+            "id_menu" => "MN14",
+            "nama" => "Strawberry Pudding",
+            "gambar" => "assets\img\products\dsrt5.png",
+            "deskripsi" => "pudding dengan fla vanila bercampur dengan buah strawberry",
+            "kategori" => 3,
+            "harga" => 26000
+        ]);
+        Menu::create([
+            "id_menu" => "MN15",
+            "nama" => "Spaghetti Aglio Olio",
+            "gambar" => "assets\img\products\mkn1.png",
+            "deskripsi" => "mie spaghetti yang yummy dipadukan dengan saus cheese yang gurih",
+            "kategori" => 1,
+            "harga" => 34000
+        ]);
+        Menu::create([
+            "id_menu" => "MN16",
+            "nama" => "Chicken Cordon Blue",
+            "gambar" => "assets\img\products\mkn2.png",
+            "deskripsi" => "ayam yang sangat lembut serta gurih",
+            "kategori" => 1,
+            "harga" => 35000
+        ]);
+        Menu::create([
+            "id_menu" => "MN17",
+            "nama" => "Macaroni Pasta",
+            "gambar" => "assets\img\products\mkn3.png",
+            "deskripsi" => "makaroni dengan pasta bolognese",
+            "kategori" => 1,
+            "harga" => 34000
+        ]);
+        Menu::create([
+            "id_menu" => "MN18",
+            "nama" => "Fried Fries",
+            "gambar" => "assets\img\products\mkn4.png",
+            "deskripsi" => "kentang goreng yang digoreng kering dann dibumbuin gurih",
+            "kategori" => 1,
+            "harga" => 28000
+        ]);
+        Menu::create([
+            "id_menu" => "MN19",
+            "nama" => "Beef Burger",
+            "gambar" => "assets\img\products\mkn5.png",
+            "deskripsi" => "beef yang juicy dan roti burger yang gurih",
+            "kategori" => 1,
+            "harga" => 30000
+        ]);
+        Menu::create([
+            "id_menu" => "MN20",
+            "nama" => "Green Salad",
+            "gambar" => "assets\img\products\mkn6.png",
+            "deskripsi" => "sayuran yang segar",
+            "kategori" => 1,
+            "harga" =>25000
+        ]);
+        Menu::create([
+            "id_menu" => "MN21",
+            "nama" => "Boba Brown Sugar",
+            "gambar" => "assets\img\products\mnm1.png",
+            "deskripsi" => "minuman milk tea dengan tambahan topping boba",
+            "kategori" => 2,
+            "harga" => 25000
+        ]);
+        Menu::create([
+            "id_menu" => "MN22",
+            "nama" => "FNS Coffee",
+            "gambar" => "assets\img\products\mnm2.png",
+            "deskripsi" => "serbuk kopi khas ala FNS",
+            "kategori" => 2,
+            "harga" => 26000
+        ]);
+        Menu::create([
+            "id_menu" => "MN23",
+            "nama" => "Ice Matcha",
+            "gambar" => "assets\img\products\mnm3.png",
+            "deskripsi" => "minuman milk dengan serbuk matcha",
+            "kategori" => 2,
+            "harga" => 30000
+        ]);
+        Menu::create([
+            "id_menu" => "MN25",
+            "nama" => "Ice Strawberry",
+            "gambar" => "assets\img\products\mnm4.png",
+            "deskripsi" => "minuman milk dengan serbuk strawberry dan extra buah strawberry",
+            "kategori" => 2,
+            "harga" => 30000
+        ]);
+        Menu::create([
+            "id_menu" => "MN26",
+            "nama" => "Peachy Lemonade",
+            "gambar" => "assets\img\products\mnm5.png",
+            "deskripsi" => "minuman segar dengan tambahan sirup peach dan perasan lemon",
+            "kategori" => 2,
+            "harga" => 25000
+        ]);
 
         // meja
         Meja::create([
