@@ -22,9 +22,9 @@
                 <div class="product-filters">
                     <ul>
                         <li class="active" data-filter="*">Semua</li>
-                        <li data-filter=".3">Makanan</li>
-                        <li data-filter=".2">Dessert</li>
-                        <li data-filter=".1">Minuman</li>
+                        <li data-filter=".1">Makanan</li>
+                        <li data-filter=".3">Dessert</li>
+                        <li data-filter=".2">Minuman</li>
                     </ul>
                 </div>
             </div>
