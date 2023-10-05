@@ -10,9 +10,9 @@
                         <h2 class="text-light">Jumlah Pengunjung</h2>
                         <form action="/pesan" method="get" class="mt-5">
                             @csrf
-                            <input class="input w-100 form-control-lg input-group form-label" type="number" name="jumlah"
+                            <input class="input w-100" type="number" name="jumlah"
                                 placeholder="Masukkan jumlah pengunjung" style="width: 100%"><br>
-                            <input type="submit" value="CARI MEJA" style="width: 70%">
+                            <input class="w-75" type="submit" value="CARI MEJA">
                         </form>
                     </div>
                 </div>
