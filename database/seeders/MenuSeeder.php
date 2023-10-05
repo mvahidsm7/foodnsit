@@ -75,7 +75,7 @@ class MenuSeeder extends Seeder
                 "nama" => "Yogurth Sweddish",
                 "gambar" => "assets\img\products\dessert3.jpg",
                 "deskripsi" => "yogurth blubbery yang sweet",
-                "kategori" => 2,
+                "kategori" => 3,
                 "harga" => 45000
             ]),
             Menu::create([
