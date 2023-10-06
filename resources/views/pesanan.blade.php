@@ -19,7 +19,7 @@
     <div class="cart-section mt-5 mb-5">
         <div class="container">
             <div class="card">
-                <div class="card-body">
+                <div class="card-body mx-5">
                     <center>
                         <h4 class="card-title">Profil</h4>
                     </center>
@@ -32,11 +32,14 @@
                     <h5>Email :</h5>
                     </p>
                     <p class="card-text">{{ $user->email }}</p>
-                    <a class="btn btn-outline-danger" href="{{ route('logout') }}"
-                        onclick="event.preventDefault();
+                    <div class="d-flex">
+                        <a class="btn btn-outline-info mx-1 w-100" href="">Ganti Password</a>
+                        <a class="btn btn-outline-danger w-100" href="{{ route('logout') }}"
+                            onclick="event.preventDefault();
                         document.getElementById('logout-form').submit();">
-                        {{ __('Logout') }}
-                    </a>
+                            {{ __('Logout') }}
+                        </a>
+                    </div>
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                         @csrf
                     </form>
@@ -51,65 +54,65 @@
     <div class="cart-section mt-5 mb-5">
         <div class="container">
             <div class="card">
-                <div class="card-body">
+                <div class="card-body mx-5">
                     <center>
                         <h4 class="card-title">Pesanan Anda</h4>
                     </center>
                     <hr>
-                    @foreach ($pes as $p)
+                    @foreach ($pes as $pesanan)
                         <center>
-                            <p class="card-text">
-                            <h5>Pesanan {{ $p->kd_pes }}</h5>
-                            </p>
+                            <h5>Pesanan {{ $pesanan->kd_pes }}</h5>
                         </center>
+                        <p>
+                        <h5>Tanggal Pemesanan :</h5>{{ $pesanan->created_at }}
                         </p>
-                        <h5>Jam :</h5>{{ $p->jam }}
+                        <p>
+                        <h5>Jam :</h5>{{ $pesanan->jam }}
                         </p>
-                        <h5>Tanggal :</h5>{{ $p->tanggal }}
+                        <p>
+                        <h5>Tanggal :</h5>{{ $pesanan->tanggal }}
                         </p>
                         <p>
                         <h5>Status Pesanan :</h5>
-                        @if ($p->status == 1)
-                            @if ($p->expired_at < now())
+                        @if ($pesanan->status == 1)
+                            @if ($pesanan->expired_at < now())
                                 Kadaluarsa
                             @else
                                 Menunggu Pembayaran
                             @endif
-                        @elseif ($p->status == 2)
+                        @elseif ($pesanan->status == 2)
                             Dibayar
-                        @elseif ($p->status == 3)
+                        @elseif ($pesanan->status == 3)
                             Selesai
                         @else
                             Batal
                         @endif
                         </p>
                         <p>
-                            @if ($p->status == 1)
-                                @if ($p->expired_at > now())
-                                    <a href="/bayar/{{ $p->kd_pes }}" class="btn btn-outline-success">Detail
+                            @if ($pesanan->status == 1)
+                                @if ($pesanan->expired_at > now())
+                                    <a href="/bayar/{{ $pesanan->kd_pes }}" class="btn btn-outline-success">Detail
                                         Pesanan</a>
-                                    <a href="/batal/{{ $p->kd_pes }}" class="btn btn-outline-danger">Batalkan
+                                    <a href="/batal/{{ $pesanan->kd_pes }}" class="btn btn-outline-danger">Batalkan
                                         Pesanan</a>
                                 @else
-                                    <a href="/detail/{{ $p->kd_pes }}" class="btn btn-outline-secondary">Detail
+                                    <a href="/detail/{{ $pesanan->kd_pes }}" class="btn btn-outline-secondary">Detail
                                         Pesanan</a>
                                 @endif
-                            @elseif ($p->status == 2)
-                                <form action="selesai/{{ $p->kd_pes }}" method="post">
+                            @elseif ($pesanan->status == 2)
+                                <form action="selesai/{{ $pesanan->kd_pes }}" method="post">
                                     @csrf
                                     <button type="submit" class="btn btn-outline-success">Selesaikan
                                         Pesanan</button>
-                                    <a href="/detail/{{ $p->kd_pes }}" class="btn btn-outline-secondary">Detail
+                                    <a href="/detail/{{ $pesanan->kd_pes }}" class="btn btn-outline-secondary">Detail
                                         Pesanan</a>
-                                    <a href="/batal/{{ $p->kd_pes }}" class="btn btn-outline-danger">Batalkan
+                                    <a href="/batal/{{ $pesanan->kd_pes }}" class="btn btn-outline-danger">Batalkan
                                         Pesanan</a>
                                 </form>
                             @else
-                                <a href="/detail/{{ $p->kd_pes }}" class="btn btn-outline-secondary">Detail
+                                <a href="/detail/{{ $pesanan->kd_pes }}" class="btn btn-outline-secondary">Detail
                                     Pesanan</a>
                             @endif
-
-
                         </p>
                         <hr>
                     @endforeach

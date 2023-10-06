@@ -91,7 +91,6 @@ class BayarController extends Controller
         $bayar->no_pembayaran = $code;
         $bayar->total = $total;
         DB::table('pesan')->where('kd_pes', $pes->kd_pes)->update(array('status' => 2));
-        DB::table('meja')->where('no_meja', $pes->no_meja)->update(array('status' => 'dipesan'));
         $bayar->save();
         return redirect('email');
     }

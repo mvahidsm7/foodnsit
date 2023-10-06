@@ -49,6 +49,7 @@ class PesanController extends Controller
                 'expired_at' => now()->addHours(2)
             ]
         );
+        DB::table('meja')->where('no_meja', $pesanan->no_meja)->update(array('status' => 'dipesan'));
         for ($i = 1; $i <= $men; $i++) {
             if ($request['menu'][$i - 1] != 0) {
                 $harga =  Menu::where('id_menu', ('MN' . $i))->get();
@@ -72,7 +73,10 @@ class PesanController extends Controller
     
     public function expired($kd_pes)
     {
+        $pesanan = Pesan::where('kd_pes', $kd_pes)->get();
+        $pesanan = $pesanan[0];
         DB::table('pesan')->where('kd_pes', $kd_pes)->update(array('status' => 4));
+        DB::table('meja')->where('no_meja', $pesanan->no_meja)->update(array('status' => 'tersedia'));
         return redirect('/profil');
     }
 
