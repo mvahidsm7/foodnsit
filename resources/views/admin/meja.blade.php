@@ -1,20 +1,7 @@
-@extends('layouts.main')
+@extends('layouts.admin1')
 @section('content')
-    <!-- breadcrumb-section -->
-    <div class="breadcrumb-section breadcrumb-bg">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 offset-lg-2 text-center">
-                    <div class="breadcrumb-text">
-                        <p>Halaman</p>
-                        <h1>Meja</h1>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- end breadcrumb section -->
-    {{-- table --}}
+<div class="main-panel">
+    <div class="content-wrapper">
     <div class="container mt-150 mb-150">
         <table class="table">
             <tr class="table-active">
@@ -34,6 +21,13 @@
             @csrf
             <button class="btn btn-outline-success" type="submit">Tambah</button>
         </form>
+    </div>
+    </div>
+    <footer class="footer">
+        <div class="d-sm-flex justify-content-center justify-content-sm-between">
+            <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © Food n Sit 2023</span>
+        </div>
+    </footer>
     </div>
     {{-- end table --}}
 @endsection
