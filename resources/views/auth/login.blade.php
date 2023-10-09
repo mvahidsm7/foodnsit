@@ -101,6 +101,8 @@
                             <button type="submit" class="tombol w-100">Masuk</button>
                         </div>
                         <div class="text-center">
+                            Lupa Password? <a class="text-decoration-none" href="/forgot-password">Reset Password</a>
+                            <br>
                             Belum Punya Akun? <a class="text-decoration-none" href="{{ route('register') }}">Buat
                                 Akun</a>
                         </div>
