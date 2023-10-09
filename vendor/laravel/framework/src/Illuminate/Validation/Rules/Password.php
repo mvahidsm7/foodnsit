@@ -2,15 +2,15 @@
 
 namespace Illuminate\Validation\Rules;
 
-use Illuminate\Container\Container;
-use Illuminate\Contracts\Validation\DataAwareRule;
-use Illuminate\Contracts\Validation\Rule;
-use Illuminate\Contracts\Validation\UncompromisedVerifier;
-use Illuminate\Contracts\Validation\ValidatorAwareRule;
 use Illuminate\Support\Arr;
+use InvalidArgumentException;
+use Illuminate\Validation\Rule;
+use Illuminate\Container\Container;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Traits\Conditionable;
-use InvalidArgumentException;
+use Illuminate\Contracts\Validation\DataAwareRule;
+use Illuminate\Contracts\Validation\ValidatorAwareRule;
+use Illuminate\Contracts\Validation\UncompromisedVerifier;
 
 class Password implements Rule, DataAwareRule, ValidatorAwareRule
 {
