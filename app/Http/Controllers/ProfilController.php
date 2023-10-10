@@ -7,9 +7,11 @@ use App\Models\Menu;
 use App\Models\Bayar;
 use App\Models\Pesan;
 use App\Models\Detail;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class ProfilController extends Controller
 {
@@ -76,5 +78,27 @@ class ProfilController extends Controller
         $menu = $detail;
         $noUrut = 1;
         return view('invoice', compact('user', 'pes', 'menu', 'bayar', 'noUrut'));
+    }
+
+    public function changePassword()
+    {
+        return view('auth.change-password');
+    }
+    public function processChangePassword(Request $request)
+    {
+        //cek password lama
+        if(!Hash::check($request->old_password, auth()->user()->password)) {
+            return back()->with('error', 'Password lama tidak cocok');
+        }
+        //cek password baru
+        if($request->new_password != $request->repeat_password) {
+            return back()->with('error', 'Password baru dan konfirmasi tidak cocok');
+        }
+
+        auth()->user()->update([
+            'password' => Hash::make($request->new_password)
+        ]);
+
+        return redirect('/profil')->with('success', 'Password berhasil diubah');
     }
 }

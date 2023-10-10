@@ -33,7 +33,7 @@
                     </p>
                     <p class="card-text">{{ $user->email }}</p>
                     <div class="d-flex">
-                        <a class="btn btn-outline-info mx-1 w-100" href="">Ganti Password</a>
+                        <a class="btn btn-outline-info mx-1 w-100" href="/change-password">Ganti Password</a>
                         <a class="btn btn-outline-danger w-100" href="{{ route('logout') }}"
                             onclick="event.preventDefault();
                         document.getElementById('logout-form').submit();">
