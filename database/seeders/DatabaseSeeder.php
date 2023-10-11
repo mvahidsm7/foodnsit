@@ -214,22 +214,6 @@ class DatabaseSeeder extends Seeder
             "kategori" => 2,
             "harga" => 30000
         ]);
-        Menu::create([
-            "id_menu" => "MN25",
-            "nama" => "Ice Strawberry",
-            "gambar" => "assets\img\products\mnm4.png",
-            "deskripsi" => "minuman milk dengan serbuk strawberry dan extra buah strawberry",
-            "kategori" => 2,
-            "harga" => 30000
-        ]);
-        Menu::create([
-            "id_menu" => "MN26",
-            "nama" => "Peachy Lemonade",
-            "gambar" => "assets\img\products\mnm5.png",
-            "deskripsi" => "minuman segar dengan tambahan sirup peach dan perasan lemon",
-            "kategori" => 2,
-            "harga" => 25000
-        ]);
 
         // meja
         Meja::create([
