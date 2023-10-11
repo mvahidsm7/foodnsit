@@ -16,9 +16,9 @@ class MenuController extends Controller
     public function index()
     {
         $kategori = Kategori::all();
-        $pagination = 5;
-        $menu = Menu::paginate($pagination);
-        return view('menu', compact('menu'));
+        $menu = Menu::paginate(8);
+        // $menu = Menu::all();
+        return view('menu', compact('menu', 'kategori'));
     }
 
     /**

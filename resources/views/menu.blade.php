@@ -22,19 +22,28 @@
                 <div class="product-filters">
                     <ul>
                         <li class="active" data-filter="*">Semua</li>
-                        <li data-filter=".1">Makanan</li>
+                        @foreach ($kategori as $item)
+                            <li data-filter=".{{ $item->id }}">{{ $item->kategori }}</li>
+                        @endforeach
+                        {{-- <li data-filter=".1">Makanan</li>
                         <li data-filter=".3">Dessert</li>
-                        <li data-filter=".2">Minuman</li>
+                        <li data-filter=".2">Minuman</li> --}}
                     </ul>
+                </div>
+                <div class="container mb-3">
+                    <div class="w-100 item-align-center">
+                        {{ $menu->links('pagination::bootstrap-5') }}
+                    </div>
                 </div>
             </div>
         </div>
+
 
         <div class="row product-lists">
             @foreach ($menu as $m)
                 {{-- <div class="col-sm-4 text-center {{$m->kategori}}">
 					<div class="single-product-item">
-						<div class="product-image">
+                        <div class="product-image">
 							<a href="single-product.html"><img src="{{$m->gambar}}" alt=""></a>
 						</div>
 						<h3>{{$m->nama}}</h3>
@@ -45,7 +54,7 @@
 						<p>{{$m->deskripsi}}</p>
 					</div>
 				</div> --}}
-                <div class="col-sm-3 mb-4 {{$m->kategori}}">
+                <div class="col-sm-3 mb-4 {{ $m->kategori }}">
                     <div class="menu card h-100 text-center single-product-item">
                         <img class="card-img-top" src="{{ $m->gambar }}" alt="Title">
                         <div class="card-body">
@@ -57,7 +66,6 @@
                 </div>
             @endforeach
         </div>
-        {{ $menu->onEachSide(5)->links() }}
     </div>
     <!-- end products -->
 @endsection

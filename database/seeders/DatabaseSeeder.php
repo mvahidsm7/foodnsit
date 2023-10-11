@@ -36,7 +36,7 @@ class DatabaseSeeder extends Seeder
             "gambar" => "assets\img\products\dessert.png",
             "deskripsi" => "Cake dengan selai stroberi yang maniss'",
             "kategori" => 3,
-            "harga" => 100000
+            "harga" => 20000
         ]);
         Menu::create([
             "id_menu" => "MN2",
@@ -116,7 +116,7 @@ class DatabaseSeeder extends Seeder
             "gambar" => "assets\img\products\dsrt2.png",
             "deskripsi" => "salad dengan buah buahan yang segar dan peeling yang manis",
             "kategori" => 3,
-            "harga" => 250000
+            "harga" => 25000
         ]);
         Menu::create([
             "id_menu" => "MN12",
