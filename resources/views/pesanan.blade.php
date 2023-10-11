@@ -59,7 +59,7 @@
                         <h4 class="card-title">Pesanan Anda</h4>
                     </center>
                     <hr>
-                    @foreach ($pes as $pesanan)
+                    @foreach ($pes->sortByDesc('created_at') as $pesanan)
                         <center>
                             <h5>Pesanan {{ $pesanan->kd_pes }}</h5>
                         </center>
