@@ -57,6 +57,7 @@
                 </div>
             @endforeach
         </div>
+        {{ $menu->onEachSide(5)->links() }}
     </div>
     <!-- end products -->
 @endsection

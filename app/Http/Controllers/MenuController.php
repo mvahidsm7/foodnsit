@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+
 use App\Models\Menu;
 use App\Models\Kategori;
 use App\Http\Requests\StoreMenuRequest;
@@ -15,7 +16,8 @@ class MenuController extends Controller
     public function index()
     {
         $kategori = Kategori::all();
-        $menu = Menu::all();
+        $pagination = 5;
+        $menu = Menu::paginate($pagination);
         return view('menu', compact('menu'));
     }
 
