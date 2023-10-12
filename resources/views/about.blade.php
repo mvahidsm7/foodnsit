@@ -4,7 +4,7 @@
 	<!-- breadcrumb-section -->
 	<div class="breadcrumb-section breadcrumb-bg">
 		<div class="container">
-			<div class="row">
+			<div class="row"> 
 				<div class="col-lg-8 offset-lg-2 text-center">
 					<div class="breadcrumb-text">
 						<p>ini halaman</p>
@@ -22,8 +22,11 @@
 			<div class="row">
 				<div class="col-lg-7">
 					<div class="featured-text">
-						<h2 class="pb-3">Kenapa <span class="orange-text">Food n Sit ?</span></h2>
-						<div class="row">
+						<h2 class="pb-3">Apa Itu <span class="orange-text">Food n Sit ?</span></h2>
+						<p>FOOD n SIT adalah sebuah Aplikasi Resevasi Restoran yang  bertujuan untuk mempermudah customer  melakukan reservasi dan memesan makanan. </p>
+						<h3 class="pb-3">Kenapa Dinamakan <span class="orange-text">Food n Sit ?</span></h3>
+						<p>"FOOD n SIT" dapat diartikan sebagai tempat atau restoran yang menyediakan makanan dan tempat duduk untuk para pelanggan. Ini adalah kombinasi antara "food" (makanan) dan "sit" (duduk), yang mengindikasikan bahwa tempat ini adalah tempat untuk makan dan bersantai.</p>
+						<div class="row" >
 							<div class="col-lg-6 col-md-6 mb-4 mb-md-5">
 								<div class="list-box d-flex">
 									<div class="list-icon">
@@ -78,55 +81,6 @@
 	<!-- end featured section -->
 
 	<!-- team section -->
-	<div class="mt-150">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-8 offset-lg-2 text-center">
-					<div class="section-title">
-						<h3>Our <span class="orange-text">Team</span></h3>
-						<p>Kelompok KRPL dari PPLG 2 yang membuat dan mengembangkan aplikasi ini</p>
-					</div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-lg-4 col-md-6">
-					<div class="single-team-item">
-						<div class="team-bg team-bg-1"></div>
-						<h4>Muhammad Vahid <span>backend</span></h4>
-						<ul class="social-link-team">
-							<li><a href="https://instagram.com/xvhxid" target="_blank"><i class="fab fa-instagram"></i></a></li>
-						</ul>
-					</div>
-				</div>
-				<div class="col-lg-4 col-md-6">
-					<div class="single-team-item">
-						<div class="team-bg team-bg-2"></div>
-						<h4>Monica Reditha <span>frontend</span></h4>
-						<ul class="social-link-team">
-							<li><a href="https://instagram.com/mniceee_" target="_blank"><i class="fab fa-instagram"></i></a></li>
-						</ul>
-					</div>
-				</div>
-				<div class="col-lg-4 col-md-6 offset-md-3 offset-lg-0">
-					<div class="single-team-item">
-						<div class="team-bg team-bg-3"></div>
-						<h4>Fajar Fathurohman <span>backend</span></h4>
-						<ul class="social-link-team">
-							<li><a href="https://instagram.com/fajar.fathurrr" target="_blank"><i class="fab fa-instagram"></i></a></li>
-						</ul>
-					</div>
-				</div>
-                <div class="col-lg-4 col-md-6">
-					<div class="single-team-item">
-						<div class="team-bg team-bg-4"></div>
-						<h4>Dedi Setiawan <span>frontend</span></h4>
-						<ul class="social-link-team">
-							<li><a href="https://instagram.com/dedisetiawan_70" target="_blank"><i class="fab fa-instagram"></i></a></li>
-						</ul>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+
 	<!-- end team section -->
 @endsection

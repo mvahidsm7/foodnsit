@@ -18,7 +18,7 @@ class BerandaController extends Controller
             return view('index', compact('user', 'menu'));
         } else {
             if (Auth::user()->email == 'admin@food.com') {
-                $pes = Pesan::orderBy('updated_at', 'desc')->get();
+                $pes = Pesan::orderBy('updated_at', 'desc')->paginate(5);
                 $detail = Detail::with('menu')->get();
                 foreach ($detail as $key) {
                     $harga[] = $key->menu->harga;

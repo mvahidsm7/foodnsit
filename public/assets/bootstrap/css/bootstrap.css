@@ -5005,9 +5005,9 @@ input[type="button"].btn-block {
   padding: 0.5rem 0.75rem;
   margin-left: -1px;
   line-height: 1.25;
-  color: #007bff;
-  background-color: #fff;
-  border: 1px solid #dee2e6;
+  color: #19191a;
+  background-color: #4bca19;
+  border: 1px solid #eb250b;
 }
 
 .page-link:hover {
@@ -5043,11 +5043,11 @@ input[type="button"].btn-block {
 }
 
 .page-item.disabled .page-link {
-  color: #6c757d;
+  color: #002752;
   pointer-events: none;
   cursor: auto;
-  background-color: #fff;
-  border-color: #dee2e6;
+  background-color: #a71d2a;
+  border-color: #171a1d;
 }
 
 .pagination-lg .page-link {

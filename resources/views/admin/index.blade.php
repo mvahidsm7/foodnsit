@@ -21,7 +21,9 @@
                     </tr>
                   </thead>
                   <tbody>
+                    {{ $pes->links('pagination::bootstrap-5') }}
                     @foreach ($pes as $p)
+                   
                     <tr>
                       <td>
                         <span class="pl-2">{{ $p->pengguna[0]->name }}</span>
