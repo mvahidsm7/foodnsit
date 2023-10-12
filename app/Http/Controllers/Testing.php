@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Menu;
 use App\Models\Pesan;
 use App\Models\Detail;
+use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
@@ -30,16 +31,17 @@ class Testing extends Controller
         // $code = date('now').$kode;
         // dd(date('now').$kode);
         // dd($tes->bayar->total);
-        $pes = Pesan::where('status', 1)->where('expired_at', '<=', now())->get();
-        dd($pes);
-        
-        $det = Pesan::with('detail')->get();
-        $qty = 5;
-        $id = $det[0]->detail->id_menu;
-        $menu = Menu::where('id_menu', $id)->get();
-        $menu = $menu[0];
-        $total = $menu->harga * $qty;
-        return view('test');
+        // $pes = Pesan::where('status', 1)->where('expired_at', '<=', now())->get();
+        $test = User::withCount('pesanan')->get();
+        return view('test', compact('test'));
+        // $tmp = count($test[1]->pesanan);
+        // dd($tmp);
+        // $det = Pesan::with('detail')->get();
+        // $qty = 5;
+        // $id = $det[0]->detail->id_menu;
+        // $menu = Menu::where('id_menu', $id)->get();
+        // $menu = $menu[0];
+        // $total = $menu->harga * $qty;
     }
 
     public function form(Request $r)

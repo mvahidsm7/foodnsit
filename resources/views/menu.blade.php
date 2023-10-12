@@ -60,7 +60,7 @@
                         <div class="card-body">
                             <h4 class="card-title">{{ $m->nama }}</h4>
                             <h6>Rp. {{ $m->harga }}</h6>
-                            <p class="card-text">{{ $m->deskripsi }}</p>
+                            {{-- <p class="card-text">{{ $m->deskripsi }}</p> --}}
                         </div>
                     </div>
                 </div>

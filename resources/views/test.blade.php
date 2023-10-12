@@ -31,8 +31,9 @@
                     tes
                 </button>
             </form> --}}
-            @foreach ($det as $item)
-                {{ $item-> }}
+            @foreach ($test as $item)
+                {{ $item->name }}
+                {{ $item->pesanan_count }} <br>
             @endforeach
         </div>
     </div>

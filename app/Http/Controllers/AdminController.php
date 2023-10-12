@@ -76,12 +76,12 @@ class AdminController extends Controller
 
     public function TampilUser()
     {
-        $users = User::select('users.*', DB::raw('COUNT(pesan.id) as pesan_count'))
-        ->leftJoin('pesan', 'users.id', '=', 'pesan.user')
-        ->where('users.email', '!=', 'admin@food.com')
-        ->groupBy('users.id', 'users.name', 'users.email')
-        ->get();
-        $pes = Pesan::all();
-        return view('admin.user', compact( 'pes', 'users'));
+        // $users = User::select('users.*', DB::raw('COUNT(pesan.id) as pesan_count'))
+        // ->leftJoin('pesan', 'users.id', '=', 'pesan.user')
+        // ->where('users.email', '!=', 'admin@food.com')
+        // ->groupBy('users.id', 'users.name', 'users.email')
+        // ->get();
+        $users = User::where('email', '!=', 'admin@food.com')->withCount('pesanan')->get();
+        return view('admin.user', compact(  'users'));
     }
 }

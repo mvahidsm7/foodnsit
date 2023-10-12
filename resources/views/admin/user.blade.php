@@ -9,11 +9,11 @@
                 <td>Email User</td>
                 <td>Jumlah Pesanan</td>
             </tr>
-            @foreach ($users as $u)
+            @foreach ($users as $user)
                 <tr>
-                    <td>{{ $u->name }}</td>
-                    <td>{{ $u->email }}</td>
-                    <td>{{ $u->pesan_count }}</td>
+                    <td>{{ $user->name }}</td>
+                    <td>{{ $user->email }}</td>
+                    <td>{{ $user->pesanan_count }}</td>
                 </tr>
             @endforeach
         </table>
