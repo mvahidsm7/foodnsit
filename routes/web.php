@@ -68,6 +68,8 @@ Route::post('/tambah-menu', [AdminController::class, 'TambahMenuView']);
 Route::post('/tambah-menu/sukses', [AdminController::class, 'TambahMenu']);
 Route::post('/edit-menu/{id_menu}', [AdminController::class, 'editMenu']);
 Route::post('/update-menu/sukses', [AdminController::class, 'UpdateMenu']);
+// admin - user
+Route::get('/admin/user', [AdminController::class, 'TampilUser']);
 // test
 Route::get('/test', [Testing::class, 'index']);
 Route::get('/template', function(){return view('templating');});
@@ -78,7 +80,7 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/tentang', [TentangController::class, 'index']);
 
-//forgot - password
+// forgot - password
 Route::get('/forgot-password', function () {
     return view('auth.forgot-password');
 })->middleware('guest')->name('password.request');
@@ -124,6 +126,6 @@ Route::post('/reset-password', function (Request $request) {
                 : back()->withErrors(['email' => [__($status)]]);
 })->middleware('guest')->name('password.update');
 
-//change - password
+// change - password
 Route::get('/change-password', [ProfilController::class, 'changePassword']);
 Route::post('/change-password', [ProfilController::class, 'processChangePassword']);
