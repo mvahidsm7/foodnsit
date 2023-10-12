@@ -4,9 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Models\Meja;
 use App\Models\Menu;
+use App\Models\User;
 use App\Models\Pesan;
 use Illuminate\Http\Request;
 use Barryvdh\DomPDF\Facade\Pdf;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 
 class AdminController extends Controller
@@ -70,5 +72,16 @@ class AdminController extends Controller
         $pes = Pesan::with('pengguna', 'bayar', 'detail')->where('status', '=', 2)->orWhere('status', '=', 3)->get();
         $pes = Pdf::loadview('laporan', ['pes' => $pes]);
         return $pes->download('laporan-pesanan.pdf');
+    }
+
+    public function TampilUser()
+    {
+        $users = User::select('users.*', DB::raw('COUNT(pesan.id) as pesan_count'))
+        ->leftJoin('pesan', 'users.id', '=', 'pesan.user')
+        ->where('users.email', '!=', 'admin@food.com')
+        ->groupBy('users.id', 'users.name', 'users.email')
+        ->get();
+        $pes = Pesan::all();
+        return view('admin.user', compact( 'pes', 'users'));
     }
 }

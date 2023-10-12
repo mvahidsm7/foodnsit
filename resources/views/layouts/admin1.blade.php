@@ -68,7 +68,7 @@
                     </a>
                 </li>
                 <li class="nav-item menu-items">
-                    <a class="nav-link" href="pages/charts/chartjs.html">
+                    <a class="nav-link" href="/admin/user">
                         <span class="menu-icon">
                             <i class="mdi mdi mdi-account-multiple-plus"></i>
                         </span>

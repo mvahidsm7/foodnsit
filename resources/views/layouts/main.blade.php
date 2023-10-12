@@ -9,7 +9,7 @@
         content="Responsive Bootstrap4 Shop Template, Created by Imran Hossain from https://imransdesign.com/">
 
     <!-- title -->
-    <title>FOOD n SIT</title>
+    <title>Food n Sit</title>
 
     <!-- favicon -->
     <link rel="shortcut icon" type="image/png" href="{{ asset('') }}assets/img/favicon.png">
