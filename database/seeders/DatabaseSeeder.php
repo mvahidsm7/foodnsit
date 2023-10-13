@@ -217,27 +217,27 @@ class DatabaseSeeder extends Seeder
 
         // meja
         Meja::create([
-            "no_meja" => "MJ001",
+            "no_meja" => "MJ1",
             "kapasitas" => 2
         ]);
         Meja::create([
-            "no_meja" => "MJ002",
+            "no_meja" => "MJ2",
             "kapasitas" => 2
         ]);
         Meja::create([
-            "no_meja" => "MJ003",
+            "no_meja" => "MJ3",
             "kapasitas" => 4
         ]);
         Meja::create([
-            "no_meja" => "MJ004",
+            "no_meja" => "MJ4",
             "kapasitas" => 4
         ]);
         Meja::create([
-            "no_meja" => "MJ005",
+            "no_meja" => "MJ5",
             "kapasitas" => 6
         ]);
         Meja::create([
-            "no_meja" => "MJ006",
+            "no_meja" => "MJ6",
             "kapasitas" => 6
         ]);
 

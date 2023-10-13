@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Validator;
 
 class AdminController extends Controller
 {
@@ -25,7 +26,20 @@ class AdminController extends Controller
     }
     public function TambahMeja(Request $request)
     {
-        Meja::create($request->except('_token', 'submit'));
+        $request->validate(
+            [
+                'no_meja' => 'required',
+                'kapasitas' => 'required'
+            ]
+        );
+        $nomor = $request->no_meja;
+        $kapasitas = $request->kapasitas;
+        Meja::create(
+            [
+                'no_meja' => 'MJ' . $nomor,
+                'kapasitas' => $kapasitas
+            ]
+        );
         return redirect('/admin/meja');
     }
     public function EditMeja($no_meja)
@@ -61,9 +75,6 @@ class AdminController extends Controller
     {
         $user = Auth::user();
         $pes = Pesan::with('pengguna')->where('status', '=', 2)->orWhere('status', '=', 3)->get();
-        // $pes = Pesan::all();
-        $pes = $pes[0];
-        // dd($pes);
         return view('admin.pesanan', compact('pes', 'user'));
     }
 
@@ -71,7 +82,7 @@ class AdminController extends Controller
     {
         $pes = Pesan::with('pengguna', 'bayar', 'detail')->where('status', '=', 2)->orWhere('status', '=', 3)->get();
         $pes = Pdf::loadview('laporan', ['pes' => $pes]);
-        return $pes->download('laporan-pesanan.pdf');
+        return $pes->stream('laporan-pesanan.pdf');
     }
 
     public function TampilUser()
@@ -82,6 +93,6 @@ class AdminController extends Controller
         // ->groupBy('users.id', 'users.name', 'users.email')
         // ->get();
         $users = User::where('email', '!=', 'admin@food.com')->withCount('pesanan')->get();
-        return view('admin.user', compact(  'users'));
+        return view('admin.user', compact('users'));
     }
 }

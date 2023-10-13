@@ -17,7 +17,7 @@
 
 <body>
     <div class="container-scroller">
-        <nav class="sidebar sidebar-offcanvas" id="sidebar">
+        <nav class="sidebar w-25 sidebar-offcanvas" id="sidebar">
             <div class="sidebar-brand-wrapper d-none d-lg-flex align-items-center justify-content-center fixed-top">
                 <a class="sidebar-brand brand-logo" href="/"><img src="{{ asset('assets/img/logo.png') }}"
                         alt="logo" /></a>
@@ -84,10 +84,11 @@
                     </a>
                 </li>
                 <li class="nav-item menu-items">
-                  <form action="" method="post">
-                    
-                  </form>
-                    <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault();
+                    <form action="" method="post">
+
+                    </form>
+                    <a class="nav-link" href="{{ route('logout') }}"
+                        onclick="event.preventDefault();
                     document.getElementById('logout-form').submit();">
                         <span class="menu-icon">
                             <i class="mdi mdi mdi-cash-multiple"></i>
