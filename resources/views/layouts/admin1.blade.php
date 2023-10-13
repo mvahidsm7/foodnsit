@@ -42,6 +42,14 @@
                 </li>
                 <li class="nav-item nav-category">
                     <span class="nav-link">Navigation</span>
+                    <a class="btn btn-outline-danger w-100" href="{{ route('logout') }}"
+                        onclick="event.preventDefault();
+                        document.getElementById('logout-form').submit();">
+                        {{ __('Logout') }}
+                    </a>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                        @csrf
+                    </form>
                 </li>
                 <li class="nav-item menu-items">
                     <a class="nav-link" href="/">
