@@ -27,10 +27,7 @@
                     </tr>
                 @endforeach
             </table>
-            <form action="/tambah-menu" method="post">
-                @csrf
-                <button class="btn btn-outline-success" type="submit">tambah</button>
-            </form>
+            <a class="btn btn-outline-success" href="/tambah-menu">Tambah Menu</a>
         </div>
         {{-- <footer class="footer">
             <div class="d-sm-flex justify-content-center justify-content-sm-between">

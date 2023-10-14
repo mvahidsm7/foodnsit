@@ -64,7 +64,7 @@ Route::get('/print-pesanan', [AdminController::class, 'pdf']);
 Route::get('/laporan', [PesananController::class, 'laporan']);
 // admin - menu
 Route::get('/admin/menu', [AdminController::class, 'TampilMenu']);
-Route::post('/tambah-menu', [AdminController::class, 'TambahMenuView']);
+Route::get('/tambah-menu', [AdminController::class, 'TambahMenuView']);
 Route::post('/tambah-menu/sukses', [AdminController::class, 'TambahMenu']);
 Route::post('/edit-menu/{id_menu}', [AdminController::class, 'editMenu']);
 Route::post('/update-menu/sukses', [AdminController::class, 'UpdateMenu']);

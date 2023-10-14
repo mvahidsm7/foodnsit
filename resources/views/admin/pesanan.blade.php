@@ -109,7 +109,7 @@
                     <input type="date" class="form-control" name="tanggal_sampai" value="{{ request('tanggal_sampai') }}">
                 <br>
             </div>
-            <div class="col-sm-2">
+            <div class="col-sm-3">
                 <button type="submit" class="btn btn-primary mt-4">Search</button>
             </div>
         </div>
