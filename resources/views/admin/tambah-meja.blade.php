@@ -15,6 +15,7 @@
     <!-- end breadcrumb section -->
     {{-- form --}}
     <div class="main-panel">
+        <div class="content-wrapper">
         <div class="container mt-150 mb-150">
             <form action="/tambah-meja/sukses" method="post">
                 @csrf
@@ -30,6 +31,7 @@
                     <button class="btn btn-warning w-75" type="submit">simpan</button>
                 </center>
             </form>
+        </div>
         </div>
     </div>
 @endsection

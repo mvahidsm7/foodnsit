@@ -1,6 +1,7 @@
 @extends('layouts.admin1')
 @section('content')
     <div class="main-panel">
+        <div class="content-wrapper">
         <div class="container mt-150 mb-150">
             <table class="table">
                 <tr class="table-active">
@@ -28,5 +29,6 @@
             </div>
         </footer> --}}
     </div>
+</div>
     {{-- end table --}}
 @endsection

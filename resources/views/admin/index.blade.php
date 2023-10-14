@@ -13,6 +13,7 @@
                                         <tr>
                                             <th> Nama Pemesan </th>
                                             <th> Kode Pesanan </th>
+                                            <th> Tanggal Pemesanan </th>
                                             <th> Nomor Meja </th>
                                             <th> Menu </th>
                                             <th> Tanggal & Jam </th>
@@ -29,6 +30,7 @@
                                                         <span class="pl-2">{{ $p->pengguna[0]->name }}</span>
                                                     </td>
                                                     <td> {{ $p->kd_pes }} </td>
+                                                    <td> {{ $p->created_at->format('Y-m-d') }} </td>
                                                     <td> {{ $p->no_meja }} </td>
                                                     <td>
                                                         @foreach ($p->detail as $item)
@@ -40,8 +42,7 @@
                                                     <td> {{ $p->jam }} {{ $p->tanggal }} </td>
                                                     <td>
                                                         @if ($p->status == 1)
-                                                            <div class="badge badge-outline-warning">Menunggu Pembayaran
-                                                            </div>
+                                                            <div class="badge badge-outline-warning">Menunggu</div>
                                                         @elseif ($p->status == 2)
                                                             <div class="badge badge-outline-success">Dibayar</div>
                                                         @else

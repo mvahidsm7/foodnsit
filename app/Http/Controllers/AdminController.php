@@ -71,10 +71,24 @@ class AdminController extends Controller
     {
     }
 
-    public function TampilPesanan()
+    public function TampilPesanan(Request $request)
     {
         $user = Auth::user();
-        $pes = Pesan::with('pengguna')->where('status', '=', 2)->orWhere('status', '=', 3)->get();
+        $pes = Pesan::query()->with('pengguna');
+
+        if ($request->has('status')) {
+            $pes->where('status', $request->status);
+        }
+
+        if ($request->has('tanggal_dari') && $request->has('tanggal_sampai')) {
+            $pes->whereBetween('created_at', [
+                $request->tanggal_dari,
+                $request->tanggal_sampai . ' 23:59:59'
+            ]);
+        }
+
+        $pes = $pes->get();
+
         return view('admin.pesanan', compact('pes', 'user'));
     }
 
