@@ -17,7 +17,7 @@
 
 <body>
     <div class="container-scroller">
-        <nav class="sidebar w-25 sidebar-offcanvas" id="sidebar">
+        <nav class="sidebar sidebar-offcanvas" id="sidebar">
             <div class="sidebar-brand-wrapper d-none d-lg-flex align-items-center justify-content-center fixed-top">
                 <a class="sidebar-brand brand-logo" href="/"><img src="{{ asset('assets/img/logo.png') }}"
                         alt="logo" /></a>
@@ -42,11 +42,6 @@
                 </li>
                 <li class="nav-item nav-category">
                     <span class="nav-link">Navigation</span>
-                    <a class="btn btn-outline-danger w-100" href="{{ route('logout') }}"
-                        onclick="event.preventDefault();
-                        document.getElementById('logout-form').submit();">
-                        {{ __('Logout') }}
-                    </a>
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                         @csrf
                     </form>
