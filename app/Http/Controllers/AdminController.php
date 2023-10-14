@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Kategori;
 use App\Models\Meja;
 use App\Models\Menu;
 use App\Models\User;
@@ -55,11 +56,31 @@ class AdminController extends Controller
     }
     public function TambahMenuView()
     {
-        return view('tambah-menu');
+        $kategori = Kategori::all();
+        return view('admin.tambah-menu', compact('kategori'));
     }
     public function TambahMenu(Request $request)
     {
-        Menu::create($request->except('_token', 'submit'));
+        $request->validate([
+            'id_menu' => 'required',
+            'nama' => 'required',
+            'gambar' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'deskripsi' => 'required',
+            'harga' => 'required',
+            'kategori' => 'required'
+        ]);
+
+        $namaGambar = $request->id_menu . '-' . $request->nama . '.' . $request->gambar->extension();
+        $request->gambar->move(public_path('assets/img/products'), $namaGambar);
+
+        Menu::create([
+            'id_menu' => 'MN' . $request->id_menu,
+            'nama' => $request->nama,
+            'gambar' => 'assets\\img\\products\\' . $namaGambar,
+            'deskripsi' => $request->deskripsi,
+            'harga' => $request->harga,
+            'kategori' => $request->kategori
+        ]);
         return redirect('/admin/menu');
     }
 
