@@ -1,32 +1,20 @@
 @extends('layouts.admin1')
 @section('content')
-    <!-- breadcrumb-section -->
-    {{-- <div class="breadcrumb-section breadcrumb-bg">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 offset-lg-2 text-center">
-                    <div class="breadcrumb-text">
-                        <p>Halaman</p>
-                        <h1>Tambah Menu</h1>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> --}}
-    <!-- end breadcrumb section -->
     {{-- form --}}
     <div class="main-panel">
         <div class="content-wrapper">
             <div class="container mt-150 mb-150">
-                <form action="/tambah-menu/sukses" method="post" enctype="multipart/form-data">
+                <form action="/update-menu/sukses" method="post" enctype="multipart/form-data">
                     @csrf
                     <div class="mb-3">
                         <span>id menu</span>
-                        <input class="form-control text-light bg-dark" type="text" name="id_menu" id="" value="{{old('id_menu')}}">
+                        <input class="form-control text-light bg-dark" type="text" name="id_menu" id=""
+                            value="{{ $menu->id_menu }}" readonly>
                     </div>
                     <div class="mb-3">
                         <span>nama</span>
-                        <input class="form-control text-light bg-dark" type="text" name="nama" id="" value="{{old('nama')}}">
+                        <input class="form-control text-light bg-dark" type="text" name="nama" id=""
+                            value="{{ $menu->nama }}">
                     </div>
                     <div class="mb-3">
                         <span>gambar</span><br>
@@ -34,17 +22,19 @@
                     </div>
                     <div class="mb-3">
                         <span>deskripsi menu</span>
-                        <input class="form-control text-light bg-dark" type="text" name="deskripsi" id="" value="{{old('deskripsi')}}">
+                        <input class="form-control text-light bg-dark" type="text" name="deskripsi" id=""
+                            value="{{ $menu->deskripsi }}">
                     </div>
                     <div class="mb-3">
                         <span>harga</span>
-                        <input class="form-control text-light bg-dark" type="number" name="harga" id="" value="{{old('harga')}}">
+                        <input class="form-control text-light bg-dark" type="number" name="harga" id=""
+                            value="{{ $menu->harga }}">
                     </div>
                     <div class="mb-5">
                         <span>kategori</span>
                         <select class="form-control text-light bg-dark" type="number" name="kategori" id="">
                             @foreach ($kategori as $item)
-                                <option value="{{ $item->id }}">{{ $item->kategori }}</option>
+                                <option @if ($menu->kategori == $item->id) selected @endif value="{{ $item->id }}">{{ $item->kategori }}</option>
                             @endforeach
                         </select>
                     </div>
