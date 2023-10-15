@@ -79,16 +79,16 @@
                 <div class="col-lg-6 grid-margin stretch-card">
                     <div class="card">
                         <div class="card-body">
-                            <h4 class="card-title">Volume Transaksi</h4>
-                            <canvas id="lineChart" style="height:250px"></canvas>
+                            <h4 class="card-title">Volume Pendapatan</h4>
+                            <div id="pendapatan"></div>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-6 grid-margin stretch-card">
                     <div class="card">
                         <div class="card-body">
-                            <h4 class="card-title">Menu Yang Sering di Pesan</h4>
-                            <canvas id="barChart" style="height:230px"></canvas>
+                            <h4 class="card-title">Pemesanan</h4>
+                            <div id="pemesanan"></div>
                         </div>
                     </div>
                 </div>
@@ -212,4 +212,98 @@
             </div>
         </footer>
     </div>
+@endsection
+@section('js')
+<script src="{{ asset('assets/achart/dist/apexcharts.js') }}"></script>
+<link rel="stylesheet" href="{{ asset('assets/achart/dist/apexcharts.css') }}"/>
+<script>
+    var options = {
+          series: [{
+            name: "Penghasilan",
+            data: @json($dataTotalPendapatan)
+        }],
+          chart: {
+          height: 350,
+          type: 'line',
+          zoom: {
+            enabled: false
+          }
+        },
+        dataLabels: {
+          enabled: false
+        },
+        stroke: {
+          curve: 'straight'
+        },
+        title: {
+          text: 'Data Total Pendapatan Perbulan',
+          align: 'left'
+        },
+        grid: {
+          row: {
+            colors: ['#f3f3f3', 'transparent'], // takes an array which will be repeated on columns
+            opacity: 0.5
+          },
+        },
+        xaxis: {
+          categories: @json($dataBulan),
+        },
+        yaxis: {
+            labels: {
+                formatter: function(value) {
+                    return value.toLocaleString("id-ID", {
+                        style: "currency",
+                        currency: "IDR"
+                    });
+                },
+            },
+        }
+        };
+
+        var chart = new ApexCharts(document.querySelector("#pendapatan"), options);
+        chart.render();
+
+        var options = {
+          series: [{
+          name: 'Pesanan Selesai',
+          data: @json($dataTotalPemesananSukses)
+        }, {
+            name: 'Pesanan Gagal',
+            data: @json($dataTotalPemesananGagal)
+        }],
+          chart: {
+          type: 'bar',
+          height: 350
+        },
+        plotOptions: {
+          bar: {
+            horizontal: false,
+            columnWidth: '55%',
+            endingShape: 'rounded'
+          },
+        },
+        dataLabels: {
+          enabled: false
+        },
+        stroke: {
+          show: true,
+          width: 2,
+          colors: ['transparent']
+        },
+        xaxis: {
+          categories: @json($dataBulan),
+        },
+        yaxis: {
+          title: {
+            text: 'Jumlah Pesanan'
+          }
+        },
+        fill: {
+          opacity: 1
+        },
+        };
+
+        var chart = new ApexCharts(document.querySelector("#pemesanan"), options);
+        chart.render();
+</script>
 @endsection
