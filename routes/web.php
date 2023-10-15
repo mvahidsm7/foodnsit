@@ -75,6 +75,8 @@ Route::get('/admin/user', [AdminController::class, 'TampilUser']);
 Route::get('/test', [Testing::class, 'index']);
 Route::get('/template', function(){return view('templating');});
 Route::post('/test/form', [Testing::class, 'form']);
+// grafik
+// Route::get('/', [BerandaController::class, 'grafik']);
 
 Auth::routes();
 
