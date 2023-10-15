@@ -70,6 +70,8 @@ class AdminController extends Controller
             'kategori' => 'required'
         ]);
 
+        // dd($request);
+
         $namaGambar = $request->id_menu . '-' . $request->nama . '.' . $request->gambar->extension();
         $request->gambar->move(public_path('assets/img/products'), $namaGambar);
 

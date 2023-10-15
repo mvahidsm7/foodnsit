@@ -2,7 +2,8 @@
 @section('content')
     <div class="main-panel">
         <div class="content-wrapper">
-        <div class="container mt-150 mb-150">
+        <div class="container mb-150">
+            <a class="btn btn-outline-success mb-2" href="/tambah-menu">Tambah Menu</a>
             <table class="table">
                 <tr class="table-active">
                     <td>Kode</td>
@@ -27,7 +28,6 @@
                     </tr>
                 @endforeach
             </table>
-            <a class="btn btn-outline-success" href="/tambah-menu">Tambah Menu</a>
         </div>
         {{-- <footer class="footer">
             <div class="d-sm-flex justify-content-center justify-content-sm-between">
