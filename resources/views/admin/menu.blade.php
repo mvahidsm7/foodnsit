@@ -23,7 +23,24 @@
                             <td>
                                 <form action="/edit-menu/{{ $m->id_menu }}" method="post">
                                     @csrf
-                                    <button class="badge bg-warning" type="submit">edit</button>
+                                    <button class="btn bg-warning w-100" type="submit">edit</button>
+                                </form>
+                                <form action="/hapus-menu/{{ $m->id_menu }}" method="post">
+                                    <div class="popup" id="myForm">
+                                        <div class="popup-content">
+                                            @csrf
+                                            <center>
+                                                <h3>Hapus menu ini?</h3>
+                                                <div class="container d-flex">
+                                                    <button class="btn btn-danger w-50" type="submit">ya</button>
+                                                    <div class="btn btn-secondary w-50 mx-1" onclick="closeForm()">tidak
+                                                    </div>
+                                                </div>
+                                            </center>
+                                        </div>
+                                    </div>
+                                    <div class="btn bg-danger w-100"
+                                        onclick="openForm()">hapus</div>
                                 </form>
                             </td>
                         </tr>
@@ -39,4 +56,13 @@
         </div>
     </div>
     {{-- end table --}}
+    <script type="text/javascript">
+        function openForm() {
+            document.getElementById("myForm").style.display = "block";
+        }
+
+        function closeForm() {
+            document.getElementById("myForm").style.display = "none";
+        }
+    </script>
 @endsection

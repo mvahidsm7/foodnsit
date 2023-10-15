@@ -113,7 +113,6 @@ class AdminController extends Controller
 
         if ($request->gambar) {
             $menu->update([
-                'id_menu' => 'MN' . $request->id_menu,
                 'nama' => $request->nama,
                 'gambar' => 'assets\\img\\products\\' . $namaGambar,
                 'deskripsi' => $request->deskripsi,
@@ -123,7 +122,6 @@ class AdminController extends Controller
         } 
         else {
             $menu->update([
-                'id_menu' => 'MN' . $request->id_menu,
                 'nama' => $request->nama,
                 'deskripsi' => $request->deskripsi,
                 'harga' => $request->harga,
@@ -131,6 +129,12 @@ class AdminController extends Controller
             ]);
         }
 
+        return redirect('/admin/menu');
+    }
+
+    public function hapus($id_menu){
+        $menu = Menu::where('id_menu', $id_menu);
+        $menu->delete();
         return redirect('/admin/menu');
     }
 
