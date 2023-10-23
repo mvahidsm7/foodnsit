@@ -50,7 +50,7 @@ Route::get('/bayar/{kd_pes}', [BayarController::class, 'index']);
 Route::get('/bayar/{kd_pes}/sukses', [BayarController::class, 'create']);
 Route::get('email', [emailController::class, 'email'])->name('email');
 Route::get('batal/{kd_pes}', [ProfilController::class, 'batal']);
-Route::post('batal/{kd_pes}/sukses', [ProfilController::class, 'BatalSukses']);
+Route::get('batal/{kd_pes}/sukses', [ProfilController::class, 'BatalSukses']);
 Route::post('/expired/{kd_pes}', [PesanController::class, 'expired']);
 // Route::post('/midtrans-callback', [BayarController::class, 'callback']);
 

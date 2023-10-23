@@ -34,7 +34,11 @@
                                 <span class="count bg-success"></span>
                             </div>
                             <div class="profile-name">
-                                <h5 class="mb-0 font-weight-normal">{{ Auth::user()->name }}</h5>
+                                <h5 class="mb-0 font-weight-normal">
+                                    @if (Auth::user())
+                                        {{ Auth::user()->name }}
+                                    @endif
+                                </h5>
                                 <span>Admin</span>
                             </div>
                         </div>
@@ -106,8 +110,8 @@
             <!-- partial:partials/_navbar.html -->
             <nav class="navbar p-0 fixed-top d-flex flex-row">
                 <div class="navbar-brand-wrapper d-flex d-lg-none align-items-center justify-content-center">
-                    <a class="navbar-brand brand-logo-mini" href="index.html"><img src="{{ asset('assets/img/logo.png') }}"
-                            alt="logo" /></a>
+                    <a class="navbar-brand brand-logo-mini" href="index.html"><img
+                            src="{{ asset('assets/img/logo.png') }}" alt="logo" /></a>
                 </div>
                 <div class="navbar-menu-wrapper flex-grow d-flex align-items-stretch">
                     <button class="navbar-toggler navbar-toggler align-self-center" type="button"
@@ -194,7 +198,11 @@
                                 <div class="navbar-profile">
                                     <img class="img-xs rounded-circle"
                                         src="{{ asset('assets/img/faces/face15.png') }}" alt="">
-                                    <p class="mb-0 d-none d-sm-block navbar-profile-name">{{ Auth::user()->name }}</p>
+                                    <p class="mb-0 d-none d-sm-block navbar-profile-name">
+                                        @if (Auth::user())
+                                            {{ Auth::user()->name }}
+                                        @endif
+                                    </p>
                                     <i class="mdi mdi-menu-down d-none d-sm-block"></i>
                                 </div>
                             </a>
@@ -255,7 +263,7 @@
     <script src="{{ asset('assets/js/settings.js') }}"></script>
     <script src="{{ asset('assets/js/todolist.js') }}"></script>
     <script src="{{ asset('assets/js/dashboard.js') }}"></script>
-        
+
     @yield('js')
 </body>
 

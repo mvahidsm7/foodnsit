@@ -42,23 +42,29 @@
                                                     <td> {{ $p->jam }} {{ $p->tanggal }} </td>
                                                     <td>
                                                         @if ($p->status == 1)
-                                                            <div class="badge badge-outline-warning">Menunggu</div>
+                                                            @if ($p->expired_at < now())
+                                                                <div class="badge badge-outline-secondary">Kadaluarsa</div>
+                                                            @else
+                                                                <div class="badge badge-outline-warning">Menunggu</div>
+                                                            @endif
                                                         @elseif ($p->status == 2)
                                                             <div class="badge badge-outline-success">Dibayar</div>
-                                                        @else
+                                                        @elseif ($p->status == 3)
                                                             <div class="badge badge-outline-primary">Selesai</div>
+                                                        @else
+                                                            <div class="badge badge-outline-danger">Batal</div>
                                                         @endif
                                                     </td>
                                                     <td>
                                                         @if ($p->status == 1)
-                                                            <a href="/batal/{{ $p->no_pes }}"
-                                                                class="btn btn-outline-danger">Batalkan</a>
+                                                            <button onclick="konfirmasi('{{$p->kd_pes}}')"
+                                                                class="btn btn-outline-danger">Batalkan</button>
                                                         @elseif ($p->status == 2)
                                                             <a href="" class="btn btn-outline-success">Selesaikan</a>
                                                             <br>
                                                             <br>
-                                                            <a href="/batal/{{ $p->no_pes }}"
-                                                                class="btn btn-outline-danger">Batalkan</a>
+                                                            <button onclick="konfirmasi('{{$p->kd_pes}}')"
+                                                                class="btn btn-outline-danger">Batalkan</button>
                                                         @else
                                                             Selesai
                                                         @endif
@@ -214,96 +220,104 @@
     </div>
 @endsection
 @section('js')
-<script src="{{ asset('assets/achart/dist/apexcharts.js') }}"></script>
-<link rel="stylesheet" href="{{ asset('assets/achart/dist/apexcharts.css') }}"/>
-<script>
-    var options = {
-          series: [{
-            name: "Penghasilan",
-            data: @json($dataTotalPendapatan)
-        }],
-          chart: {
-          height: 350,
-          type: 'line',
-          zoom: {
-            enabled: false
-          }
-        },
-        dataLabels: {
-          enabled: false
-        },
-        stroke: {
-          curve: 'straight'
-        },
-        title: {
-          text: 'Data Total Pendapatan Perbulan',
-          align: 'left'
-        },
-        grid: {
-          row: {
-            colors: ['#f3f3f3', 'transparent'], // takes an array which will be repeated on columns
-            opacity: 0.5
-          },
-        },
-        xaxis: {
-          categories: @json($dataBulan),
-        },
-        yaxis: {
-            labels: {
-                formatter: function(value) {
-                    return value.toLocaleString("id-ID", {
-                        style: "currency",
-                        currency: "IDR"
-                    });
+    <script src="{{ asset('assets/achart/dist/apexcharts.js') }}"></script>
+    <link rel="stylesheet" href="{{ asset('assets/achart/dist/apexcharts.css') }}" />
+    <script>
+        function konfirmasi(kd_pes) {
+            var konf = confirm('Batalkan pesanan ini? ' + '(Kode Pesanan: ' + kd_pes + ')');
+            if (konf) {
+                alert('Pesanan dibatalkan! ' + '(Kode Pesanan: ' + kd_pes + ')');
+                window.location.href = '/batal/' + kd_pes + '/sukses';
+            } else {}
+        }
+
+        var options = {
+            series: [{
+                name: "Penghasilan",
+                data: @json($dataTotalPendapatan)
+            }],
+            chart: {
+                height: 350,
+                type: 'line',
+                zoom: {
+                    enabled: false
+                }
+            },
+            dataLabels: {
+                enabled: false
+            },
+            stroke: {
+                curve: 'straight'
+            },
+            title: {
+                text: 'Data Total Pendapatan Perbulan',
+                align: 'left'
+            },
+            grid: {
+                row: {
+                    colors: ['#f3f3f3', 'transparent'], // takes an array which will be repeated on columns
+                    opacity: 0.5
                 },
             },
-        }
+            xaxis: {
+                categories: @json($dataBulan),
+            },
+            yaxis: {
+                labels: {
+                    formatter: function(value) {
+                        return value.toLocaleString("id-ID", {
+                            style: "currency",
+                            currency: "IDR"
+                        });
+                    },
+                },
+            }
         };
 
         var chart = new ApexCharts(document.querySelector("#pendapatan"), options);
         chart.render();
 
         var options = {
-          series: [{
-          name: 'Pesanan Selesai',
-          data: @json($dataTotalPemesananSukses)
-        }, {
-            name: 'Pesanan Gagal',
-            data: @json($dataTotalPemesananGagal)
-        }],
-          chart: {
-          type: 'bar',
-          height: 350
-        },
-        plotOptions: {
-          bar: {
-            horizontal: false,
-            columnWidth: '55%',
-            endingShape: 'rounded'
-          },
-        },
-        dataLabels: {
-          enabled: false
-        },
-        stroke: {
-          show: true,
-          width: 2,
-          colors: ['transparent']
-        },
-        xaxis: {
-          categories: @json($dataBulan),
-        },
-        yaxis: {
-          title: {
-            text: 'Jumlah Pesanan'
-          }
-        },
-        fill: {
-          opacity: 1
-        },
+            series: [{
+                name: 'Pesanan Selesai',
+                data: @json($dataTotalPemesananSukses)
+            }, {
+                name: 'Pesanan Gagal',
+                data: @json($dataTotalPemesananGagal)
+            }],
+            chart: {
+                type: 'bar',
+                height: 350
+            },
+            plotOptions: {
+                bar: {
+                    horizontal: false,
+                    columnWidth: '55%',
+                    endingShape: 'rounded'
+                },
+            },
+            dataLabels: {
+                enabled: false
+            },
+            stroke: {
+                show: true,
+                width: 2,
+                colors: ['transparent']
+            },
+            xaxis: {
+                categories: @json($dataBulan),
+            },
+            yaxis: {
+                title: {
+                    text: 'Jumlah Pesanan'
+                }
+            },
+            fill: {
+                opacity: 1
+            },
         };
 
         var chart = new ApexCharts(document.querySelector("#pemesanan"), options);
         chart.render();
-</script>
+    </script>
 @endsection

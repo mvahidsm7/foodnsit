@@ -48,8 +48,9 @@ class ProfilController extends Controller
                 ->where('no_meja', $pes->no_meja)
                 ->update(['status' => 'tersedia']);
         }
-        $pes->delete();
-        return redirect('/profil');
+        DB::table('pesan')->where('kd_pes', $kd_pes)->update(array('status' => 4));
+        DB::table('meja')->where('no_meja', $pes->no_meja)->update(array('status' => 'tersedia'));
+        return redirect()->back()->with('success', '');
     }
     public function detail($kd_pes)
     {
@@ -87,11 +88,11 @@ class ProfilController extends Controller
     public function processChangePassword(Request $request)
     {
         //cek password lama
-        if(!Hash::check($request->old_password, auth()->user()->password)) {
+        if (!Hash::check($request->old_password, auth()->user()->password)) {
             return back()->with('error', 'Password lama tidak cocok');
         }
         //cek password baru
-        if($request->new_password != $request->repeat_password) {
+        if ($request->new_password != $request->repeat_password) {
             return back()->with('error', 'Password baru dan konfirmasi tidak cocok');
         }
 
