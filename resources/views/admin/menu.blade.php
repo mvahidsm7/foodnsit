@@ -23,10 +23,11 @@
                             <td>
                                 <form action="/edit-menu/{{ $m->id_menu }}" method="post">
                                     @csrf
-                                    <button class="btn bg-warning w-100" type="submit">edit</button>
+                                    <button class="btn bg-warning w-100 mb-2" type="submit">edit</button>
                                 </form>
                                 <form action="/hapus-menu/{{ $m->id_menu }}" method="post">
-                                    <div class="popup" id="myForm">
+                                    @csrf
+                                    {{-- <div class="popup" id="myForm">
                                         <div class="popup-content">
                                             @csrf
                                             <center>
@@ -40,7 +41,8 @@
                                         </div>
                                     </div>
                                     <div class="btn bg-danger w-100"
-                                        onclick="openForm()">hapus</div>
+                                        onclick="openForm()">hapus</div> --}}
+                                    <button type="submit" class="btn btn-danger w-100">hapus</button>
                                 </form>
                             </td>
                         </tr>

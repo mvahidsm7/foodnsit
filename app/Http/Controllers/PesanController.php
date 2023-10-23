@@ -49,16 +49,20 @@ class PesanController extends Controller
                 'expired_at' => now()->addHours(2)
             ]
         );
+        // dd($request);
         DB::table('meja')->where('no_meja', $pesanan->no_meja)->update(array('status' => 'dipesan'));
-        for ($i = 1; $i <= $men; $i++) {
-            if ($request['menu'][$i - 1] != 0) {
-                $harga =  Menu::where('id_menu', ('MN' . $i))->get();
+        $menu = Menu::all();
+        foreach ($request['menu'] as $key => $value) {
+            if ($value) {
+                $id_menu = $request -> id_menu[$key];
+                // dd($id_menu);
+                $harga =  Menu::where('id_menu', ($id_menu))->first();
                 $detail = Detail::create(
                     [
                         'kd_pes' => $pesanan->kd_pes,
-                        'id_menu' => 'MN' . $i,
-                        'harga' => $harga[0]->harga,
-                        'qty' => $request['menu'][$i - 1],
+                        'id_menu' => $id_menu,
+                        'harga' => $harga->harga,
+                        'qty' => $value,
                     ]
                 );
             }

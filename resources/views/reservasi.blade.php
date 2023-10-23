@@ -37,6 +37,7 @@
                                                     <h6>Rp. {{ $item->harga }}</h6>
                                                     <input class="w-100" type="number" name="menu[]" id=""
                                                         placeholder="isi jumlah" min="0">  
+                                                    <input class="w-100" type="text" name="id_menu[]" hidden value="{{ $item -> id_menu }}">  
                                                 </div>
                                             </div>
                                         </div>
