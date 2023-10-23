@@ -14,6 +14,6 @@ class emailController extends Controller
     {
         $user = Auth::user();
         Mail::to($user->email)->send(new kirimInvoice());
-        return redirect('');
+        return redirect('/profil');
     }
 }
