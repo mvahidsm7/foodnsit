@@ -119,8 +119,7 @@ class AdminController extends Controller
                 'harga' => $request->harga,
                 'kategori' => $request->kategori
             ]);
-        } 
-        else {
+        } else {
             $menu->update([
                 'nama' => $request->nama,
                 'deskripsi' => $request->deskripsi,
@@ -132,10 +131,11 @@ class AdminController extends Controller
         return redirect('/admin/menu');
     }
 
-    public function hapus($id_menu){
+    public function hapus($id_menu)
+    {
         $menu = Menu::where('id_menu', $id_menu);
         $menu->delete();
-        return redirect('/admin/menu');
+        return redirect()->back()->with('success', 'Item berhasil dihapus');
     }
 
     public function TampilPesanan(Request $request)

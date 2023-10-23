@@ -25,9 +25,11 @@
                                     @csrf
                                     <button class="btn bg-warning w-100 mb-2" type="submit">edit</button>
                                 </form>
-                                <form action="/hapus-menu/{{ $m->id_menu }}" method="post">
-                                    @csrf
-                                    {{-- <div class="popup" id="myForm">
+                                {{-- <form action="/hapus-menu/{{ $m->id_menu }}" method="post"> --}}
+                                {{-- @csrf --}}
+                                <button class="btn btn-danger w-100"
+                                    onclick="konfirmasi('{{ $m->id_menu }}')">hapus</button>
+                                {{-- <div class="popup" id="myForm">
                                         <div class="popup-content">
                                             @csrf
                                             <center>
@@ -42,8 +44,7 @@
                                     </div>
                                     <div class="btn bg-danger w-100"
                                         onclick="openForm()">hapus</div> --}}
-                                    <button type="submit" class="btn btn-danger w-100">hapus</button>
-                                </form>
+                                {{-- </form> --}}
                             </td>
                         </tr>
                     @endforeach
@@ -59,12 +60,12 @@
     </div>
     {{-- end table --}}
     <script type="text/javascript">
-        function openForm() {
-            document.getElementById("myForm").style.display = "block";
-        }
-
-        function closeForm() {
-            document.getElementById("myForm").style.display = "none";
+        function konfirmasi(id_menu) {
+            var konf = confirm('Yakin menghapus menu? ' + '(ID Menu: ' + id_menu + ')');
+            if (konf) {
+                alert('Menu dihapus ! ' + '(ID Menu: ' + id_menu + ')');
+                window.location.href = '/hapus-menu/' + id_menu;
+            } else {}
         }
     </script>
 @endsection

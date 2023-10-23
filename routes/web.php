@@ -68,7 +68,7 @@ Route::get('/tambah-menu', [AdminController::class, 'TambahMenuView']);
 Route::post('/tambah-menu/sukses', [AdminController::class, 'TambahMenu']);
 Route::post('/edit-menu/{id_menu}', [AdminController::class, 'editMenu']);
 Route::post('/update-menu/sukses', [AdminController::class, 'UpdateMenu']);
-Route::post('/hapus-menu/{id_menu}', [AdminController::class, 'hapus']);
+Route::get('/hapus-menu/{id_menu}', [AdminController::class, 'hapus']);
 // admin - user
 Route::get('/admin/user', [AdminController::class, 'TampilUser']);
 // test
