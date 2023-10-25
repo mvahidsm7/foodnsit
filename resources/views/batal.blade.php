@@ -21,7 +21,7 @@
                             <b class="text-light"><i>Dana yang akan dikembalikan akan di kirimkan ke rekening anda dengan potongan 5%</i></b>
                             <p>Apakah anda yakin?</p>
                             <center>
-                                <form action="/batal/{{ $pes->kd_pes }}/sukses" method="post">
+                                <form action="/batal/{{ $pes->kd_pes }}/sukses" method="get">
                                     @csrf
                                     <button type="submit" class="btn btn-outline-secondary text-light">Konfirmasi</button>
                                     <a href="/profil" class="btn btn-outline-success text-light">Batal</a>
