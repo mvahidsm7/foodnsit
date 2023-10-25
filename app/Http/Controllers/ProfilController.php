@@ -41,7 +41,7 @@ class ProfilController extends Controller
     }
     public function BatalSukses($kd_pes)
     {
-        $pes = Pesan::all()->where('kd_pes', '=', $kd_pes);
+        $pes = Pesan::where('kd_pes', '=', $kd_pes)->get();
         $pes = $pes[0];
         if ($pes->no_meja == true) {
             DB::table('meja')
