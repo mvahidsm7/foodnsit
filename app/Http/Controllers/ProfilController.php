@@ -35,12 +35,12 @@ class ProfilController extends Controller
     }
     public function batal($kd_pes)
     {
-        $pes = Pesan::>where('kd_pes', '=', $kd_pes)->first();
+        $pes = Pesan::where('kd_pes', $kd_pes)->first();
         return view('batal', compact('pes'));
     }
     public function BatalSukses($kd_pes)
     {
-        $pes = Pesan::where('kd_pes', '=', $kd_pes)->first();
+        $pes = Pesan::where('kd_pes', $kd_pes)->first();
         if ($pes->no_meja == true) {
             DB::table('meja')
                 ->where('no_meja', $pes->no_meja)
