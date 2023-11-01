@@ -98,7 +98,7 @@
                         onclick="event.preventDefault();
                     document.getElementById('logout-form').submit();">
                         <span class="menu-icon">
-                            <i class="mdi mdi mdi-cash-multiple"></i>
+                            <i class="mdi mdi mdi-logout"></i>
                         </span>
                         <span class="menu-title">Logout</span>
                     </a>
